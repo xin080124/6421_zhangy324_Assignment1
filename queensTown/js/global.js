@@ -14,7 +14,8 @@ function toggle(targetid){
         var showItems = new Array('motel1');//if there is no 'bb2',this won't work
         var hideItems = new Array('hotel1','hotel2','bb1','bb2','bb3');	
     }
-    else    {
+    else
+    {
     	var showItems = new Array('bb1','bb2');//if there is no 'bb2',this won't work
         var hideItems = new Array('hotel1','hotel2','motel1');	
     }

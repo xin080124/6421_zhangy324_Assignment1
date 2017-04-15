@@ -150,6 +150,16 @@ border-radius:5px;
 box-shadow:5px 5px 5px #ccc;
 padding:29px}
 
+div.imgholder{display:block;width:260px;border:1px solid #666;margin:100px 0 10px;padding:4px}
+
+#home_featured2 img{display:inline}
+#home_featured2 .imgholder{display:block;width:290px;background:url(../images/image-frames.png) top left no-repeat;height:180px!important;margin:0;padding:9px}
+#home_featured2 li{display:block;float:left;width:200px;margin:0 30px 0 0;padding:0}
+#home_featured2 p{margin:0;padding:0 20px}
+#home_featured2 p strong{display:block;margin-bottom:10px;font-size:22px;font-weight:400;color:#4A4A4A;background-color:#E0E0E0}
+#home_featured2 h2{text-align:center}
+
+
 a:link{
 	color: #604848;
 	text-decoration: none;  

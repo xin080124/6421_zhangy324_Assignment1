@@ -1,46 +1,79 @@
-<!DOCTYPE html>
+<!-- /*put your test code here*/
+/*test display: block/inline*/ -->
+<!-- <span style="display:block">11111111</span><span>2222222222222</span>
+<div style="display:inline">11111111</div><div style="display:inline">22222222</div> -->
+
 <html>
+
 <head>
-	<title></title>
 
-    <link rel="stylesheet" type="text/css" href="css/global.css">
-    <link rel="stylesheet" type="text/css" href="css/home2.css">
-</head>	
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+
+<title>oec2003</title>
+
+<script language="JavaScript" type="text/JavaScript">
+
+
+function toggle(targetid)
+{
+
+    if (document.getElementById)
+    {
+        target=document.getElementById(targetid);
+
+        if (target.style.display=="block"){
+
+                target.style.display="none";
+
+        } 
+        else 
+        {
+
+                target.style.display="block";
+        }
+
+    }
+
+}
+
+
+
+</script>
+
+<style type="text/css">
+
+<!--
+
+#div1{
+
+background-color:#000000;
+
+height:400px;
+
+width:400px;
+
+display:none;
+
+}
+
+-->
+
+</style>
+
+</head>
+
+
+
 <body>
-	<header class="clearfix">
 
-/*put your test code here*/
+<input type="button" id="butn" value="show/hide" onclick="toggle('div1')" />
 
-<span style="display:block">11111111</span><span>2222222222222</span>
-<div style="display:inline">11111111</div><div style="display:inline">22222222</div>
+<center>
 
-		<div class="logo left">
-             <a href="/">
-             <img src="images/logo.jpg" class="img-responsive" />
-             </a>
-		</div>
-		<nav class="right">
-			<ul>
-			    <li><a href="/">Home</a></li>
-			    <li><a href="/about-us">About Us</a></li>
-			    <li><a href="/contact-us">Contact Us</a></li>
-			    <li><a href="/news">News</a></li>
-			    <li><a href="/blog">Blog</a></li>
-			</ul>
-		</nav>
-	</header>
+<div id="div1"></div></center>
 
-	<section id="top-banner">
-		<img src="images/qslong.jpg" class="img-responsive" />
-		<div class="banner-text">
-		    <h1>Welcome to Queen's Town!</h1>
-			
-		</div>
-	</section>
-
-	<footer>
-		
-	</footer>
+div in the middle
 
 </body>
+
 </html>
