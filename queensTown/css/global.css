@@ -8,6 +8,15 @@
 	box-sizing:border-box;
 }
 
+.main {
+	width:984px; 	
+	padding:0;border: 
+	margin:0 auto;
+	font-size:14px;
+	line-height:25px;
+} 
+
+
 html{
 	height: 100%;
 }
@@ -26,9 +35,120 @@ img{
 	vertical-align: middle;
 }
 
+/*.nav ul li
+{width:100%}
+*/
+
+/*.nav li:hover
+{visibility:inherit}
+*/
+
+.nav li 
+{
+	/*position:absolute;*/ /*if use this, words overlap*/
+	position:relative;
+	display:inline-block; /* make the items locate in a line*/
+	zoom:1;
+	*display:inline;
+}
+
+.nav a
+{display:block;
+	position:relative;
+	color:#333!important;
+	text-decoration:none;
+	padding:.75em 1em
+}
+
+.nav li:hover ul,
+
+.nav li.sfHover ul{left:0;top:2.5em;z-index:99}
+
+.nav a,
+.nav a:visited,
+.nav li
+.active li a{color:#333}
+.nav a.sf-with-ul{padding-right:2.25em}
+.nav li ul a.sf-with-ul{padding-right:1em}
+
 ul li{
 	list-style: none;
 }
+
+div.main-container
+{display:block;text-align:left;margin:0 0 1px}
+/*div.main-container h1,
+div.main-container h2,
+div.main-container h3,
+div.main-container h4,
+div.main-container h5,
+div.main-container h6
+{font-family:Artifika, Arial, Helvetica, sans-serif;
+	font-weight:400;
+	line-height:normal;margin:0 0 15px;padding:0}*/
+
+#sub-headline{border-bottom:1px solid #666;padding:15px 0}
+#sub-headline .tagline_left{margin:8px 0 0;padding:0}
+#breadcrumb{border-top:1px solid #666;border-bottom:1px solid #666;padding:20px 0}
+#breadcrumb ul li.current a{text-decoration:underline}
+
+.container{border-top:1px solid #666;border-bottom:1px solid #666;padding:30px 0}
+
+.container1{border-top:1px solid #666;padding:30px 0}
+
+.clear{clear:both}
+br.clear{clear:both;margin-top:-15px}
+
+.portfolio
+{
+	position:relative;
+	display:block;
+	width:100%;
+	border-top:1px solid #999; /*the size of the top border line*/
+	border-bottom:1px solid #999;
+	margin:0 auto 1px;
+	padding:1px 0
+}
+
+.portfolio .readmore
+{
+	display:block;
+    text-align:right
+}
+
+.portfolio .tagline_left
+{
+	display:block;
+	float:left;
+	width:500px;  /*if it exceeds 500px, it will push the tagline to the bottom*/
+	line-height:1.6em;
+	margin:10px 0 0
+}
+	
+.portfolio .tagline_right
+{
+	display:block;
+	float:right;
+	width:600px  /*if it is less than 100px, it would make the webpage too wider,
+	              that even a strollbar on the bottom will show*/
+}
+	
+.portfolio .tagline_right img
+{display:block;width:470px;height:auto;border:10px solid #E0E0E0;padding:5px}
+
+.portfolio .tagline_right img:hover
+{display:block;width:470px;height:auto;border:10px solid #B4B4B4;padding:5px}
+
+.box
+{background-color:#FFF;
+border:1px solid #666;
+-webkit-border-radius:5px;
+-moz-border-radius:5px;
+border-radius:5px;
+-webkit-box-shadow:5px 5px 5px #ccc;
+-moz-box-shadow:5px 5px 5px #ccc;
+box-shadow:5px 5px 5px #ccc;
+padding:29px}
 
 a:link{
 	color: #604848;
@@ -103,3 +223,67 @@ header nav ul li{
 	max-width: 1280px;
 	height:auto;
 }
+
+/***** menu *****/
+.menu-row {
+	width:100%;
+	padding:1px 0 5px;
+	background:url(../images/menu-row-tail.png) center top repeat-x;
+}
+	#page1 .menu-row {margin-bottom:22px;}
+.menu {width:100%; background:url(../images/menu-spacer.gif) left top no-repeat; overflow:hidden;}
+.menu li {
+	float:left; 
+	position:relative;
+	background:url(../images/menu-spacer.gif) right top no-repeat;
+}
+.menu li a {
+	display:inline-block; 
+	height:60px;
+	overflow:hidden;
+	font-family: 'PT Sans', sans-serif;
+	font-size:17px; 
+	font-weight:400;
+	line-height:59px; 
+	padding:0 64px; 
+	color:#fff; 
+	text-transform:uppercase; 
+}
+
+.menu li a.active,
+.menu > li > a:hover {background:url(../images/menu-active-tail.gif) 0 0 repeat-x #f00058;}
+
+/***** slider *****/
+.slider-wrapper {
+	width:952px;
+	height:516px;
+	padding:54px 0 0 32px;
+	background:url(../images/slider-bg.png) 0 0 no-repeat;
+	overflow:hidden;
+}
+.slider {
+	width:920px;
+	height:454px;
+}
+.items {display:none;}
+
+.pagination {
+	position:absolute;
+	left:418px;
+	bottom:-62px;
+	z-index:99;
+}
+	.pagination li {
+		float:left;
+		padding-right:6px;
+	}
+	.pagination a {
+		display:block;
+		width:24px;
+		height:24px;
+		background:url(../images/slider-pagination.png) right top no-repeat;
+		cursor:pointer;
+	}
+	.pagination li.current a {cursor:default;}
+	.pagination li.current a,
+	.pagination a:hover {background-position:left top;}
