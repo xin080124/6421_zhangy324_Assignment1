@@ -4,6 +4,7 @@
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="css/global.css">
 <link rel="stylesheet" type="text/css" href="css/home2.css">
+<script src="js/global.js" type="text/javascript"></script>
 
 <html> 
 <head> 
@@ -51,43 +52,30 @@
 	  	</div>
   	</div>
 
-  	<form>
-   <!-- ç”¨æˆ·åï¼š<input type="text"id="text" />
-   <input type="button" onClick="username();" value="æ£€éªŒæ˜¯å¦å¯ç”¨"/> -->
+  
+   <!-- ÓÃ»§Ãû£º<input type="text"id="text" />
+   <input type="button" onClick="username();" value="¼ìÑéÊÇ·ñ¿ÉÓÃ"/> -->
 
-<div class="box">
-    name<input id="age" name="age" type="text"/>
-    <br />
-    <br />
-    surname<input id="age" name="age" type="text"/>
-	<br />
-	<br />
-	email address<input id="age" name="age" type="text"/>
-	<br />
-	<br />
-	user agreement<input id="age" name="age" type="text"/>
-<br />
-<br />
-<br />	
-		<a href="javascript:show();">submit</a>
-		<script type="text/javascript">
-		function show()
-		{
-		var values = document.getElementById("age").value;
-		if(values<0||values>120||values=="")
-		{
-		alert("å¹´é¾„èŒƒå›´ä¸ºã€0-120ã€‘ï¼Œè¯·é‡æ–°æ·»å†™");
-		return;
-		}else
-		{
-		alert("æ·»å†™æ­£ç¡®");
-		}
-		}
-		</script>
-
+	<div class="box">
+		<form>
+		    name<input id="name" name="name" type="text"/>
+		    <br />
+		    <br />
+		    surname<input id="surname" name="surname" type="text"/>
+			<br />
+			<br />
+			email address<input id="email" name="email" type="text"/>
+				<br />
+				<br />
+			user agreement<input id="age" name="age" type="text"/>
+				<br />
+				<br />
+				<br />	
+			<a href="javascript:checkSubmit();">submit</a>
+		    <!-- <a href="javascript:show();">submit</a> -->
 		</form>
-
-  </div>
+	 
+	 </div>
 
 
 	

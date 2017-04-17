@@ -39,3 +39,101 @@ function toggle(targetid){
     }
 
 }
+function checkSubmit()
+{
+    if(false == nameCheck())
+    {
+        alert("the name should include at least 3 letters");
+        return;
+    }
+    else if(false == SurnameCheck())
+    {
+        alert("the surname should include at least 5 letters");
+        return;    
+    }
+    else if(false == EmailCheck())
+    {
+        alert("incorrect email");
+        return;    
+    }
+    else
+    {
+        alert("submit success");
+        // var aa = 7;
+        // alert(aa);
+    } 
+    // var values = document.getElementById("age").value;
+    // if(values<0||values>120||values=="")
+    // {
+    // alert("xxxx");
+    // return;
+    // }else
+    // {
+    // alert("xxxx");
+    // }
+
+
+ }
+
+function nameCheck()
+{
+    var values = document.getElementById("name").value.length;
+    // if(values<0||values>120||values=="")
+    // {
+    //     //alert("incorrect name");
+    //     return false;
+    // }
+
+    //alert(values);
+    if(values<3)
+    {
+        //alert("the name should include more than 2 letters");
+        return false;
+    }
+    else
+    {
+        //alert("ok");
+        return true;    
+    }
+    return true;
+ }
+
+ function SurnameCheck()
+{
+    var values = document.getElementById("surname").value.length;
+    if(values<5)
+    {
+        //alert("the name should include more than 2 letters");
+        return false;
+    }
+    else
+    {
+        //alert("ok");
+        return true;    
+    }
+    return true;
+ }
+function show()
+{
+    var values = document.getElementById("age").value;
+    if(values<0||values>120||values=="")
+    {
+    alert("xxxx");
+    return;
+    }else
+    {
+    alert("xxxx");
+    }
+ }
+function EmailCheck() 
+{ 
+    var email = document.getElementById("email").value; 
+   
+    if(!/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(email)) 
+    { 
+       
+        document.getElementById("email").focus(); 
+        return false; 
+    } 
+    return true; 
+} 
