@@ -13,50 +13,6 @@
 <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script> 
 <title>PPT Demo</title> 
 <style type="text/css"> 
-.ppt-container, .ppt-container ul, .ppt-container li, .ppt-container img { 
-margin : 0; 
-padding : 0; 
-border : 0; 
-} 
-.ppt-container { 
-width : 752px; /*根据展示图片的大小在这里设置容器的width和height*/ 
-height : 328px; 
-position : relative; 
-} 
-.ppt-container img { 
-width : 100%; 
-height : 100%; 
-} 
-.ppt-container .hide { 
-display : none; 
-} 
-.ppt-container ul.image-list li { 
-position : absolute; 
-top : 0px; 
-left : 0px; 
-} 
-.ppt-container ul.button-list { 
-list-style : none; 
-position : absolute; 
-right : 20px; 
-bottom : 20px; 
-} 
-.ppt-container ul.button-list li { 
-float : left; 
-padding-right : 10px; 
-} 
-.ppt-container ul.button-list span { 
-background : #E5E5E5; 
-padding : 1px 7px; 
-line-height : 20px; 
-font-size : 13px; 
-display : block; 
-cursor : default; 
-} 
-.ppt-container ul.button-list span.selected { 
-color : #FFF; 
-background : #FF7000; 
-} 
 </style> 
 <script type="text/javascript"> 
 $(function() { 
@@ -110,25 +66,49 @@ $(".ppt-container ul.button-list li span[data-index="+ iNextIndex +"]").click();
 	<div class="container1">
     	<br />
 
-		<div class="container2">
+		<!-- <div class="container2">
 			 <article id="home_featured2">
 			  <br class="clear" />
 			</article>
-	  	</div>
+	  	</div> -->
   	</div>
+  	<div class="fixbox">
+	<!-- <div class="box"> -->
+		<!-- <div class="portfolio"> -->
+		<div class="ppt-container">
+			
+			<ul class="image-list"> 
+				<li data-index="0"><img src="images/glr1.jpg"/></li> 
+				<li data-index="1" class="hide"><img src="images/glr2.jpg"/></li> 
+				<li data-index="2" class="hide"><img src="images/glr3.jpg"/></li> 
+			</ul> 
+			<ul class="button-list"> 
+				<li><span data-index="0" class="selected">1</span></li> 
+				<li><span data-index="1">2</span></li> 
+				<li><span data-index="2">3</span></li> 
+				<li><span data-index="4">4</span></li> 
+				<li><span data-index="5">5</span></li> 
+				<li><span data-index="6">6</span></li> 
+				<li><span data-index="7">7</span></li> 
+				<li><span data-index="8">8</span></li> 
+				<li><span data-index="9">9</span></li> 
+			</ul> 
 
-	<div class="ppt-container"> 
-	<ul class="image-list"> 
-	<li data-index="0"><img src="images/glr1.jpg"/></li> 
-	<li data-index="1" class="hide"><img src="images/glr2.jpg"/></li> 
-	<li data-index="2" class="hide"><img src="images/glr3.jpg"/></li> 
-	</ul> 
-	<ul class="button-list"> 
-	<li><span data-index="0" class="selected">1</span></li> 
-	<li><span data-index="1">2</span></li> 
-	<li><span data-index="2">3</span></li> 
-	</ul> 
+			</div>
+			<!-- <img src="images/HiltonHotel.jpg" alt="" /> -->
+        </div>
 	</div>
+	 <br />
+	<div class="clear"></div>
 </div> 
+<br />
+<div class="clear"></div>
+
+<footer>
+        <p class="tagline_left">Design by Yixin Zhang, 2017</p>
+    <p class="tagline_right">6420 Assignment1</p>
+    <br class="clear" />
+    </footer>
+
 </body> 
 </html> 
