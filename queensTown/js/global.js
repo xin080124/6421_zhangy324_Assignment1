@@ -56,22 +56,16 @@ function checkSubmit()
         alert("incorrect email");
         return;    
     }
-    else
+    else if(false == agreeBoxCheck())
+    {
+        alert("please agree with the term of service ");
+    }
+    else 
     {
         alert("submit success");
         // var aa = 7;
         // alert(aa);
-    } 
-    // var values = document.getElementById("age").value;
-    // if(values<0||values>120||values=="")
-    // {
-    // alert("xxxx");
-    // return;
-    // }else
-    // {
-    // alert("xxxx");
-    // }
-
+    }    
 
  }
 
@@ -113,6 +107,20 @@ function nameCheck()
     }
     return true;
  }
+
+ function agreeBoxCheck()
+{
+    if(document.getElementById("checkboxID").checked)
+    {
+         return true;
+    }
+    else
+    {
+         return false;
+    }
+    
+}
+
 function show()
 {
     var values = document.getElementById("age").value;
