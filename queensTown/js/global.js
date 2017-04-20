@@ -63,8 +63,6 @@ function checkSubmit()
     else 
     {
         alert("submit success");
-        // var aa = 7;
-        // alert(aa);
     }    
 
  }
@@ -72,21 +70,13 @@ function checkSubmit()
 function nameCheck()
 {
     var values = document.getElementById("name").value.length;
-    // if(values<0||values>120||values=="")
-    // {
-    //     //alert("incorrect name");
-    //     return false;
-    // }
-
-    //alert(values);
+    
     if(values<3)
     {
-        //alert("the name should include more than 2 letters");
         return false;
     }
     else
     {
-        //alert("ok");
         return true;    
     }
     return true;

@@ -9,7 +9,7 @@ $(function()
             var iIndex = $(this).attr("data-index"); 
             if(iIndex == iPreIndex) 
             { 
-                return; // 点击了当前图片，不切换 
+                return; // click the current image，no change
             } 
 
             $(".ppt-container .image-list li[data-index="+ iIndex +"]").fadeIn(1500); 
