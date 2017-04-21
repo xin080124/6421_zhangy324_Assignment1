@@ -1,79 +1,77 @@
-<!-- /*put your test code here*/
-/*test display: block/inline*/ -->
-<!-- <span style="display:block">11111111</span><span>2222222222222</span>
-<div style="display:inline">11111111</div><div style="display:inline">22222222</div> -->
-
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML
+1.0Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"> -->
+<!DOCTYPE html>
 <html>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<!-- <title>用户名是否可用</title>
+<script type="text/JavaScript"language="javascript">
+   function username(){
+     var regex=/[a-zA-Z0-9_]*/;
+     var username =document.getElementById('text').value;
+     vara=regex.exec(username);
+     if(a!=""){
+       alert('用户名可用!');
+     }else{
+       alert('有非法字符');
+     }
+   }
+</script> -->
 
-<head>
+</head>
+<body>
+<form>
+   用户名：<input type="text"id="text" />
+   <input type="button" onClick="username();" value="检验是否可用"/>
 
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+选择您的拿手技术：
+<input type="checkbox" name="box" id="box1" value="ASP" />ASP
+<input type="checkbox" name="box" id="box2" value="PHP" />PHP
+<input type="checkbox" name="box" id="box3" value="JSP" />JSP
+<input type="button" name="button" id="button" onclick="checkbox()" value="提交" />
 
-<title>oec2003</title>
-
-<script language="JavaScript" type="text/JavaScript">
 
 
-function toggle(targetid)
+   <input id="age" name="age" type="text"/>
+<a href="javascript:show();">确定</a>
+<script type="text/javascript">
+function show()
 {
-
-    if (document.getElementById)
-    {
-        target=document.getElementById(targetid);
-
-        if (target.style.display=="block"){
-
-                target.style.display="none";
-
-        } 
-        else 
-        {
-
-                target.style.display="block";
-        }
-
-    }
-
+var values = document.getElementById("age").value;
+if(values<0||values>120||values=="")
+{
+alert("年龄范围为【0-120】，请重新添写");
+return;
+}else
+{
+alert("添写正确");
+}
 }
 
-
+function checkbox()
+{
+var str=document.getElementsByName("box");
+var objarray=str.length;
+var chestr="";
+for (i=0;i<objarray;i++)
+{
+ if(str[i].checked == true)
+ {
+  chestr+=str[i].value+",";
+ }
+}
+if(chestr == "")
+{
+ alert("请先选择复选框～！");
+}
+else
+{
+ alert("复选框的值是："+chestr);
+}
+}
 
 </script>
 
-<style type="text/css">
-
-<!--
-
-#div1{
-
-background-color:#000000;
-
-height:400px;
-
-width:400px;
-
-display:none;
-
-}
-
--->
-
-</style>
-
-</head>
-
-
-
-<body>
-
-<input type="button" id="butn" value="show/hide" onclick="toggle('div1')" />
-
-<center>
-
-<div id="div1"></div></center>
-
-div in the middle
-
+</form>
 </body>
-
 </html>
