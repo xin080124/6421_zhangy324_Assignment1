@@ -27,6 +27,16 @@ function gobackward() {
   document.getElementById("PN").innerHTML = current;
 }
 
+//Load previous image
+function goforward() {
+  current = current + 1;
+  if( current > 6 ) {
+     current = 0;
+  }
+  document.slide.src=slide_tray[current].src;  //update current image
+  document.getElementById("PN").innerHTML = current;
+}
+
 //Form validation
 function validate_form(thisform)
 {
@@ -113,7 +123,7 @@ function currentSlide(n) {
 //manual mode
 
 function showSlides(n) {
-	document.getElementById("left").style.visibility = "hidden"; 
+	// document.getElementById("left").style.visibility = "hidden"; 
   var i;
   var slides = document.getElementsByClassName("mySlides");
   // var dots = document.getElementsByClassName("dot");
