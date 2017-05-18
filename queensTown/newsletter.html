@@ -10,13 +10,57 @@
 <head> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
 
-
-<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script> 
+<!-- <script src="js/jquery.js" type="text/javascript"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>  -->
 <title>PPT Demo</title> 
+
+ <script>
+$(document).ready(function(){
+  $("p").click(function(){
+    $(this).hide();
+  });
+});
+</script>
+
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#div1").fadeIn();
+        $("#div2").fadeIn("slow");
+        $("#div3").fadeIn(3000);
+    });
+});
+</script>
+
+<script>
+$(document).ready(function(){
+    $("#p1").mouseenter(function(){
+        alert("You entered p1!");
+    });
+});
+</script>
+
 
 
 </head> 
 <body> 
+
+<p id="p1">be careful to Enter this paragraph.</p>
+
+<p>如果您点击我，我会消失。 try click</p>
+<p>点击我，我会消失。 click will vanish this</p>
+<p>也要点击我哦。</p>
+
+<p>Demonstrate fadeIn() with different parameters.</p>
+
+
+
+<button>Click to fade in boxes</button><br><br>
+
+<div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+<div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+<div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
 
 <div class="main-container">
   <header>
@@ -75,6 +119,8 @@ Leave a contact info right now for regular updates on what�s new in Queenstown~
 		</form>
 	 
 	 </div>
+	 
+	
 
 
 	
