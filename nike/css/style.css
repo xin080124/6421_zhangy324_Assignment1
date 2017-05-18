@@ -23,6 +23,18 @@ border-bottom:1px solid #FCF;
 }
 ul.menu a:hover {background-color: #FFF;}
 
+body{
+	min-height: 100%;
+	text-align: center;
+	font: normal 100% 'PT Sans', Arial, sans-serif;	
+	font-weight: 700;
+	color: #604848;
+	background-color: grey;
+	/*color: #3090f0;*/
+	text-decoration: none; 
+}
+
+
 /* home page */
 div#header {
     clear: both;
