@@ -113,6 +113,12 @@ div#transbox{
 	height: 250px;
 }
 
+ div#formStyle{
+            width: 500px;
+           /* border: 1px solid red;*/
+            text-align: left;        /*右对齐*/·
+        }
+
 /* For image links*/
 #largeImage {
 position: absolute;
@@ -129,4 +135,36 @@ height:300px;
 a img {
 border: 12px double #990000;
 margin:2px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+ .prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
 }

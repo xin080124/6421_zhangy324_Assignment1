@@ -30,6 +30,7 @@ function gobackward() {
 //Form validation
 function validate_form(thisform)
 {
+	// document.getElementById("name").style.visibility = "hidden"; 
 with (thisform)
 {
 if (validate_email(email, "The input email address is not valid!")==false)
@@ -97,3 +98,34 @@ $(function() {
 	 }
 	 document.write(strLinks);
  }
+ 
+var slideIndex = 1;
+showSlides(slideIndex);
+ 
+ function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+//manual mode
+
+function showSlides(n) {
+	document.getElementById("left").style.visibility = "hidden"; 
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  // var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1} 
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+  }
+  // for (i = 0; i < dots.length; i++) {
+      // dots[i].className = dots[i].className.replace(" active", "");
+  // }
+  slides[slideIndex-1].style.display = "block"; 
+  // dots[slideIndex-1].className += " active";
+}
+ 
