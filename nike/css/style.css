@@ -1,0 +1,120 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* menu */
+ul.menu
+{
+float:left;
+padding:0;
+margin:0;
+list-style-type:none;
+}
+ul.menu a
+{
+float:left;
+width:160px;
+text-decoration:#FFF;
+font-weight:bold;
+font-size:16px;
+color: #FCF;
+background-color:#990000;
+padding:0.2em 0.2em;
+border-bottom:1px solid #FCF;
+}
+ul.menu a:hover {background-color: #FFF;}
+
+/* home page */
+div#header {
+    clear: both;
+	padding: 1px;
+	background-color: white;
+	text-align:center;
+}
+div#left {
+    float: left;
+    width: 180px;
+}
+div#right {
+    float: right;
+    width: 180px;
+}
+div#middle {
+    margin:5px 180px 0px 180px;
+}
+
+div#wrapper {
+    margin:0 auto;
+}
+
+/* section#top-banner .banner-text{ */
+	/* font-size: 4em; */
+	/* text-align: middle; */
+	/* color: red; */
+/* } */
+
+
+div.heading1
+{
+	display:block;
+    text-align:middle;
+	color: red;
+}
+
+div.heading
+{
+	/* display:block; */
+    text-align:center;
+	color: red;
+}
+
+div.front
+{
+	text-align:center;
+    margin-top:30px;
+	margin-bottom:30px;
+}
+
+div.frontHeading
+{
+	color: red;
+	font-size:30px;
+    margin:10px;
+    text-align:center;
+}
+
+.description{text-align:justify; padding:10px;}
+
+/* transparent box */
+div#transbox{
+	margin-top:20px;
+	margin-left:20px;
+	margin-right:20px;
+	text-align:justify;
+	background-image:url(images/background-bird.gif);
+	background-position:center;
+	background-repeat:no-repeat;
+	font-size:16px;
+	/* for IE */
+    filter:alpha(opacity=40);
+	/* CSS3 standard */
+    opacity:0.4;
+	height: 250px;
+}
+
+/* For image links*/
+#largeImage {
+position: absolute;
+padding: .5em;
+background: #e3e3e3;
+border: 1px solid #BFBFBF;
+}
+
+#board {
+width: 900px;
+height:300px;
+}
+
+a img {
+border: 12px double #990000;
+margin:2px;
+}
