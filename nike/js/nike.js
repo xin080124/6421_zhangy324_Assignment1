@@ -95,6 +95,10 @@ $(function() {
 	$('a').mousemove(function(e) {
 		$("#largeImage").css('top', e.pageY - offsetY).css('left', e.pageX - offsetX);
 	});
+	
+	$("#transbox").mouseenter(function(){
+        alert("You entered p1!");
+    });
 
 });	
 
