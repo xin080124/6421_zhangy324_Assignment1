@@ -1,3 +1,35 @@
+function showItems(){
+    var txt = '{ "sites" : [' +
+'{ "name":"菜鸟教程" , "url":"www.runoob.com" },' +
+'{ "name":"google" , "url":"www.google.com" },' +
+'{ "name":"微博" , "url":"www.weibo.com" } ]}';
+
+var obj = eval ("(" + txt + ")");
+
+document.getElementById("name").innerHTML=obj.sites[1].name 
+document.getElementById("url").innerHTML=obj.sites[0].url 
+
+}
+
+
+function showBookItems(){
+    var txt = '{ "sites" : [' +
+'{ "id":"1" , "title":"Harry potter", "category":"novel", "desc":"story of wizard and his friends","popularity":"high","onsale":"high","price":"50" },'+
+'{ "id":"2" , "title":"Cambridge IELTS 11", "category":"Education", "desc":"Authentic Examination Papers","popularity":"middle","onsale":"high","price":"33.99" },'+
+'{ "id":"3" , "title":"", "category":"", "desc":"","popularity":"","onsale":"","price":"" },'+
+'{ "id":"4" , "title":"", "category":"", "desc":"","popularity":"","onsale":"","price":"" },'+
+'{ "id":"5" , "title":"", "category":"", "desc":"","popularity":"","onsale":"","price":"" },'+
+'{ "id":"" , "title":"", "category":"", "desc":"","popularity":"","onsale":"","price":"" },'+
+'{ "id":"" , "title":"", "category":"", "desc":"","popularity":"","onsale":"","price":"" },'+
+ ]}';
+
+var obj = eval ("(" + txt + ")");
+
+document.getElementById("id").innerHTML=obj.sites[0].id 
+document.getElementById("title").innerHTML=obj.sites[0].title
+document.getElementById("category").innerHTML=obj.sites[0].category
+}
+
 function toggle(targetid){
 
     if(targetid == "all")
