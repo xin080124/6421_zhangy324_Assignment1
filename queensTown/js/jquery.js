@@ -33,3 +33,4 @@ $(function()
         ); //5000 means,trigger one click event every 5000ms, thus implement auto play
 }
 );
+
