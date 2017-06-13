@@ -1,32 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>QueensTown | Visit And Dine</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/global.css">
-  <script src="js/global.js" type="text/javascript"></script>
-</head>
-<body onload="TopBook()">
-<div class="col-sm-4">
-	<div class="embed-responsive embed-responsive-16by9">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/wg3vyVZfaSg" frameborder="0" allowfullscreen></iframe>
-  </div>
-</div>
-<div class="col-sm-8">
-<section>
-</section>
-<section>
-<div class="page-header">
-   <h1>Top 5 Books</h1>
-  </div>
- <div class="col-container">
-<p id="demo"></p>
-
-<script>
 var myObj, x="", i;
 
 //Storing data:
@@ -52,7 +23,6 @@ myObj =  [
  { "id":"19","title":"The Complete Sherlock Holmes","category":"The eccentric detective Sherlock Holmes with the aid of Dr. Watson investigates strange and baffling mysteries.","desc":"novel","popularity":"43","onsale":"low","price":"23.09"},
  { "id":"20","title":"Steve Jobs: The Exclusive Biography","category":"Biography","desc":"The Book of Jobs, Isaacson provides an extraordinary account of Jobs\' professional and personal life","popularity":"84","onsale":"high","price":"31.35"},];
 
-
 var asc = function(x,y)  
     {  
         return (x.popularity > y.popularity) ? 1 : -1  
@@ -61,25 +31,6 @@ myObj.sort(asc); //升序排序  
 
 for (var i=0;i<5;i++) { 
 var myJSON = myObj[i].title+myObj[i].desc;
-document.write('<img src="images/book' + i + '.jpg">'); 
+document.write('<img src="images/book' + i + '.jpg">');
+ 
 document.getElementById("demo").innerHTML += myJSON;
-
-}
-
-</script>
-
- <div class="col">
-
- </div>
- <div class="col">
- </div>
- <div class="col">
- </div>
- <div class="col">
- </div>
-</section>
-<section>
-</section>
-</div>
-</body>
-</html>
