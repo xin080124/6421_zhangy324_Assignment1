@@ -23,10 +23,26 @@
 <div class="page-header">
    <h1>Top 5 Books</h1>
   </div>
- <div class="col-container">
-<p id="demo"></p>
-
-<script type="text/javascript">
+ <div class="col-container" id="top5">
+<p id="book_top1_title"></p>
+<img id="book_top1_picture" src="book1.jpg">
+ <div class="col" id="top5">
+<p id="book_top2_title"></p>
+<img id="book_top2_picture" src="book1.jpg">
+ </div>
+ <div class="col" id="top5">
+ <p id="book_top3_title"></p>
+<img id="book_top3_picture" src="book1.jpg">
+ </div>
+ <div class="col" id="top5">
+ <p id="book_top4_title"></p>
+<img id="book_top4_picture" src="book1.jpg">
+ </div>
+ <div class="col" id="top5">
+ <p id="book_top5_title"></p>
+<img id="book_top5_picture" src="book1.jpg">
+ </div>
+ <script type="text/javascript">
         var objectList = new Array();
         function Book(id,title,category,desc,popularity,onsale,price){
             this.id=id;
@@ -60,23 +76,30 @@
         //按年龄从小到大排序
         objectList.sort(function(a,b){
             return b.popularity-a.popularity});
-        for(var i=0;i<objectList.length;i++){
-            document.writeln('<br />name:'+objectList[i].title+' price:'+objectList[i].price);
-			var x=objectList[i].title;
-			document.getElementById("demo").innerHTML=x;
-           }
+       // for(var i=0;i<objectList.length;i++){
+         //   document.writeln('<br />name:'+objectList[i].title+' price:'+objectList[i].price);
+			//}
+		var book_1_title=objectList[0].title;
+			document.getElementById("book_top1_title").innerHTML=book_1_title;
+			var book_top1_picture="images/book"+objectList[0].id+".jpg";
+			document.getElementById("book_top1_picture").src=book_top1_picture;
+		var book_2_title=objectList[1].title;
+			document.getElementById("book_top2_title").innerHTML=book_2_title;
+			var book_top2_picture="images/book"+objectList[1].id+".jpg";
+			document.getElementById("book_top2_picture").src=book_top2_picture;
+		var book_3_title=objectList[2].title;
+			document.getElementById("book_top3_title").innerHTML=book_3_title;
+			var book_top3_picture="images/book"+objectList[2].id+".jpg";
+			document.getElementById("book_top3_picture").src=book_top3_picture;
+		var book_4_title=objectList[3].title;
+			document.getElementById("book_top4_title").innerHTML=book_4_title;
+			var book_top4_picture="images/book"+objectList[3].id+".jpg";
+			document.getElementById("book_top4_picture").src=book_top4_picture;
+		var book_5_title=objectList[4].title;
+			document.getElementById("book_top5_title").innerHTML=book_5_title;
+			var book_top5_picture="images/book"+objectList[4].id+".jpg";
+			document.getElementById("book_top5_picture").src=book_top5_picture;
     </script>
-
-
- <div class="col">
-
- </div>
- <div class="col">
- </div>
- <div class="col">
- </div>
- <div class="col">
- </div>
 </section>
 <section>
 </section>
