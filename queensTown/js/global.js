@@ -40,6 +40,11 @@ var obj = eval ("(" + txt + ")");
 document.getElementById("id").innerHTML=obj.sites[0].id 
 document.getElementById("title").innerHTML=obj.sites[0].title
 document.getElementById("category").innerHTML=obj.sites[0].category
+
+if (popularity=="high")
+{
+	for(id=1;id<=20;id++)
+}
 }
 
 function toggle(targetid){
