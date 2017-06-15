@@ -35,7 +35,7 @@
                     tr[i].className = 'on';
                     seleted += parseInt(tr[i].getElementsByTagName('input')[1].value);
                     price += parseFloat(tr[i].cells[4].innerHTML);
-                    HTMLstr += '<div><img src="' + tr[i].getElementsByTagName('img')[0].src + '"><span class="del" index="' + i + '">取消选择</span></div>'
+                    HTMLstr += '<div><img src="' + tr[i].getElementsByTagName('img')[0].src + '"><span class="del" index="' + i + '">undo</span></div>'
                 }
                 else {
                     tr[i].className = '';
@@ -123,7 +123,7 @@
                         }
                         break;
                     case 'delete': //点击了删除
-                        var conf = confirm('确定删除此商品吗？');
+                        var conf = confirm('are you sure to delete？');
                         if (conf) {
                             this.parentNode.removeChild(this);
                         }
@@ -147,7 +147,7 @@
         // 点击全部删除
         deleteAll.onclick = function () {
             if (selectedTotal.innerHTML != 0) {
-                var con = confirm('确定删除所选商品吗？'); //弹出确认框
+                var con = confirm('are you sure to deleteAll？'); //弹出确认框
                 if (con) {
                     for (var i = 0; i < tr.length; i++) {
                         // 如果被选中，就删除相应的行
@@ -158,7 +158,7 @@
                     }
                 }
             } else {
-                alert('请选择商品！');
+                alert('please select！');
             }
             getTotal(); //更新总数
         }
