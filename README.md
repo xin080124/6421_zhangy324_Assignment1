@@ -1,2 +1,0 @@
-# 6421_zhangy324_Assignment1
-Queenstown
