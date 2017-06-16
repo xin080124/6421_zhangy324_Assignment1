@@ -12,9 +12,9 @@
                 }
                 return ret;
             }
-        }
+        } 
 
-        var table = document.getElementById('cartTable'); // 购物车表格
+        var table = document.getElementById('cartTable'); // shopping cart table
         var selectInputs = document.getElementsByClassName('check'); // 所有勾选框
         var checkAllInputs = document.getElementsByClassName('check-all') // 全选框
         var tr = table.children[1].rows; //行
@@ -164,6 +164,6 @@
         }
         console.log("\u767e\u5ea6\u641c\u7d22\u3010\u7d20\u6750\u5bb6\u56ed\u3011\u4e0b\u8f7d\u66f4\u591aJS\u7279\u6548\u4ee3\u7801");
         // 默认全选
-        checkAllInputs[0].checked = true;
+        checkAllInputs[0].checked = false;
         checkAllInputs[0].onclick();
     }
