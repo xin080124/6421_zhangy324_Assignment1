@@ -78,9 +78,9 @@
                                                 	<h3 class="p2">Membership SignUp</h3>
                                                     <form id="contact-form" method="post" enctype="multipart/form-data">                    
                                                         <fieldset>
-                                                              <label><span class="text-form">Name:</span><input name="first" type="text" /></label>
-															  <label><span class="text-form">Surname:</span><input name="last" type="text" /></label>
-                                                              <label><span class="text-form">Email:</span><input name="email" type="text" /></label>   
+                                                              <label><span class="text-form">Name:</span><input id="name" name="first" type="text" /></label>
+															  <label><span class="text-form">Surname:</span><input id="surname" name="last" type="text" /></label>
+                                                              <label><span class="text-form">Email:</span><input id="email" name="email" type="text" /></label>   
                                                               <label><span class="text-form">Date of Birth:</span><input name="DOB" type="date" value="2000-01-01"/></label> 
 															  <form action="" method="get"> Sex: 
 																<div><input name="sex" type="radio" checked="checked" value="male" />Male </div>
@@ -89,11 +89,11 @@
 															  <br/>
 															  <br/>
 															  <form action="" method="get">
-																<label><input name="agree" type="checkbox" value="" />I accept the terms of license agreement.</label> 
+																<label><input name="agree" id="checkboxID" type="checkbox" value="" />I accept the terms of license agreement.</label> 
 															  </form> 
                                                               <div class="buttons">
                                                                   <a class="button" href="#" onClick="document.getElementById('contact-form').reset()">Clear</a>
-                                                                  <a class="button" href="#" onClick="document.getElementById('contact-form').submit()">Submit</a>
+                                                                  <a class="button" href="javascript:checkSubmit();">Submit</a>
                                                               </div>                             
                                                         </fieldset>						
                                                     </form>
@@ -115,7 +115,7 @@
                     	<article class="grid_3">
                         	<h3 class="prev-indent-bot">Our Address</h3>
                             <dl>
-                                <dt class="indent-bot">139 Carrington Rd, <br>Mount Albert, Auckland 1025.</dt>
+                                <dt class="indent-bot">44/46 Lorne St, <br> Auckland, 1010.</dt>
                                 <dd><span>Freephone:</span>  +1 800 559 6580</dd>
                                 <dd><span>Telephone:</span>  +1 959 603 6035</dd>
                                 <dd><span>FAX:</span>  +1 504 889 9898</dd>
