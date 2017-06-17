@@ -74,11 +74,12 @@
                                     <div id="thumbs" class="navigation">
                                         <ul class="thumbs noscript">
                                             <li>
-                                                <a class="thumb" href="images/book2.jpg" title=""> <img src="images/gallery2.jpg" alt="" /><span></span> </a>
+                                                <a class="thumb" href="images/book2.jpg" title=""> <img id = "gallery1" /><span></span> </a>
+                                                <p class="color-4 prev-indent-bot" id="d_book_t1"></p>
                                             </li> 
                                             <li>
-                                                <a class="thumb" href="images/book3.jpg" title=""> <img src="images/gallery3.jpg" alt="" /> <span></span></a>
-                                            </li> 
+                                                <a class="thumb" href="images/book3.jpg" title=""> <img id = "gallery2"  /> <span></span></a>
+                                            </li>     
                                             <li>
                                                 <a class="thumb" href="images/book4.jpg" title=""> <img src="images/gallery4.jpg" alt="" /> <span></span></a>
                                             </li> 
@@ -104,7 +105,127 @@
                                 </div>
                             </div>
 
+<script type="text/javascript">
+   document.getElementById("d_book_t1").innerHTML = "1111111111111111111111";
+//document.getElementById("gallery1").src = "images/gallery3.jpg";
 
+
+var indexArr = new Array(20);   
+
+var popularArr = new Array(20);
+var onSaleArr = new Array(20);
+
+initArrays();
+
+function initArrays()
+{
+  for (i = 0; i <20; i++) 
+  {
+    indexArr[i] = String(i);
+    popularArr[i] = String(2);
+    onSaleArr[i] = String(i);
+  }
+}
+
+function setPopularArrays(x)
+{
+  //document.write("setPopularArrays")
+  for (i = 0; i <20; i++) 
+  {
+    //popularArr[i] = i;
+     var popStr = x[i].getElementsByTagName("popularity")[0].childNodes[0].nodeValue;
+     if(popStr == "high")
+     {
+          //alert("high");
+          //document.write("popularity high " + String(i) + "<br />")
+          popularArr[i] = String(2);
+     }
+     else
+     {
+         //alert("low");
+         //document.write("popularity low " + String(i) + "<br />")
+         popularArr[i] = String(0);
+         //alert(popularArr[i]);
+     }
+         
+  }
+}
+
+
+function sortByPopular(i, j)
+{
+  //alert(arr[j] - arr[i]);
+    //return (arr[j] - arr[i]);
+    return (popularArr[j] - popularArr[i]);
+    //return (j-i);
+}
+
+
+function loadDoc() {
+
+    //document.getElementById("d_book_t").innerHTML = "hehe";
+    //alert("hehe");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myFunction(this);
+    }
+  };
+  xhttp.open("GET", "books1652.xml", true);
+  xhttp.send();
+}
+
+function myFunction(xml) {
+  var i;
+  var xmlDoc = xml.responseXML;
+  var x = xmlDoc.getElementsByTagName("book");
+
+//use x get popularity
+setPopularArrays(x);
+indexArr.sort(sortByPopular);
+   for (i = 0; i <3; i++) { 
+     var string_i = String(i+1); 
+  //   //alert(string_i);
+    //document.getElementById("gallery"+string_i).src = "images/gallery2.jpg";
+    //document.getElementById("gallery1").src = "images/gallery2.jpg";
+  // //document.getElementById("d_book_t").innerHTML += "hehe";
+  // document.getElementById("d_book_desc").innerHTML += x[i].getElementsByTagName("desc")[0].childNodes[0].nodeValue;
+  
+   }
+}
+
+// function sortNumber(a, b)
+// {
+// return b - a;
+// }
+
+// var arr = new Array(6)
+// arr[0] = "10"
+// arr[1] = "5"
+// arr[2] = "40"
+// arr[3] = "25"
+// arr[4] = "1000"
+// arr[5] = "1"
+
+//  //document.write(arr.sort(sortNumber))
+//  loadDoc();
+//  //printRes();
+// function printRes()
+// {
+//  //alert("mad");
+//  document.write(popularArr + "<br />")
+// document.write(indexArr.sort(sortByPopular));
+ 
+// }
+ 
+// // document.write(indexArr + "<br />");
+// //document.write(popularArr + "<br />");
+// // for (i = 0; i <20; i++) 
+// //   {
+// //     document.write(String(indexArr[i]) + "<br />");
+// //   }
+
+</script>
 
                             <div class="container_12">
                             	<div class="wrapper">
@@ -242,120 +363,6 @@
     
 <script>
     //
-
-var indexArr = new Array(20);
-
-var popularArr = new Array(20);
-var onSaleArr = new Array(20);
-
-initArrays();
-
-function initArrays()
-{
-  for (i = 0; i <20; i++) 
-  {
-    indexArr[i] = String(i);
-    popularArr[i] = String(2);
-    onSaleArr[i] = String(i);
-  }
-}
-
-function setPopularArrays(x)
-{
-  //document.write("setPopularArrays")
-  for (i = 0; i <20; i++) 
-  {
-    //popularArr[i] = i;
-     var popStr = x[i].getElementsByTagName("popularity")[0].childNodes[0].nodeValue;
-     if(popStr == "high")
-     {
-          //alert("high");
-          //document.write("popularity high " + String(i) + "<br />")
-          popularArr[i] = String(2);
-     }
-     else
-     {
-         //alert("low");
-         //document.write("popularity low " + String(i) + "<br />")
-         popularArr[i] = String(0);
-         //alert(popularArr[i]);
-     }
-         
-  }
-}
-
-
-function sortByPopular(i, j)
-{
-  //alert(arr[j] - arr[i]);
-    //return (arr[j] - arr[i]);
-    return (popularArr[j] - popularArr[i]);
-    //return (j-i);
-}
-
-
-function loadDoc() {
-
-    //document.getElementById("d_book_t").innerHTML = "hehe";
-    //alert("hehe");
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      myFunction(this);
-    }
-  };
-  xhttp.open("GET", "books1652.xml", true);
-  xhttp.send();
-}
-
-function myFunction(xml) {
-  var i;
-  var xmlDoc = xml.responseXML;
-  var x = xmlDoc.getElementsByTagName("book");
-
-//use x get popularity
-setPopularArrays(x);
-//indexArr.sort(sortByPopular);
-  // for (i = 1; i <x.length; i++) { 
-  //   var string_i = String(i); 
-  //   //alert(string_i);
-  //  document.getElementById("d_book_t"+string_i).innerHTML += x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
-  // //document.getElementById("d_book_t").innerHTML += "hehe";
-  // document.getElementById("d_book_desc").innerHTML += x[i].getElementsByTagName("desc")[0].childNodes[0].nodeValue;
-  
-  // }
-}
-
-function sortNumber(a, b)
-{
-return b - a;
-}
-
-var arr = new Array(6)
-arr[0] = "10"
-arr[1] = "5"
-arr[2] = "40"
-arr[3] = "25"
-arr[4] = "1000"
-arr[5] = "1"
-
- //document.write(arr.sort(sortNumber))
- loadDoc();
- //printRes();
-function printRes()
-{
- //alert("mad");
- document.write(popularArr + "<br />")
-document.write(indexArr.sort(sortByPopular));
- 
-}
- 
-// document.write(indexArr + "<br />");
-//document.write(popularArr + "<br />");
-// for (i = 0; i <20; i++) 
-//   {
-//     document.write(String(indexArr[i]) + "<br />");
-//   }
 </script>
 
 <a href="javascript:printRes();">submit</a> 
