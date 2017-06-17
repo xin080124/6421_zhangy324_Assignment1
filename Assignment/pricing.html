@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/grid.css" type="text/css" media="screen">   
     <script src="js/jquery-1.6.2.min.js" type="text/javascript"></script>    
 </head>
-<body id="page4">
+<body id="page4" onload="loadDoc()">
 	<!--==============================header=================================-->
     <header>
     	<div class="row-1">
@@ -70,12 +70,38 @@
                                             	<div class="indent-left p2">
                                                 	<h3 class="p0">Latest Income</h3>
                                                 </div>
+													<script>
+displayCD(0);
+
+function displayCD(i) {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            myFunction(this, i);
+        }
+    };
+    xmlhttp.open("GET", "books.xml", true);
+    xmlhttp.send();
+}
+
+function myFunction(xml, i) {
+    var xmlDoc = xml.responseXML; 
+    x = xmlDoc.getElementsByTagName("book");
+    document.getElementById("showCD").innerHTML =
+    "Artist: " +
+    x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue +
+    "<br>Title: " +
+    x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue +
+    "<br>Year: " + 
+    x[i].getElementsByTagName("desc")[0].childNodes[0].nodeValue;
+}
+</script>
                                                 <div class="wrapper p4">
                                                     <article class="grid_4 alpha">
                                                         <div class="indent-left">
                                                             <figure class="frame2 p2"><img src="images/page4-img1.jpg" alt="" /></figure>
-                                                            <p class="color-4 prev-indent-bot">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
-                                                            <p>Doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.</p>
+                                                            <p class="color-4 prev-indent-bot" id="d_book_t"></p>
+                                                            <p id="d_book_desc"></p>
                                                             <div class="wrapper">
                                                             	<span class="price fleft">$45.99</span>
                                                                 <a class="button fright" href="#">Read More</a>
@@ -150,7 +176,75 @@
                 </div>
             </div>	
         </div>
-        <div class="bg-bot">
+		<div id="shoppingcart" class="shoppingcart">
+	<div class="head_row hid">
+		<div class="img left">&nbsp;</div>
+		<div class="name left">商品名称</div>
+		<div class="price left">单价</div>
+		<div class="ctrl left">操作</div>
+	</div>
+</div>	
+
+<script>
+/*  start*/
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myFunction(this);
+    }
+  };
+  xhttp.open("GET", "books.xml", true);
+  xhttp.send();
+}
+var shopBar = document.getElementById("price-list");
+var shopCar = document.getElementById("shoppingcart");
+var oUl = document.getElementsByTagName("ul")[0];
+var x = xmlDoc.getElementsByTagName("title");
+for(var i=0; i<x.length; i++){
+			var oLi = document.createElement("indent-left");
+			var data = aData[i];
+			oLi.innerHTML += '<div class="pro_img"><img src="images/books'+x[i].id+'.jpg" width="150" height="150"></div>';
+			oLi.innerHTML += '<h3 class="pro_name"><a href="#">'+x[i].title+'</a></h3>';
+			oLi.innerHTML += '<p class="pro_price">'+x[i],price+'元</p>';
+			//oLi.innerHTML += '<p class="pro_rank">'+data["proComm"]+'万人评价</p>';
+			//oLi.innerHTML += '<div class="add_btn">加入购物车</div>';
+			oUl.appendChild(oLi);
+		}
+		var aBtn = getClass(shopBar,"button fright");
+
+		for(var i=0; i<x.length; i++){
+			aBtn[i].index = i;
+			aBtn[i].onclick = function(){
+				var oDiv = document.createElement("div");
+				var data = aData[this.index];
+				oDiv.className = "row hid";
+				oDiv.innerHTML += '<div class="img left"><img src="images/books'+x[i].id+'.jpg" width="80" height="80"></div>';
+				oDiv.innerHTML += '<div class="name left"><span>'+x[i].title+'</span></div>';
+				oDiv.innerHTML += '<div class="price left"><span>'+x[i],price+'元</span></div>';
+				oDiv.innerHTML += '<div class="ctrl left"><a href="javascript:;">×</a></div>';
+				shopCar.appendChild(oDiv);
+				var delBtn = oDiv.lastChild.getElementsByTagName("a")[0];
+				delBtn.onclick=function(){
+					shopCar.removeChild(oDiv);
+				}
+			}
+		}
+		function getClass(shopBar,tagname){
+			var aTag = shopBar.getElementsByTagName("*");
+			var aBox = [];
+			for(var i=0; i<aTag.length; i++){
+				if(aTag[i].className == tagname){
+					aBox.push(aTag[i]);
+				}
+			}
+			return aBox
+		}
+	}
+</script>
+
+       
+	   <div class="bg-bot">
         	<div class="main">
             	<div class="container_12">
                 	<div class="wrapper">
