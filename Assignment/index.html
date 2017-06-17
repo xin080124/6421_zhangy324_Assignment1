@@ -24,7 +24,6 @@
                                 <li><a href="catalogue.html">Catalogue</a></li>
                                 <li><a href="pricing.html">Pricing</a></li>
                                 <li><a href="contacts.html">Contacts</a></li>
-								          <li><a href="shoppingcart.html">Shopping Cart</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -105,12 +104,81 @@
                                     </div>
                                 </div>
                             </div>
+
+
+
                             <div class="container_12">
                             	<div class="wrapper">
                                 	<article class="grid_12">
                                     	<h3 class="color-1">The Latest Books</h3>
                                         <div class="wrapper">
                                         	<article class="grid_6 alpha">
+                                                <figure class="img-indent frame"><img id="img1" alt="" /></figure>
+                                                <div class="extra-wrap">
+                                                    <div class="indent-top">
+                                                        <ul class="list-1">
+                                                             <li><a href="#">Services de décoration intérieure</a></li>
+                                                             <li class="last"><a href="#">Análisis completo <br>del color</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </article>
+                                            <article class="grid_6 omega">
+                                                <figure class="img-indent frame"><img src="images/hor-book2.jpg" alt="" /></figure>
+                                                <div class="extra-wrap">
+                                                    <div class="indent-top">
+                                                        <ul class="list-1">
+                                                             <li><a href="#">Servicios de diseño para la construcción de</a></li>
+                                                             <li class="last"><a href="#">Mkati Design kukonzanso</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </article>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                            <div class="container_12">
+                              <div class="wrapper">
+                                  <article class="grid_12">
+                                      <!-- <h3 class="color-1">The Latest Books</h3> -->
+                                        <div class="wrapper">
+                                          <article class="grid_6 alpha">
+                                                <figure class="img-indent frame"><img src="images/hor-book1.jpg" alt="" /></figure>
+                                                <div class="extra-wrap">
+                                                    <div class="indent-top">
+                                                        <ul class="list-1">
+                                                             <li><a href="#">Services de décoration intérieure</a></li>
+                                                             <li class="last"><a href="#">Análisis completo <br>del color</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </article>
+                                            <article class="grid_6 omega">
+                                                <figure class="img-indent frame"><img src="images/hor-book2.jpg" alt="" /></figure>
+                                                <div class="extra-wrap">
+                                                    <div class="indent-top">
+                                                        <ul class="list-1">
+                                                             <li><a href="#">Servicios de diseño para la construcción de</a></li>
+                                                             <li class="last"><a href="#">Mkati Design kukonzanso</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </article>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                            <div class="container_12">
+                              <div class="wrapper">
+                                  <article class="grid_12">
+                                      <!-- <h3 class="color-1">The Latest Books</h3> -->
+                                        <div class="wrapper">
+                                          <article class="grid_6 alpha">
                                                 <figure class="img-indent frame"><img src="images/hor-book1.jpg" alt="" /></figure>
                                                 <div class="extra-wrap">
                                                     <div class="indent-top">
@@ -173,6 +241,118 @@
         </div>
     </section>
     
+<script>
+    //
+
+var indexArr = new Array(20);
+
+var popularArr = new Array(20);
+var onSaleArr = new Array(20);
+
+initArrays();
+
+function initArrays()
+{
+  for (i = 0; i <5; i++) 
+  {
+    indexArr[i] = String(i);
+    popularArr[i] = String(i);
+    onSaleArr[i] = String(i);
+  }
+}
+
+function setPopularArrays(x)
+{
+  //document.write("setPopularArrays")
+  for (i = 0; i <20; i++) 
+  {
+    //popularArr[i] = i;
+     var popStr = x[i].getElementsByTagName("popularity")[0].childNodes[0].nodeValue;
+     if(popStr == "high")
+     {
+          //alert("high");
+          //document.write("popularity high " + String(i) + "<br />")
+          popularArr[i] = "2";
+     }
+     else
+     {
+         //alert("low");
+         //document.write("popularity low " + String(i) + "<br />")
+         popularArr[i] = "0";
+     }
+         
+  }
+}
+
+
+function sortByPopular(i, j)
+{
+  alert(arr[j] - arr[i]);
+    return (arr[j] - arr[i]);
+    //return (j-i);
+}
+
+
+function loadDoc() {
+
+    //document.getElementById("d_book_t").innerHTML = "hehe";
+    //alert("hehe");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myFunction(this);
+    }
+  };
+  xhttp.open("GET", "books1652.xml", true);
+  xhttp.send();
+}
+
+function myFunction(xml) {
+  var i;
+  var xmlDoc = xml.responseXML;
+  var x = xmlDoc.getElementsByTagName("book");
+
+//use x get popularity
+setPopularArrays(x);
+//indexArr.sort(sortByPopular);
+  // for (i = 1; i <x.length; i++) { 
+  //   var string_i = String(i); 
+  //   //alert(string_i);
+  //  document.getElementById("d_book_t"+string_i).innerHTML += x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+  // //document.getElementById("d_book_t").innerHTML += "hehe";
+  // document.getElementById("d_book_desc").innerHTML += x[i].getElementsByTagName("desc")[0].childNodes[0].nodeValue;
+  
+  // }
+}
+
+function sortNumber(a, b)
+{
+return b - a;
+}
+
+var arr = new Array(6)
+arr[0] = "10"
+arr[1] = "5"
+arr[2] = "40"
+arr[3] = "25"
+arr[4] = "1000"
+arr[5] = "1"
+
+// document.write(arr + "<br />")
+ //document.write(arr.sort(sortNumber))
+ loadDoc();
+document.write(indexArr.sort(sortByPopular));
+
+// document.write(indexArr + "<br />");
+//document.write(popularArr + "<br />");
+// for (i = 0; i <20; i++) 
+//   {
+//     document.write(String(indexArr[i]) + "<br />");
+//   }
+</script>
+
+
+
 	<!--==============================footer=================================-->
     <footer>
         <div class="main">
