@@ -73,7 +73,7 @@
                                                 <div class="wrapper p4">
                                                     <article class="grid_4 alpha">
                                                         <div class="indent-left">
-                                                            <figure class="frame2 p2"><img src="book2.jpg" alt="" /></figure>
+                                                            <figure class="frame2 p2" id="d_book_img0"></figure>
 															<p class="color-4 prev-indent-bot" id="d_book_t0"></p>
 															<p id="d_book_desc0"></p>
                                                            <div class="wrapper">
@@ -85,7 +85,7 @@
 													
                                                     <article class="grid_4">
                                                         <div class="indent3">
-                                                            <figure class="frame2 p2"><img src="book2.jpg" alt="" /></figure>
+                                                            <figure class="frame2 p2" id="d_book_img1"></figure>
 															<p class="color-4 prev-indent-bot" id="d_book_t1"></p>
 															<p id="d_book_desc1"></p>
                                                            <div class="wrapper">
@@ -96,7 +96,7 @@
                                                     </article>
                                                     <article class="grid_4 omega">
                                                         <div class="indent-right">
-                                                            <figure class="frame2 p2"><img src="book2.jpg" alt="" /></figure>
+                                                            <figure class="frame2 p2" id="d_book_img2"></figure>
 															<p class="color-4 prev-indent-bot" id="d_book_t2"></p>
 															<p id="d_book_desc2"></p>
                                                            <div class="wrapper">
@@ -109,7 +109,7 @@
                                                 <div class="wrapper">
                                                     <article class="grid_4 alpha">
                                                         <div class="indent-left">
-                                                            <figure class="frame2 p2"><img src="book2.jpg" alt="" /></figure>
+                                                            <figure class="frame2 p2" id="d_book_img3"></figure>
 															<p class="color-4 prev-indent-bot" id="d_book_t3"></p>
 															<p id="d_book_desc3"></p>
                                                            <div class="wrapper">
@@ -120,7 +120,7 @@
                                                     </article>
                                                     <article class="grid_4">
                                                         <div class="indent3">
-                                                            <figure class="frame2 p2"><img src="book2.jpg" alt="" /></figure>
+                                                            <figure class="frame2 p2" id="d_book_img4"></figure>
 															<p class="color-4 prev-indent-bot" id="d_book_t4"></p>
 															<p id="d_book_desc4"></p>
                                                            <div class="wrapper">
@@ -131,7 +131,7 @@
                                                     </article>
                                                     <article class="grid_4 omega">
                                                         <div class="indent-right">
-                                                            <figure class="frame2 p2"><img src="book2.jpg" alt="" /></figure>
+                                                            <figure class="frame2 p2" id="d_book_img5"></figure>
 															<p class="color-4 prev-indent-bot" id="d_book_t5"></p>
 															<p id="d_book_desc5"></p>
                                                            <div class="wrapper">
@@ -154,9 +154,9 @@
 		<div id="shoppingcart" class="shoppingcart">
 	<div class="head_row hid">
 		<div class="img left">&nbsp;</div>
-		<div class="name left">Name</div>
-		<div class="price left">Price</div>
-		<div class="ctrl left">Operation</div>
+		<div class="name left">商品名称</div>
+		<div class="price left">单价</div>
+		<div class="ctrl left">操作</div>
 	</div>
 </div>	
 
@@ -235,7 +235,7 @@ function myFunction(xml) {
    document.getElementById("d_book_t"+string_i).innerHTML += x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
    document.getElementById("d_book_desc"+string_i).innerHTML += x[i].getElementsByTagName("desc")[0].childNodes[0].nodeValue;
    document.getElementById("d_book_price"+string_i).innerHTML += x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue;
-  
+  document.getElementById("d_book_img"+string_i).innerHTML+="<img src='images/book" + i +  ".jpg'>";
   }
 }
 </script>
