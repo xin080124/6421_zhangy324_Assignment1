@@ -252,10 +252,10 @@ initArrays();
 
 function initArrays()
 {
-  for (i = 0; i <5; i++) 
+  for (i = 0; i <20; i++) 
   {
     indexArr[i] = String(i);
-    popularArr[i] = String(i);
+    popularArr[i] = String(2);
     onSaleArr[i] = String(i);
   }
 }
@@ -271,13 +271,14 @@ function setPopularArrays(x)
      {
           //alert("high");
           //document.write("popularity high " + String(i) + "<br />")
-          popularArr[i] = "2";
+          popularArr[i] = String(2);
      }
      else
      {
          //alert("low");
          //document.write("popularity low " + String(i) + "<br />")
-         popularArr[i] = "0";
+         popularArr[i] = String(0);
+         //alert(popularArr[i]);
      }
          
   }
@@ -286,8 +287,9 @@ function setPopularArrays(x)
 
 function sortByPopular(i, j)
 {
-  alert(arr[j] - arr[i]);
-    return (arr[j] - arr[i]);
+  //alert(arr[j] - arr[i]);
+    //return (arr[j] - arr[i]);
+    return (popularArr[j] - popularArr[i]);
     //return (j-i);
 }
 
@@ -337,11 +339,17 @@ arr[3] = "25"
 arr[4] = "1000"
 arr[5] = "1"
 
-// document.write(arr + "<br />")
  //document.write(arr.sort(sortNumber))
  loadDoc();
+ //printRes();
+function printRes()
+{
+ //alert("mad");
+ document.write(popularArr + "<br />")
 document.write(indexArr.sort(sortByPopular));
-
+ 
+}
+ 
 // document.write(indexArr + "<br />");
 //document.write(popularArr + "<br />");
 // for (i = 0; i <20; i++) 
@@ -350,7 +358,7 @@ document.write(indexArr.sort(sortByPopular));
 //   }
 </script>
 
-
+<a href="javascript:printRes();">submit</a> 
 
 	<!--==============================footer=================================-->
     <footer>
