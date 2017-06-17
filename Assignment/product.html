@@ -7,17 +7,8 @@
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
     <link rel="stylesheet" href="css/grid.css" type="text/css" media="screen">   
     <script src="js/jquery-1.6.2.min.js" type="text/javascript"></script>    
-	<!--[if lt IE 7]>
-        <div style=' clear: both; text-align:center; position: relative;'>
-            <a href="http//www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http//storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0"  alt="" /></a>
-        </div>
-	<![endif]-->
-    <!--[if lt IE 9]>
-   		<script type="text/javascript" src="js/html5.js"></script>
-        <link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
-	<![endif]-->
 </head>
-<body id="page4">
+<body id="page4" onload="loadDoc()">
 	<!--==============================header=================================-->
     <header>
     	<div class="row-1">
@@ -77,12 +68,38 @@
                                             	<div class="indent-left p2">
                                                 	<h3 class="p0">Latest Income</h3>
                                                 </div>
+													<script>
+displayCD(0);
+
+function displayCD(i) {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            myFunction(this, i);
+        }
+    };
+    xmlhttp.open("GET", "books.xml", true);
+    xmlhttp.send();
+}
+
+function myFunction(xml, i) {
+    var xmlDoc = xml.responseXML; 
+    x = xmlDoc.getElementsByTagName("book");
+    document.getElementById("showCD").innerHTML =
+    "Artist: " +
+    x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue +
+    "<br>Title: " +
+    x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue +
+    "<br>Year: " + 
+    x[i].getElementsByTagName("desc")[0].childNodes[0].nodeValue;
+}
+</script>
                                                 <div class="wrapper p4">
                                                     <article class="grid_4 alpha">
                                                         <div class="indent-left">
-                                                            <figure class="frame2 p2"><img src="images/page4-book1.jpg" alt="" /></figure>
-                                                            <p class="color-4 prev-indent-bot">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
-                                                            <p>Doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.</p>
+                                                            <figure class="frame2 p2"><img src="images/page4-img1.jpg" alt="" /></figure>
+                                                            <p class="color-4 prev-indent-bot" id="d_book_t"></p>
+                                                            <p id="d_book_desc"></p>
                                                             <div class="wrapper">
                                                             	<span class="price fleft">$45.99</span>
                                                                 <a class="button fright" href="#">Read More</a>
@@ -91,7 +108,7 @@
                                                     </article>
                                                     <article class="grid_4">
                                                         <div class="indent3">
-                                                            <figure class="frame2 p2"><img src="images/page4-book2.jpg" alt="" /></figure>
+                                                            <figure class="frame2 p2"><img src="images/page4-img2.jpg" alt="" /></figure>
                                                             <p class="color-4 prev-indent-bot">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.</p>
                                                             <p>Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt eque porro quisquam est, qui dolorem ipsum.</p>
                                                             <div class="wrapper">
@@ -102,7 +119,7 @@
                                                     </article>
                                                     <article class="grid_4 omega">
                                                         <div class="indent-right">
-                                                            <figure class="frame2 p2"><img src="images/page4-book3.png" alt="" /></figure>
+                                                            <figure class="frame2 p2"><img src="images/page4-img3.jpg" alt="" /></figure>
                                                             <p class="color-4 prev-indent-bot">Feque porro quisquam est, qui dolorem ipsum quia dolor sit consectetur.</p>
                                                             <p>Adipisci velit, sed quia non numquam eius modi tempora incidu labore et dolore magnam aliquam quaerat voluptatem.</p>
                                                             <div class="wrapper">
@@ -115,7 +132,7 @@
                                                 <div class="wrapper">
                                                     <article class="grid_4 alpha">
                                                         <div class="indent-left">
-                                                            <figure class="frame2 p2"><img src="images/page4-book4.jpg" alt="" /></figure>
+                                                            <figure class="frame2 p2"><img src="images/page4-img4.jpg" alt="" /></figure>
                                                             <p class="color-4 prev-indent-bot">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
                                                             <p>Doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.</p>
                                                             <div class="wrapper">
@@ -126,7 +143,7 @@
                                                     </article>
                                                     <article class="grid_4">
                                                         <div class="indent3">
-                                                            <figure class="frame2 p2"><img src="images/page4-book5.jpg" alt="" /></figure>
+                                                            <figure class="frame2 p2"><img src="images/page4-img5.jpg" alt="" /></figure>
                                                             <p class="color-4 prev-indent-bot">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.</p>
                                                             <p>Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt eque porro quisquam est, qui dolorem ipsum.</p>
                                                             <div class="wrapper">
@@ -137,7 +154,7 @@
                                                     </article>
                                                     <article class="grid_4 omega">
                                                         <div class="indent-right">
-                                                            <figure class="frame2 p2"><img src="images/page4-book6.jpg" alt="" /></figure>
+                                                            <figure class="frame2 p2"><img src="images/page4-img6.jpg" alt="" /></figure>
                                                             <p class="color-4 prev-indent-bot">Feque porro quisquam est, qui dolorem ipsum quia dolor sit consectetur.</p>
                                                             <p>Adipisci velit, sed quia non numquam eius modi tempora incidu labore et dolore magnam aliquam quaerat voluptatem.</p>
                                                             <div class="wrapper">
