@@ -60,12 +60,10 @@
                     <div class="grid_12">
                         <nav>
                             <ul class="menu">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="services.html">Services</a></li>
-                                <li><a href="catalogue.html">Catalogue</a></li>
-                                <li><a class="active" href="pricing.html">Pricing</a></li>
-                                <li><a href="contacts.html">Contacts</a></li>
-                                           <li><a href="shoppingcart.html">Shopping Cart</a></li>
+                                <li><a class="active" href="index.html">Home</a></li>
+                                <li><a href="product.html">Product</a></li>
+                                <li><a href="membership.html">Membership</a></li>
+                                <li><a href="about.html">About us</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -85,10 +83,15 @@
                     <div class="grid_3">
                         <form id="search-form" method="post" enctype="multipart/form-data">
                             <fieldset>  
-                                <div class="search-field">
-                                    <input name="search" type="text" />
-                                    <a class="search-button" href="#" onClick="document.getElementById('search-form').submit()"><span>search</span></a> 
-                                </div>                      
+                                
+                                    <!-- <select onchange="ShowImage(parseInt(this.value), 'image');"> -->
+<select onchange="ShowCategory(this.value);">
+  <option value="Education">Education</option>
+  <option value="Investing">Investing</option>
+  <option value="Business">Business</option>
+  <option value="Cooking and Food">Cooking and Food</option>
+</select>
+                                                     
                             </fieldset>
                         </form>
                      </div>
@@ -98,13 +101,7 @@
         </div>      
     </header><div class="ic">More Website Templates  @ TemplateMonster.com - August22nd 2011!</div>
     
-<!-- <select onchange="ShowImage(parseInt(this.value), 'image');"> -->
-<select onchange="ShowCategory(this.value);">
-  <option value="Education">Education</option>
-  <option value="Investing">Investing</option>
-  <option value="Business">Business</option>
-  <option value="Cooking and Food">Cooking and Food</option>
-</select>
+
 
 
 <!-- content -->
@@ -493,7 +490,7 @@ loadDoc(null);
     var xml_category = x[i].getElementsByTagName("category")[0].childNodes[0].nodeValue;
     if(xml_category == category)
     {
-        alert(j);alert(i);
+        //alert(j);alert(i);
         indexArr[j] = i;
         j++;
     }
@@ -543,8 +540,8 @@ function myFunction(xml,category) {
         {
             priceArr[i] = x[eleIndex].getElementsByTagName("price")[0].childNodes[0].nodeValue;
    
-    document.getElementById("d_book_t"+string_i).innerHTML += x[eleIndex].getElementsByTagName("title")[0].childNodes[0].nodeValue;
-   document.getElementById("d_book_desc"+string_i).innerHTML += x[eleIndex].getElementsByTagName("desc")[0].childNodes[0].nodeValue;
+    document.getElementById("d_book_t"+string_i).innerHTML = x[eleIndex].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+   document.getElementById("d_book_desc"+string_i).innerHTML = x[eleIndex].getElementsByTagName("desc")[0].childNodes[0].nodeValue;
    document.getElementById("d_book_price"+string_i).innerHTML = x[eleIndex].getElementsByTagName("price")[0].childNodes[0].nodeValue;
   document.getElementById("d_book_img"+string_i).innerHTML ="<img src='images/book" + String(eleIndex+1) +  ".jpg'>";
         }
