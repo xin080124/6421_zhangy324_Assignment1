@@ -8,9 +8,9 @@ var popularArr = new Array(20);
 var indexSale = new Array(20);
 var onSaleArr = new Array(20);
 
-initArrays();
+//initArrays();
 
-function initArrays()
+function initArrays()	
 {
   for (i = 0; i <20; i++) 
   {
@@ -45,7 +45,8 @@ function setSaleArrays(x)
   for (i = 0; i <19; i++) 
   {
      var popStr = x[i].getElementsByTagName("onsale")[0].childNodes[0].nodeValue;
-     if(popStr == "high")
+     
+	 if(popStr == "high")
      {
           onSaleArr[i] = String(5);
      }
@@ -53,6 +54,7 @@ function setSaleArrays(x)
      {
          onSaleArr[i] = String(0);
      }
+	 
   }
 }
 
@@ -74,27 +76,37 @@ function sortBySale(i, j)
 function loadDoc() {
 
     //document.getElementById("d_book_t").innerHTML = "hehe";
-    //alert("hehe");
+    alert("loadDoc");
+	
   var xhttp = new XMLHttpRequest();
+  //xhttp.setRequestHeader("Cache-Control","no-cache");
+  //xhttp.setRequestHeader("If-Modified-Since","0");
+  
+  
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       myFunction(this);
     }
   };
-  xhttp.open("GET", "books.xml", true);
+  //xhttp.open("GET", "books1652.xml"?t=0.1234567890123456, true);
+  xhttp.open("GET","books1652.xml?t=" + Math.random(),true);
+
   xhttp.send();
-}
+
+  }
 
 function myFunction(xml) {
   var i;
   var xmlDoc = xml.responseXML;
   var x = xmlDoc.getElementsByTagName("book");
 
+  //alert("myFunction");
+  
 //use x get popularity
 setPopularArrays(x);
 setSaleArrays(x);
-//indexArr.sort(sortByPopular);
-//indexSale.sort(sortBySale);
+indexArr.sort(sortByPopular);
+indexSale.sort(sortBySale);
    for (i = 0; i <6; i++) { 
      var string_i = String(parseInt(indexArr[i])+1); 
      var string_sale_i = String(parseInt(indexSale[i])+1); 
@@ -105,15 +117,17 @@ setSaleArrays(x);
      var poularImage = "images/gallery"+string_i+".jpg";
      var onSaleImage = "images/gallery"+string_sale_i+".jpg";
 
+	 
      if(i == 0)
      {
-        document.getElementById("d_book_t1").innerHTML = string_debug;
+		 alert("i=0");
+        document.getElementById("d_book_t1").innerHTML = "indexArr[0] = "+string_debug;
         document.getElementById("d_book_t2").innerHTML = poularImage;
  
         document.getElementById("d_book_t7").innerHTML = string_sale_debug;
         
      }
-
+/*
     if(i == 1)
      {
         document.getElementById("d_book_t3").innerHTML = string_debug;
@@ -127,6 +141,7 @@ setSaleArrays(x);
         document.getElementById("d_book_t6").innerHTML = poularImage;
  
      }
+	 */
        //   //alert(string_i);
     //document.getElementById("popular1").src = poularImage;
     document.getElementById("popular"+String(i+1)).src = poularImage;
@@ -154,13 +169,15 @@ arr[4] = "1000"
 arr[5] = "1"
 
  //document.write(arr.sort(sortNumber))
- loadDoc();
+ //loadDoc();
  //printRes();
 function printRes()
 {
  //alert("mad");
- document.write(popularArr + "<br />")
-document.write(indexArr.sort(sortByPopular)+ "<br />");
+document.write(popularArr + "<br />")
+document.write(onSaleArr + "<br />")
+
+ document.write(indexArr.sort(sortByPopular)+ "<br />");
 document.write(indexSale.sort(sortBySale));
  
 }
