@@ -188,6 +188,7 @@
 			oUl.appendChild(oLi);
 		}
 		var aBtn = getClass(shopBar,"add_btn");
+		var totalPrice = 0.0;
 		for(var i=0; i<aBtn.length; i++){
 			aBtn[i].index = i;
 			aBtn[i].onclick = function(){
@@ -196,12 +197,17 @@
 				oDiv.className = "row hid";
 				oDiv.innerHTML += '<div class="img left"><img src="'+data["imgUrl"]+'" width="80" height="80"></div>';
 				oDiv.innerHTML += '<div class="name left"><span>'+data["title"]+'</span></div>';
-				oDiv.innerHTML += '<div class="price left"><span>'+data["price"]+'</span></div>';
+				totalPrice += parseFloat(data["price"]);
+				//totalPrice += data["price"];
+				oDiv.innerHTML += '<div class="price left"><span>'+data["price"] +'</span></div>';
 				oDiv.innerHTML += '<div class="ctrl left"><a href="javascript:;">×</a></div>';
 				shopCar.appendChild(oDiv);
+				document.getElementById("totalprice").innerHTML="totalPrice: "+String(totalPrice);
 				var delBtn = oDiv.lastChild.getElementsByTagName("a")[0];
 				delBtn.onclick=function(){
 					shopCar.removeChild(oDiv);
+					totalPrice -= parseFloat(data["price"]);
+					document.getElementById("totalprice").innerHTML="totalPrice: "+String(totalPrice);
 				}
 			}
 		}
@@ -245,11 +251,14 @@
             </div>
         </div>    	
     </header><div class="ic">More Website Templates  @ TemplateMonster.com - August22nd 2011!</div>
-    
+   
+
+
 <div id="cartbar">
 	<ul>
 	</ul>
 </div>
+
 <div id="shoppingcart" class="shoppingcart">
 	<div class="head_row hid">
 		<div class="img left">&nbsp;</div>
@@ -257,6 +266,7 @@
 		<div class="price left">Price</div>
 		<div class="ctrl left">Operation</div>
 	</div>
+	<h2 id="totalprice"></h2> 
 </div>	
 <footer>
         <div class="main">
