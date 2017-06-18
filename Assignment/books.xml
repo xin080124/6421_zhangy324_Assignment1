@@ -7,7 +7,7 @@
 <popularity>2869</popularity>
 <onsale>930</onsale>
 <price>50</price>
-<src>book1</src>
+<src>images\book1.jpg</src>
 </book>
 <book>
 <id>2</id>
@@ -17,7 +17,7 @@
 <popularity>2311</popularity>
 <onsale>2003</onsale>
 <price>33.99</price>
-<src>book12</src>
+<src>images\book2.jpg</src>
 </book>
 <book>
 <id>3</id>
@@ -27,7 +27,7 @@
 <popularity>546</popularity>
 <onsale>3423</onsale>
 <price>18.85</price>
-<src>book3</src>
+<src>images\book2.jpg</src>
 </book>
 <book>
 <id>4</id>
@@ -37,7 +37,7 @@
 <popularity>4920</popularity>
 <onsale>2324</onsale>
 <price>81.92</price>
-<src>book4</src>
+<src>images\book2.jpg</src>
 </book>
 <book>
 <id>5</id>
@@ -47,7 +47,7 @@
 <popularity>3885</popularity>
 <onsale>3920</onsale>
 <price>53.2</price>
-<src>book5</src>
+<src>images\book2.jpg</src>
 </book>
 <book>
 <id>6</id>
@@ -57,7 +57,7 @@
 <popularity>3820</popularity>
 <onsale>394</onsale>
 <price>25.38</price>
-<src>book6</src>
+<src>images\book2.jpg</src>
 </book>
 <book>
 <id>7</id>

@@ -78,7 +78,9 @@
 															<p id="d_book_desc0"></p>
                                                            <div class="wrapper">
 														                           <span class="price fleft" id="d_book_price0">$</span>
-                                                                <input class="button fright" type="button" value="Add to cart" onclick="getbook(xml)"/>
+																				   
+																				  <input class="button fright" type="button" value="Add to cart" onclick="getbook()"/>
+                                                               
                                                             </div>
                                                         </div>
                                                     </article>
@@ -151,12 +153,13 @@
                 </div>
             </div>	
         </div>
-
 		<div cellpadding="4" cellspacing="4" border="1" id="orderedProductsTbl"/>
    
                 <table id="orderedProductsTblBody">
 
                         <div colspan="3" align="right" id="cart_total"/>
+</div>	
+
 
 
        
@@ -211,9 +214,6 @@
 	    <script>
     loadDoc();
 function loadDoc() {
-
-    //document.getElementById("d_book_t").innerHTML = "hehe";
-    //alert("hehe");
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -235,8 +235,8 @@ function myFunction(xml) {
   document.getElementById("d_book_img"+string_i).innerHTML+="<img src='images/book" + i +  ".jpg'>";
   }
 }
-
- var shoppingCart = [];
+//create array that will hold all ordered products
+    var shoppingCart = [];
 
     //this function manipulates DOM and displays content of our shopping cart
     function displayShoppingCart(){
@@ -256,13 +256,11 @@ function myFunction(xml) {
             var cellName = row.insertCell(0);
             var cellDescription = row.insertCell(1);
             var cellPrice = row.insertCell(2);
-			var cellImg = row.insertCell(3);
             cellPrice.align="right";
             //fill cells with values from current product object of our array
             cellName.innerHTML = shoppingCart[product].Name;
             cellDescription.innerHTML = shoppingCart[product].Description;
             cellPrice.innerHTML = shoppingCart[product].Price;
-			cellImg.innerHTML=shoppingCart[product].Img;
             cart_total_price+=shoppingCart[product].Price;
         }
         //fill total cost of our shopping cart 
@@ -270,32 +268,34 @@ function myFunction(xml) {
     }
 
 
-    function AddtoCart(name,desc,price){
+    function AddtoCart(name,description,price){
        //Below we create JavaScript Object that will hold three properties you have mentioned:    Name,Description and Price
        var singleProduct = {};
        //Fill the product object with data
        singleProduct.Name=name;
        singleProduct.Description=description;
        singleProduct.Price=price;
-	   singleProduct.Img= img;
        //Add newly created product to our shopping cart 
        shoppingCart.push(singleProduct);
        //call display function to show on screen
        displayShoppingCart();
 
     } 
-function getbook(xml){
-	var i=1;
+	
+	function getbook(xml){
+	var i;
   var xmlDoc = xml.responseXML;
   var x = xmlDoc.getElementsByTagName("book");
-
-   var name = x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
-   var desc = x[i].getElementsByTagName("desc")[0].childNodes[0].nodeValue;
-   var price = x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue;
-  // var img ="<img src='images/book" + i +  ".jpg'>";
-return name,desc,price;
-  AddtoCart(name,desc,price);
-}
+  var 
+  for (i = 0; i <x.length; i++) { 
+  var string_i = String(i);
+   var name += x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+   var description += x[i].getElementsByTagName("desc")[0].childNodes[0].nodeValue;
+   var price += x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue;
+ // document.getElementById("d_book_img"+string_i).innerHTML+="<img src='images/book" + i +  ".jpg'>";
+  }
+  AddtoCart(name,description,price);
+	}
 </script>
 
     
