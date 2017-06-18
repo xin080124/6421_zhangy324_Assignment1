@@ -76,7 +76,7 @@ function sortBySale(i, j)
 function loadDoc() {
 
     //document.getElementById("d_book_t").innerHTML = "hehe";
-    alert("loadDoc");
+    //alert("loadDoc");
 	
   var xhttp = new XMLHttpRequest();
   //xhttp.setRequestHeader("Cache-Control","no-cache");
@@ -118,11 +118,11 @@ indexSale.sort(sortBySale);
      var onSaleImage = "images/gallery"+string_sale_i+".jpg";
 
 	 
-     if(i == 0)
+     if(i == 4)
      {
-		 alert("i=0");
-        document.getElementById("d_book_t1").innerHTML = "indexArr[0] = "+string_debug;
-        document.getElementById("d_book_t2").innerHTML = poularImage;
+		 //alert("i=0");
+        document.getElementById("d_book_t1").innerHTML = "indexSale[4] = "+string_sale_debug;
+        document.getElementById("d_book_t2").innerHTML = onSaleImage;
  
         document.getElementById("d_book_t7").innerHTML = string_sale_debug;
         
