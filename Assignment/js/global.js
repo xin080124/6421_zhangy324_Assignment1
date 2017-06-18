@@ -181,3 +181,89 @@ document.write(onSaleArr + "<br />")
 document.write(indexSale.sort(sortBySale));
  
 }
+
+function checkSubmit()
+{
+    if(false == nameCheck())
+    {
+        alert("The name should include at least 5 letters!");
+        return;
+    }
+    else if(false == SurnameCheck())
+    {
+        alert("The surname should include at least 8 letters!");
+        return;    
+    }
+    else if(false == EmailCheck())
+    {
+        alert("Incorrect email format!");
+        return;    
+    }
+    else if(false == agreeBoxCheck())
+    {
+        alert("Please agree with the term of license agreement! ");
+    }
+    else 
+    {
+        alert("Submit success!");
+    }    
+
+ }
+
+function nameCheck()
+{
+    var values = document.getElementById("name").value.length;
+    
+    if(values<5)
+    {
+        return false;
+    }
+    else
+    {
+        return true;    
+    }
+    return true;
+ }
+
+ function SurnameCheck()
+{
+    var values = document.getElementById("surname").value.length;
+    if(values<8)
+    {
+        //alert("the name should include more than 2 letters");
+        return false;
+    }
+    else
+    {
+        //alert("ok");
+        return true;    
+    }
+    return true;
+ }
+
+ function agreeBoxCheck()
+{
+    if(document.getElementById("checkboxID").checked)
+    {
+         return true;
+    }
+    else
+    {
+         return false;
+    }
+    
+}
+
+function EmailCheck() 
+{ 
+    var email = document.getElementById("email").value; 
+   
+    if(!/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(email)) 
+    { 
+       
+        document.getElementById("email").focus(); 
+        return false; 
+    } 
+    return true; 
+} 
+
