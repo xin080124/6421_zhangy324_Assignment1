@@ -1,0 +1,15 @@
+
+public class Cubes {
+
+	public static int cube(int i) {
+		i = i * i * i;
+		return i;
+		}
+
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

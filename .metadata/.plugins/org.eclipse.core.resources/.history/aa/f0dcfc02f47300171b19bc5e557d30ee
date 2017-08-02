@@ -1,0 +1,15 @@
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//question 1
+		//System.out.println("Hello World: ");
+		
+		//question 2
+		String ques2Str = "Hello World:"+ args[0];
+		System.out.println(ques2Str);
+	}
+
+}
