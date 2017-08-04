@@ -5,18 +5,23 @@ public class HelloWorld {
 		// TODO Auto-generated method stub
 		
 		//question 1
-		//System.out.println("Hello World: ");
+		System.out.println("Hello World: ");
 		
 		//question 2
 		//String ques2Str = "Hello World:"+ args[0];
 		//System.out.println(ques2Str);
 		
 		//question 3
+		
 		/*
-		int x = 5; 
-		int y = 2;
+		int x = 6; 
+		int y = 9;
 		*/
+		//int x = 5; 
+		//int y = 2;
+		
 		//int t = 0;
+		
 		/*
 		if (x > y)
 		{
@@ -32,6 +37,7 @@ public class HelloWorld {
 		*/
 		
 		//question 7
+		
 		/*
 		double[] x = { 0.3, 0.6, 0.1 }; 
 		double[] y = { 0.5, 0.1, 0.4 }; 
@@ -44,23 +50,49 @@ public class HelloWorld {
 		*/
 		
 		//???????matrix
-		
+		/*
 		java.util.Random random=new java.util.Random();
 		int result=random.nextInt(10);
 		
 		int[][] a = new int[3][3];
+		int[][] b = new int[3][3];
+		int[][] c = new int[3][3];
 		for(int row =0;row<3;row++)
 		{
 			for(int column = 0;column<3; column++)
 			{
 				a[row][column] = random.nextInt(10);
-				System.out.println("row = "+ row +" column= "+column + " : " + a[row][column]);
-				
+				b[row][column] = random.nextInt(10);
+				//System.out.println("a["+ row +"]["+column + "]: " + a[row][column]);
+				//System.out.println("b["+ row +"]["+column + "]: " + b[row][column]);
+			
+				c[row][column] = a[row][column] + b[row][column];
 			}
 		}
 		
-		//return result+1; 
-		System.out.println("result = "+result);
+		
+		
+		printMatrix(a, "a");
+		printMatrix(b, "b");
+		printMatrix(c, "c");
+	
+	*/
+	}
+	
+	public static void printMatrix(int[][] matrix, String matrixName)
+	{
+		System.out.println("-----matrix "+matrixName+"-----");
+		String rowStr = "";
+		for(int row =0;row<3;row++)
+		{
+			rowStr = "";
+			for(int column = 0;column<3; column++)
+			{
+				rowStr += " "+matrix[row][column];
+				
+			}
+			System.out.println(rowStr);
+		}
 	}
 
 }

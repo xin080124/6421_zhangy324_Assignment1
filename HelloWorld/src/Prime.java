@@ -1,4 +1,6 @@
 
+import java.util.ArrayList;
+
 public class Prime {
 
 	public static void main(String[] args) {
@@ -11,19 +13,13 @@ public class Prime {
 		// initially we are only interested in the first 20 numbers
 		int n = 20;
 		
-		int[] factorArray = new int[20];
+		ArrayList factorList = new ArrayList();
+        
 		String factorStr = "";
-		int factIdx = 0;
 
 		// start the loop from 2
 		for (int number = 2; number<=20;number++)
 		{
-			//reset factorArray????????these can be deleted
-			for(int index = 0;index<20; index++)
-			{
-				factorArray[index] = 0;
-			}
-			factIdx = 0;
 			factorStr = "";
 		    // simple flag to toggle between prime and composite
 			boolean isPrime = true;
@@ -41,9 +37,7 @@ public class Prime {
 					isPrime = false;
 					//System.out.println(" factor is "+factor);
 					
-					factorArray[factIdx] = factor;
-					factIdx++;
-					
+					factorList.add(factor);
 					factorStr += factor + ",";
 					//4
 					//break;
@@ -57,7 +51,6 @@ public class Prime {
 			{
 				System.out.println(number+" is composite.");
 				factorStr = factorStr.substring(0,factorStr.length() - 1);
-
 				System.out.println(" The factors include [" + factorStr + "]");
 			}
 			

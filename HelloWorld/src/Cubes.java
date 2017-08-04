@@ -6,6 +6,7 @@ public class Cubes {
 		return i;
 		}
 
+	
 	/*
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -13,17 +14,7 @@ public class Cubes {
 		for (int i = 1; i <= N; i++)
 		    System.out.println(i + " " + cube(i));
 
-	}
-	*/
+	}*/
 	
-	/*
-	public void executeCube(String numStr) {
-		// TODO Auto-generated method stub
-		int N = Integer.parseInt(numStr);
-		for (int i = 1; i <= N; i++)
-		    System.out.println(i + " " + cube(i));
-
-	}
-	*/
 
 }
