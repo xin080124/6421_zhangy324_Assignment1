@@ -1,4 +1,6 @@
 
+import java.util.*;
+
 public class HelloWorld {
 
 	public static void main(String[] args) {
@@ -50,49 +52,49 @@ public class HelloWorld {
 		*/
 		
 		//???????matrix
-		/*
-		java.util.Random random=new java.util.Random();
-		int result=random.nextInt(10);
 		
-		int[][] a = new int[3][3];
-		int[][] b = new int[3][3];
-		int[][] c = new int[3][3];
-		for(int row =0;row<3;row++)
-		{
-			for(int column = 0;column<3; column++)
-			{
-				a[row][column] = random.nextInt(10);
-				b[row][column] = random.nextInt(10);
-				//System.out.println("a["+ row +"]["+column + "]: " + a[row][column]);
-				//System.out.println("b["+ row +"]["+column + "]: " + b[row][column]);
-			
-				c[row][column] = a[row][column] + b[row][column];
+		Scanner sin = new Scanner(System.in);
+		System.out.println("Plese input N matrix:");
+		int m= sin.nextInt();
+		double [][] a= new double[m][m];
+		double [][] b= new double[m][m];
+		double [][] c= new double[m][m];
+		sin.close();
+	
+		for(int i=0; i<m; i++)
+			for (int j=0; j<m; j++) {
+				a[i][j]=Math.round(Math.random()*10);
+				b[i][j]=Math.round(Math.random()*10);
+				c[i][j]=a[i][j]+b[i][j];
 			}
+		
+		//print
+		for(int i=0; i<m; i++) {
+			for (int j=0; j<m; j++) {
+				System.out.print(a[i][j]+" ");
+			}
+			System.out.println();
 		}
 		
+		System.out.println("+");
 		
-		
-		printMatrix(a, "a");
-		printMatrix(b, "b");
-		printMatrix(c, "c");
-	
-	*/
-	}
-	
-	public static void printMatrix(int[][] matrix, String matrixName)
-	{
-		System.out.println("-----matrix "+matrixName+"-----");
-		String rowStr = "";
-		for(int row =0;row<3;row++)
-		{
-			rowStr = "";
-			for(int column = 0;column<3; column++)
-			{
-				rowStr += " "+matrix[row][column];
-				
+		for(int i=0; i<m; i++) {
+			for (int j=0; j<m; j++) {
+				System.out.print(b[i][j]+" ");
 			}
-			System.out.println(rowStr);
+			System.out.println();
 		}
+		
+		System.out.println("=");
+		for(int i=0; i<m; i++) {
+			for (int j=0; j<m; j++) {
+				System.out.print(c[i][j]+" ");
+			}
+			System.out.println();
+		}
+	
 	}
+	
+	
 
 }
