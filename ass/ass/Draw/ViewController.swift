@@ -14,7 +14,7 @@ class ViewController: UIViewController
     //
     var layer : CAShapeLayer!
     
-    var colorIndex = 0
+    var colorIndex = 1
     
     override func viewDidLoad()
     {
@@ -43,7 +43,7 @@ class ViewController: UIViewController
     }
     
     @IBAction func changeColor(_ sender: UIButton) {
-        colorIndex = 1
+        colorIndex = 0
     }
     
     @IBAction func handlePan(_ sender: UIPanGestureRecognizer)
