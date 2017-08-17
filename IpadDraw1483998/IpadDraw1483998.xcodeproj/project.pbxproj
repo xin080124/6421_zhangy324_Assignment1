@@ -14,6 +14,9 @@
 		87B0E1821F45914200434411 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87B0E1801F45914200434411 /* LaunchScreen.storyboard */; };
 		87B0E18D1F45914200434411 /* IpadDraw1483998Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0E18C1F45914200434411 /* IpadDraw1483998Tests.swift */; };
 		87B0E1981F45914200434411 /* IpadDraw1483998UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0E1971F45914200434411 /* IpadDraw1483998UITests.swift */; };
+		87B0E1A81F4595D900434411 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0E1A51F4595D900434411 /* CustomColors.swift */; };
+		87B0E1A91F4595D900434411 /* ShapePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0E1A61F4595D900434411 /* ShapePath.swift */; };
+		87B0E1AA1F4595D900434411 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0E1A71F4595D900434411 /* Shapes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		87B0E1931F45914200434411 /* IpadDraw1483998UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IpadDraw1483998UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87B0E1971F45914200434411 /* IpadDraw1483998UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IpadDraw1483998UITests.swift; sourceTree = "<group>"; };
 		87B0E1991F45914200434411 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87B0E1A51F4595D900434411 /* CustomColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
+		87B0E1A61F4595D900434411 /* ShapePath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapePath.swift; sourceTree = "<group>"; };
+		87B0E1A71F4595D900434411 /* Shapes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,9 @@
 		87B0E1761F45914200434411 /* IpadDraw1483998 */ = {
 			isa = PBXGroup;
 			children = (
+				87B0E1A51F4595D900434411 /* CustomColors.swift */,
+				87B0E1A61F4595D900434411 /* ShapePath.swift */,
+				87B0E1A71F4595D900434411 /* Shapes.swift */,
 				87B0E1771F45914200434411 /* AppDelegate.swift */,
 				87B0E1791F45914200434411 /* ViewController.swift */,
 				87B0E17B1F45914200434411 /* Main.storyboard */,
@@ -259,7 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87B0E1A91F4595D900434411 /* ShapePath.swift in Sources */,
 				87B0E17A1F45914200434411 /* ViewController.swift in Sources */,
+				87B0E1AA1F4595D900434411 /* Shapes.swift in Sources */,
+				87B0E1A81F4595D900434411 /* CustomColors.swift in Sources */,
 				87B0E1781F45914200434411 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
