@@ -25,6 +25,8 @@ class ViewController: UIViewController
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func dragTest(_ sender: UIButton) {
+    }
     @IBAction func handlePan(_ sender: UIPanGestureRecognizer)
     {
         if sender.state == .began
