@@ -21,7 +21,7 @@ class ViewController: UIViewController
     
     var lineCap:String = kCALineCapRound
     let shapeArray = [Shapes.oval, Shapes.rectangle, Shapes.line, Shapes.freeStyle]
-    let colorArray = [padColor.red, padColor.green]
+    let colorArray = [padColor.red, padColor.yellow, padColor.green, padColor.blue, padColor.purple]
     
     override func viewDidLoad()
     {
@@ -54,6 +54,32 @@ class ViewController: UIViewController
             {
             case padColor.red:
                 layer?.fillColor = UIColor.transparentRed.cgColor
+            case padColor.yellow:
+                layer?.fillColor = UIColor.yellow.cgColor
+            case padColor.green:
+                layer?.fillColor = UIColor.veryDarkGreen.cgColor
+            case padColor.blue:
+                layer?.fillColor = UIColor.transparentBlue.cgColor
+            case padColor.purple:
+                layer?.fillColor = UIColor.transparentPurple.cgColor
+                
+            default:
+                layer?.fillColor = UIColor.transparentBlue.cgColor
+            }
+            
+            switch selectedStrokeColor
+            {
+            case padColor.red:
+                layer?.strokeColor = UIColor.transparentRed.cgColor
+            case padColor.yellow:
+                layer?.strokeColor = UIColor.yellow.cgColor
+            case padColor.green:
+                layer?.strokeColor = UIColor.veryDarkGreen.cgColor
+            case padColor.blue:
+                layer?.strokeColor = UIColor.transparentBlue.cgColor
+            case padColor.purple:
+                layer?.strokeColor = UIColor.transparentPurple.cgColor
+                
             default:
                 layer?.fillColor = UIColor.transparentBlue.cgColor
             }
@@ -86,6 +112,7 @@ class ViewController: UIViewController
  
     @IBAction func colorDidSelect(_ sender: UIButton) {
         selectedFillColor = colorArray[sender.tag]
+        selectedStrokeColor = colorArray[sender.tag]
     }
     
     @IBAction func shapeDidSelect(_ sender: UIButton)

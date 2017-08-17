@@ -22,7 +22,12 @@ extension UIColor
     
     class var transparentRed: UIColor
     {
-        return UIColor (red: 255, green: 0, blue: 255/255, alpha: 0.5)
+        return UIColor (red: 255, green: 0, blue: 0, alpha: 0.5)
+    }
+    
+    class var transparentPurple: UIColor
+    {
+        return UIColor (red: 255/255, green: 0, blue: 255/255, alpha: 0.5)
     }
     
     class var veryDarkGreen: UIColor
