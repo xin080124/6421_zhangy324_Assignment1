@@ -39,7 +39,19 @@ class ViewController: UIViewController
     }
     
     @IBAction func DeleteDraw(_ sender: UIButton) {
-        self.DrawRegion.layer.sublayers = nil
+        /*let alertController = UIAlertController(title: "Demo",message:"Delete all the shapes?",preferredStyle: .actionSheet)
+        */
+        let alertController = UIAlertController(title: "Warning", message: "Sure to delete?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
+        let okAction = UIAlertAction(title: "Delete all", style: UIAlertActionStyle.default) {(UIAlertAction)->Void in self.DrawRegion.layer.sublayers = nil}
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+
+        self.present(alertController, animated: true, completion: nil)
+        
+        //self.DrawRegion.layer.sublayers = nil
     }
     
     @IBAction func handlePan(_ sender: UIPanGestureRecognizer)
