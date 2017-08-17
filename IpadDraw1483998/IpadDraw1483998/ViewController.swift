@@ -70,6 +70,8 @@ class ViewController: UIViewController
         }
     }
     
+    @IBAction func cccc(_ sender: UIButton) {
+    }
     @IBAction func shapeDidSelect(_ sender: UIButton)
     {
         //The code commented is equal to the code below
