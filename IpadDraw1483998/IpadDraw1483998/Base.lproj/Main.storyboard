@@ -55,9 +55,18 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="8A9-AN-wxO" appends="YES" id="E0v-RL-kkX"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="8A9-AN-wxO">
+                    <connections>
+                        <action selector="move:" destination="BYZ-38-t0r" id="CEG-yp-KpY"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-385.15625" y="-1116.2109375"/>
         </scene>
