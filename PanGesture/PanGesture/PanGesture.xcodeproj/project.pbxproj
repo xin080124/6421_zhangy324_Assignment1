@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		16BD6E081F43B4F000141A86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD6E071F43B4F000141A86 /* AppDelegate.swift */; };
+		16BD6E0A1F43B4F000141A86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD6E091F43B4F000141A86 /* ViewController.swift */; };
+		16BD6E0D1F43B4F000141A86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16BD6E0B1F43B4F000141A86 /* Main.storyboard */; };
+		16BD6E101F43B4F000141A86 /* PanGesture.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 16BD6E0E1F43B4F000141A86 /* PanGesture.xcdatamodeld */; };
+		16BD6E121F43B4F000141A86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16BD6E111F43B4F000141A86 /* Assets.xcassets */; };
+		16BD6E151F43B4F000141A86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16BD6E131F43B4F000141A86 /* LaunchScreen.storyboard */; };
+		16BD6E201F43B4F000141A86 /* PanGestureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD6E1F1F43B4F000141A86 /* PanGestureTests.swift */; };
+		16BD6E2B1F43B4F000141A86 /* PanGestureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD6E2A1F43B4F000141A86 /* PanGestureUITests.swift */; };
+		16BD6E391F43B57900141A86 /* ShapePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD6E381F43B57900141A86 /* ShapePath.swift */; };
+		16BD6E3A1F43B57900141A86 /* ShapePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD6E381F43B57900141A86 /* ShapePath.swift */; };
+		16BD6E3B1F43B57900141A86 /* ShapePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD6E381F43B57900141A86 /* ShapePath.swift */; };
+		16BD6E3D1F43B80D00141A86 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD6E3C1F43B80D00141A86 /* Shapes.swift */; };
+		16BD6E3E1F43B80D00141A86 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD6E3C1F43B80D00141A86 /* Shapes.swift */; };
+		16BD6E3F1F43B80D00141A86 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD6E3C1F43B80D00141A86 /* Shapes.swift */; };
+		16BD6E421F43B99300141A86 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD6E411F43B99300141A86 /* CustomColors.swift */; };
+		16BD6E431F43B99300141A86 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD6E411F43B99300141A86 /* CustomColors.swift */; };
+		16BD6E441F43B99300141A86 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD6E411F43B99300141A86 /* CustomColors.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		16BD6E1C1F43B4F000141A86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 16BD6DFC1F43B4F000141A86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 16BD6E031F43B4F000141A86;
+			remoteInfo = PanGesture;
+		};
+		16BD6E271F43B4F000141A86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 16BD6DFC1F43B4F000141A86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 16BD6E031F43B4F000141A86;
+			remoteInfo = PanGesture;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		16BD6E041F43B4F000141A86 /* PanGesture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanGesture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		16BD6E071F43B4F000141A86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		16BD6E091F43B4F000141A86 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		16BD6E0C1F43B4F000141A86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		16BD6E0F1F43B4F000141A86 /* PanGesture.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PanGesture.xcdatamodel; sourceTree = "<group>"; };
+		16BD6E111F43B4F000141A86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		16BD6E141F43B4F000141A86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		16BD6E161F43B4F000141A86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16BD6E1B1F43B4F000141A86 /* PanGestureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PanGestureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		16BD6E1F1F43B4F000141A86 /* PanGestureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanGestureTests.swift; sourceTree = "<group>"; };
+		16BD6E211F43B4F000141A86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16BD6E261F43B4F000141A86 /* PanGestureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PanGestureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		16BD6E2A1F43B4F000141A86 /* PanGestureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanGestureUITests.swift; sourceTree = "<group>"; };
+		16BD6E2C1F43B4F000141A86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16BD6E381F43B57900141A86 /* ShapePath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapePath.swift; sourceTree = "<group>"; };
+		16BD6E3C1F43B80D00141A86 /* Shapes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		16BD6E411F43B99300141A86 /* CustomColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		16BD6E011F43B4F000141A86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16BD6E181F43B4F000141A86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16BD6E231F43B4F000141A86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		16BD6DFB1F43B4F000141A86 = {
+			isa = PBXGroup;
+			children = (
+				16BD6E061F43B4F000141A86 /* PanGesture */,
+				16BD6E1E1F43B4F000141A86 /* PanGestureTests */,
+				16BD6E291F43B4F000141A86 /* PanGestureUITests */,
+				16BD6E051F43B4F000141A86 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		16BD6E051F43B4F000141A86 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				16BD6E041F43B4F000141A86 /* PanGesture.app */,
+				16BD6E1B1F43B4F000141A86 /* PanGestureTests.xctest */,
+				16BD6E261F43B4F000141A86 /* PanGestureUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		16BD6E061F43B4F000141A86 /* PanGesture */ = {
+			isa = PBXGroup;
+			children = (
+				16BD6E491F43BBDC00141A86 /* Others */,
+				16BD6E481F43BBCF00141A86 /* Assets */,
+				16BD6E471F43BB9A00141A86 /* Controller */,
+				16BD6E461F43BB9300141A86 /* View */,
+				16BD6E451F43BB8700141A86 /* Model */,
+			);
+			path = PanGesture;
+			sourceTree = "<group>";
+		};
+		16BD6E1E1F43B4F000141A86 /* PanGestureTests */ = {
+			isa = PBXGroup;
+			children = (
+				16BD6E1F1F43B4F000141A86 /* PanGestureTests.swift */,
+				16BD6E211F43B4F000141A86 /* Info.plist */,
+			);
+			path = PanGestureTests;
+			sourceTree = "<group>";
+		};
+		16BD6E291F43B4F000141A86 /* PanGestureUITests */ = {
+			isa = PBXGroup;
+			children = (
+				16BD6E2A1F43B4F000141A86 /* PanGestureUITests.swift */,
+				16BD6E2C1F43B4F000141A86 /* Info.plist */,
+			);
+			path = PanGestureUITests;
+			sourceTree = "<group>";
+		};
+		16BD6E451F43BB8700141A86 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				16BD6E381F43B57900141A86 /* ShapePath.swift */,
+				16BD6E3C1F43B80D00141A86 /* Shapes.swift */,
+				16BD6E0E1F43B4F000141A86 /* PanGesture.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		16BD6E461F43BB9300141A86 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				16BD6E0B1F43B4F000141A86 /* Main.storyboard */,
+				16BD6E131F43B4F000141A86 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		16BD6E471F43BB9A00141A86 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				16BD6E091F43B4F000141A86 /* ViewController.swift */,
+				16BD6E411F43B99300141A86 /* CustomColors.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		16BD6E481F43BBCF00141A86 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				16BD6E111F43B4F000141A86 /* Assets.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		16BD6E491F43BBDC00141A86 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				16BD6E071F43B4F000141A86 /* AppDelegate.swift */,
+				16BD6E161F43B4F000141A86 /* Info.plist */,
+			);
+			name = Others;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		16BD6E031F43B4F000141A86 /* PanGesture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16BD6E2F1F43B4F000141A86 /* Build configuration list for PBXNativeTarget "PanGesture" */;
+			buildPhases = (
+				16BD6E001F43B4F000141A86 /* Sources */,
+				16BD6E011F43B4F000141A86 /* Frameworks */,
+				16BD6E021F43B4F000141A86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PanGesture;
+			productName = PanGesture;
+			productReference = 16BD6E041F43B4F000141A86 /* PanGesture.app */;
+			productType = "com.apple.product-type.application";
+		};
+		16BD6E1A1F43B4F000141A86 /* PanGestureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16BD6E321F43B4F000141A86 /* Build configuration list for PBXNativeTarget "PanGestureTests" */;
+			buildPhases = (
+				16BD6E171F43B4F000141A86 /* Sources */,
+				16BD6E181F43B4F000141A86 /* Frameworks */,
+				16BD6E191F43B4F000141A86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				16BD6E1D1F43B4F000141A86 /* PBXTargetDependency */,
+			);
+			name = PanGestureTests;
+			productName = PanGestureTests;
+			productReference = 16BD6E1B1F43B4F000141A86 /* PanGestureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		16BD6E251F43B4F000141A86 /* PanGestureUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16BD6E351F43B4F000141A86 /* Build configuration list for PBXNativeTarget "PanGestureUITests" */;
+			buildPhases = (
+				16BD6E221F43B4F000141A86 /* Sources */,
+				16BD6E231F43B4F000141A86 /* Frameworks */,
+				16BD6E241F43B4F000141A86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				16BD6E281F43B4F000141A86 /* PBXTargetDependency */,
+			);
+			name = PanGestureUITests;
+			productName = PanGestureUITests;
+			productReference = 16BD6E261F43B4F000141A86 /* PanGestureUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		16BD6DFC1F43B4F000141A86 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Christine Jiang";
+				TargetAttributes = {
+					16BD6E031F43B4F000141A86 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					16BD6E1A1F43B4F000141A86 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 16BD6E031F43B4F000141A86;
+					};
+					16BD6E251F43B4F000141A86 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 16BD6E031F43B4F000141A86;
+					};
+				};
+			};
+			buildConfigurationList = 16BD6DFF1F43B4F000141A86 /* Build configuration list for PBXProject "PanGesture" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 16BD6DFB1F43B4F000141A86;
+			productRefGroup = 16BD6E051F43B4F000141A86 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				16BD6E031F43B4F000141A86 /* PanGesture */,
+				16BD6E1A1F43B4F000141A86 /* PanGestureTests */,
+				16BD6E251F43B4F000141A86 /* PanGestureUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		16BD6E021F43B4F000141A86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16BD6E151F43B4F000141A86 /* LaunchScreen.storyboard in Resources */,
+				16BD6E121F43B4F000141A86 /* Assets.xcassets in Resources */,
+				16BD6E0D1F43B4F000141A86 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16BD6E191F43B4F000141A86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16BD6E241F43B4F000141A86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		16BD6E001F43B4F000141A86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16BD6E391F43B57900141A86 /* ShapePath.swift in Sources */,
+				16BD6E0A1F43B4F000141A86 /* ViewController.swift in Sources */,
+				16BD6E3D1F43B80D00141A86 /* Shapes.swift in Sources */,
+				16BD6E101F43B4F000141A86 /* PanGesture.xcdatamodeld in Sources */,
+				16BD6E421F43B99300141A86 /* CustomColors.swift in Sources */,
+				16BD6E081F43B4F000141A86 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16BD6E171F43B4F000141A86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16BD6E3A1F43B57900141A86 /* ShapePath.swift in Sources */,
+				16BD6E201F43B4F000141A86 /* PanGestureTests.swift in Sources */,
+				16BD6E431F43B99300141A86 /* CustomColors.swift in Sources */,
+				16BD6E3E1F43B80D00141A86 /* Shapes.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16BD6E221F43B4F000141A86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16BD6E3B1F43B57900141A86 /* ShapePath.swift in Sources */,
+				16BD6E2B1F43B4F000141A86 /* PanGestureUITests.swift in Sources */,
+				16BD6E441F43B99300141A86 /* CustomColors.swift in Sources */,
+				16BD6E3F1F43B80D00141A86 /* Shapes.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		16BD6E1D1F43B4F000141A86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 16BD6E031F43B4F000141A86 /* PanGesture */;
+			targetProxy = 16BD6E1C1F43B4F000141A86 /* PBXContainerItemProxy */;
+		};
+		16BD6E281F43B4F000141A86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 16BD6E031F43B4F000141A86 /* PanGesture */;
+			targetProxy = 16BD6E271F43B4F000141A86 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		16BD6E0B1F43B4F000141A86 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16BD6E0C1F43B4F000141A86 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		16BD6E131F43B4F000141A86 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16BD6E141F43B4F000141A86 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		16BD6E2D1F43B4F000141A86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		16BD6E2E1F43B4F000141A86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		16BD6E301F43B4F000141A86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PanGesture/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.christine.Draw.PanGesture;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		16BD6E311F43B4F000141A86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PanGesture/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.christine.Draw.PanGesture;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		16BD6E331F43B4F000141A86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PanGestureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.christine.Draw.PanGestureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PanGesture.app/PanGesture";
+			};
+			name = Debug;
+		};
+		16BD6E341F43B4F000141A86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PanGestureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.christine.Draw.PanGestureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PanGesture.app/PanGesture";
+			};
+			name = Release;
+		};
+		16BD6E361F43B4F000141A86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = PanGestureUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.christine.Draw.PanGestureUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = PanGesture;
+			};
+			name = Debug;
+		};
+		16BD6E371F43B4F000141A86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = PanGestureUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.christine.Draw.PanGestureUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = PanGesture;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		16BD6DFF1F43B4F000141A86 /* Build configuration list for PBXProject "PanGesture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16BD6E2D1F43B4F000141A86 /* Debug */,
+				16BD6E2E1F43B4F000141A86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16BD6E2F1F43B4F000141A86 /* Build configuration list for PBXNativeTarget "PanGesture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16BD6E301F43B4F000141A86 /* Debug */,
+				16BD6E311F43B4F000141A86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16BD6E321F43B4F000141A86 /* Build configuration list for PBXNativeTarget "PanGestureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16BD6E331F43B4F000141A86 /* Debug */,
+				16BD6E341F43B4F000141A86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16BD6E351F43B4F000141A86 /* Build configuration list for PBXNativeTarget "PanGestureUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16BD6E361F43B4F000141A86 /* Debug */,
+				16BD6E371F43B4F000141A86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		16BD6E0E1F43B4F000141A86 /* PanGesture.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				16BD6E0F1F43B4F000141A86 /* PanGesture.xcdatamodel */,
+			);
+			currentVersion = 16BD6E0F1F43B4F000141A86 /* PanGesture.xcdatamodel */;
+			path = PanGesture.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 16BD6DFC1F43B4F000141A86 /* Project object */;
+}
