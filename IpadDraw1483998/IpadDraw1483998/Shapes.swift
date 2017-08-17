@@ -16,3 +16,12 @@ enum Shapes : Int
     case freeStyle
     //Add more shapes here
 }
+
+enum padColor : Int
+{
+    case red = 0
+    case yellow = 1
+    case green = 2
+    case blue = 3
+    case purple = 4
+}

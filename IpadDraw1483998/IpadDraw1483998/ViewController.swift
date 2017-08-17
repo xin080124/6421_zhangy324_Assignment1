@@ -15,8 +15,13 @@ class ViewController: UIViewController
     var customPath : UIBezierPath?
     var layer : CAShapeLayer?
     var selectedShape = Shapes.oval
+    
+    var selectedFillColor = padColor.green
+    var selectedStrokeColor = padColor.green
+    
     var lineCap:String = kCALineCapRound
     let shapeArray = [Shapes.oval, Shapes.rectangle, Shapes.line, Shapes.freeStyle]
+    let colorArray = [padColor.red, padColor.green]
     
     override func viewDidLoad()
     {
@@ -45,6 +50,14 @@ class ViewController: UIViewController
         }
         else if sender.state == .changed
         {
+            switch selectedFillColor
+            {
+            case padColor.red:
+                layer?.fillColor = UIColor.transparentRed.cgColor
+            default:
+                layer?.fillColor = UIColor.transparentBlue.cgColor
+            }
+            
             switch selectedShape
             {
             case Shapes.oval:
@@ -70,29 +83,13 @@ class ViewController: UIViewController
         }
     }
     
-    @IBAction func cccc(_ sender: UIButton) {
+ 
+    @IBAction func colorDidSelect(_ sender: UIButton) {
+        selectedFillColor = colorArray[sender.tag]
     }
+    
     @IBAction func shapeDidSelect(_ sender: UIButton)
     {
-        //The code commented is equal to the code below
-        //        let selectedTag : Int = sender.tag
-        //        switch selectedTag
-        //        {
-        //        case 0:
-        //            selectedShape = Shapes.oval
-        //
-        //        case 1:
-        //            selectedShape = Shapes.rectangle
-        //
-        //        case 2:
-        //            selectedShape = Shapes.line
-        //
-        //        case 3:
-        //            selectedShape = Shapes.freeStyle
-        //
-        //        default:
-        //            selectedShape = Shapes.oval
-        //        }
         selectedShape = shapeArray[sender.tag]
     }
 }

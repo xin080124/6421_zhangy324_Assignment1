@@ -53,21 +53,34 @@
                                     <action selector="shapeDidSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7pP-Uq-8A2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BV5-MG-VAU">
-                                <rect key="frame" x="41" y="833" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQn-BG-Tru">
+                                <rect key="frame" x="41" y="899" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="red"/>
+                                <state key="normal" title="tRed"/>
                                 <connections>
-                                    <action selector="cccc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HJp-Wn-Fgz"/>
+                                    <action selector="colorDidSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Tz-f5-ndd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YhP-BP-6Ce">
-                                <rect key="frame" x="155" y="833" width="46" height="30"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0P0-au-4gL">
+                                <rect key="frame" x="143" y="899" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="tYellow"/>
                                 <connections>
-                                    <action selector="cccc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h46-eu-9dq"/>
+                                    <action selector="colorDidSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="94R-2i-9P9"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zQ-Wm-XIg">
+                                <rect key="frame" x="257" y="899" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="tGreen"/>
+                                <connections>
+                                    <action selector="colorDidSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vhy-3z-m17"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAX-dl-LR8">
+                                <rect key="frame" x="361" y="899" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="tBlue"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
