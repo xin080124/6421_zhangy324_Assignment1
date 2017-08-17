@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController
 {
+    
+    @IBOutlet weak var DrawRegion: UIView!
+    
     var startPoint: CGPoint = CGPoint.zero
     var endPoint: CGPoint = CGPoint.zero
     var customPath : UIBezierPath?
@@ -35,6 +38,10 @@ class ViewController: UIViewController
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func DeleteDraw(_ sender: UIButton) {
+        self.DrawRegion.layer.sublayers = nil
+    }
+    
     @IBAction func handlePan(_ sender: UIPanGestureRecognizer)
     {
         if sender.state == .began
@@ -46,7 +53,8 @@ class ViewController: UIViewController
             layer?.lineWidth = 1.0
             layer?.strokeColor = UIColor.blue.cgColor
             layer?.lineCap = lineCap
-            self.view.layer.addSublayer(layer!)
+            //self.view.layer.addSublayer(layer!)
+            self.DrawRegion.layer.addSublayer(layer!)
         }
         else if sender.state == .changed
         {
@@ -109,7 +117,6 @@ class ViewController: UIViewController
         }
     }
     
- 
     @IBAction func colorDidSelect(_ sender: UIButton) {
         selectedFillColor = colorArray[sender.tag]
         selectedStrokeColor = colorArray[sender.tag]

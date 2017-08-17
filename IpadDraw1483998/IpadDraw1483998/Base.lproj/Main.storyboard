@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -93,13 +94,32 @@
                                     <action selector="shapeDidSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wFJ-zA-JgL"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R8S-GG-QO1" userLabel="DrawView">
+                                <rect key="frame" x="20" y="28" width="728" height="833"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPL-2x-9yu">
+                                <rect key="frame" x="602" y="937" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Trash"/>
+                                <connections>
+                                    <action selector="DeleteDraw:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hmm-lT-Wrc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="R8S-GG-QO1" secondAttribute="leading" id="CW1-Uh-Qyu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="R8S-GG-QO1" secondAttribute="trailing" id="oWd-hE-UN1"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Pab-Bx-aDE" appends="YES" id="mNk-ac-i2j"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="DrawRegion" destination="R8S-GG-QO1" id="IO3-si-L5F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="Pab-Bx-aDE">
@@ -108,7 +128,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-940.625" y="-437.109375"/>
+            <point key="canvasLocation" x="-1529" y="-291"/>
         </scene>
     </scenes>
 </document>
