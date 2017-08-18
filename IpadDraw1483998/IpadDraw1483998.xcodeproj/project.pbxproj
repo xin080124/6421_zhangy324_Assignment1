@@ -431,6 +431,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Unitec.IpadDraw1483998;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -443,6 +444,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Unitec.IpadDraw1483998;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -519,6 +521,7 @@
 				87B0E19E1F45914200434411 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		87B0E19F1F45914200434411 /* Build configuration list for PBXNativeTarget "IpadDraw1483998Tests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +530,7 @@
 				87B0E1A11F45914200434411 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		87B0E1A21F45914200434411 /* Build configuration list for PBXNativeTarget "IpadDraw1483998UITests" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +539,7 @@
 				87B0E1A41F45914200434411 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
