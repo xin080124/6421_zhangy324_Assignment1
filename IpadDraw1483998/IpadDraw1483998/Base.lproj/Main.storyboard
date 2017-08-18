@@ -55,9 +55,8 @@
                                     <action selector="colorDidSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YLk-02-MCM"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R8S-GG-QO1" userLabel="DrawView">
-                                <rect key="frame" x="555" y="139" width="728" height="746"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R8S-GG-QO1" userLabel="DrawView">
+                                <rect key="frame" x="30" y="30" width="708" height="884"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i88-Aq-Pof">
@@ -142,13 +141,17 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="0P0-au-4gL" firstAttribute="leading" secondItem="cQn-BG-Tru" secondAttribute="trailing" id="0bj-7g-A04"/>
+                            <constraint firstItem="R8S-GG-QO1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="0fs-Zu-VhV"/>
                             <constraint firstItem="txF-Xm-IM2" firstAttribute="leading" secondItem="kML-aj-bYv" secondAttribute="trailing" id="32U-Lw-Ip8"/>
+                            <constraint firstItem="mPL-2x-9yu" firstAttribute="top" secondItem="R8S-GG-QO1" secondAttribute="bottom" constant="70" id="3E8-ak-CRp"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kML-aj-bYv" secondAttribute="bottom" constant="10" id="4Q7-Fq-ERJ"/>
                             <constraint firstItem="N2i-fW-Bz7" firstAttribute="leading" secondItem="zAX-dl-LR8" secondAttribute="trailing" id="7AX-pc-pMr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="R8S-GG-QO1" secondAttribute="trailing" constant="10" id="8jS-42-uu7"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mPL-2x-9yu" secondAttribute="bottom" constant="10" id="917-Uy-Yt2"/>
                             <constraint firstItem="txF-Xm-IM2" firstAttribute="top" secondItem="9zQ-Wm-XIg" secondAttribute="bottom" id="BYb-Cb-R5P"/>
                             <constraint firstItem="h80-aX-AUz" firstAttribute="leading" secondItem="txF-Xm-IM2" secondAttribute="trailing" id="D34-yj-Qx4"/>
                             <constraint firstItem="kML-aj-bYv" firstAttribute="top" secondItem="0P0-au-4gL" secondAttribute="bottom" id="DBz-S5-Liz"/>
+                            <constraint firstItem="R8S-GG-QO1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="IaA-ue-4DA"/>
                             <constraint firstItem="i88-Aq-Pof" firstAttribute="top" secondItem="cQn-BG-Tru" secondAttribute="bottom" id="K6w-g2-2xJ"/>
                             <constraint firstItem="txF-Xm-IM2" firstAttribute="top" secondItem="zAX-dl-LR8" secondAttribute="bottom" id="NIu-Ft-OHk"/>
                             <constraint firstItem="kML-aj-bYv" firstAttribute="top" secondItem="0P0-au-4gL" secondAttribute="bottom" id="RJd-5Q-lWj"/>
