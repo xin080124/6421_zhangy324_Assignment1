@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,24 +22,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zQ-Wm-XIg">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zQ-Wm-XIg">
                                 <rect key="frame" x="120" y="954" width="45" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="2B2-ly-Xds"/>
                                     <constraint firstAttribute="width" constant="45" id="to3-QO-WkT"/>
                                 </constraints>
-                                <state key="normal" title="tGre"/>
+                                <state key="normal" title="tGre" image="GreenButton0.png"/>
                                 <connections>
                                     <action selector="colorDidSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vhy-3z-m17"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQn-BG-Tru">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQn-BG-Tru">
                                 <rect key="frame" x="30" y="954" width="45" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="0ux-88-Xhd"/>
                                     <constraint firstAttribute="height" constant="30" id="byI-vH-RAa"/>
                                 </constraints>
-                                <state key="normal" title="tRed"/>
+                                <state key="normal" title="tRed" image="RedButton0.png"/>
                                 <connections>
                                     <action selector="colorDidSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Tz-f5-ndd"/>
                                 </connections>
@@ -92,13 +92,13 @@
                                     <action selector="shapeDidSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wFJ-zA-JgL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0P0-au-4gL">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0P0-au-4gL">
                                 <rect key="frame" x="75" y="954" width="45" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="4Pn-1h-3Yd"/>
                                     <constraint firstAttribute="width" constant="45" id="Tek-lf-QE9"/>
                                 </constraints>
-                                <state key="normal" title="tYel"/>
+                                <state key="normal" title="tYel" image="YellowButton0.png"/>
                                 <connections>
                                     <action selector="colorDidSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="94R-2i-9P9"/>
                                 </connections>
@@ -184,4 +184,9 @@
             <point key="canvasLocation" x="-1352.6978417266187" y="-387.7697841726619"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="GreenButton0.png" width="500" height="300"/>
+        <image name="RedButton0.png" width="500" height="300"/>
+        <image name="YellowButton0.png" width="500" height="300"/>
+    </resources>
 </document>
