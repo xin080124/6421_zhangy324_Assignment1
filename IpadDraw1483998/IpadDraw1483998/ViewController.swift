@@ -24,7 +24,9 @@ class ViewController: UIViewController
     
     var lineCap:String = kCALineCapRound
     let shapeArray = [Shapes.oval, Shapes.rectangle, Shapes.line, Shapes.freeStyle]
-    let colorArray = [padColor.red, padColor.yellow, padColor.green, padColor.blue, padColor.purple]
+    let colorArray = [padColor.red, padColor.yellow, padColor.green, padColor.blue, padColor.purple, padColor.eras]
+    
+    var erasing:Bool = false
     
     override func viewDidLoad()
     {
@@ -32,10 +34,44 @@ class ViewController: UIViewController
         // Do any additional setup after loading the view, typically from a nib
     }
     
+    func saveDrawView()
+    {
+        
+        UIImageWriteToSavedPhotosAlbum(self.takeImage(), self, nil, nil);
+        
+        //UIImageWriteToSavedPhotosAlbum(self.takeImage(), self, "image:didFinishSavingWithError:contextInfo:", nil)
+    }
+
+    func takeImage() -> UIImage {
+        UIGraphicsBeginImageContext(DrawRegion.bounds.size)
+        DrawRegion.backgroundColor?.setFill()
+        UIRectFill(DrawRegion.bounds)
+        
+            //DrawRegion.bounds
+        //self.storyboard.
+        
+        //self.DrawRegion.drawInRect(self.bounds)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image!
+    }
+    
+    @IBAction func saveImage(_ sender: UIButton) {
+       self.saveDrawView()
+    }
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func myEraser(_ sender: UIButton) {
+        //selectedStrokeColor = colorArray[sender.tag]
+        erasing = true
+        //layer?.strokeColor = UIColor.white.cgColor
+        //selectedShape = Shapes.freeStyle
     }
     
     @IBAction func DeleteDraw(_ sender: UIButton) {
@@ -70,8 +106,10 @@ class ViewController: UIViewController
         }
         else if sender.state == .changed
         {
-            switch selectedFillColor
+            if(erasing == false)
             {
+                switch selectedFillColor
+                {
             case padColor.red:
                 layer?.fillColor = UIColor.transparentRed.cgColor
             case padColor.yellow:
@@ -104,6 +142,7 @@ class ViewController: UIViewController
                 layer?.fillColor = UIColor.transparentBlue.cgColor
             }
             
+            
             switch selectedShape
             {
             case Shapes.oval:
@@ -126,16 +165,31 @@ class ViewController: UIViewController
                 customPath?.close()
                 layer?.path = customPath?.cgPath
             }
+            }
+            else
+            {
+                layer?.strokeColor = UIColor.white.cgColor
+                endPoint = sender.location(in: sender.view)
+                customPath?.move(to: startPoint)
+                customPath?.addLine(to: endPoint)
+                startPoint = endPoint
+                customPath?.close()
+                layer?.path = customPath?.cgPath
+            }
+            
         }
     }
     
     @IBAction func colorDidSelect(_ sender: UIButton) {
+        erasing = false
+        
         selectedFillColor = colorArray[sender.tag]
         selectedStrokeColor = colorArray[sender.tag]
     }
     
     @IBAction func shapeDidSelect(_ sender: UIButton)
     {
+        erasing = false
         selectedShape = shapeArray[sender.tag]
     }
 }
