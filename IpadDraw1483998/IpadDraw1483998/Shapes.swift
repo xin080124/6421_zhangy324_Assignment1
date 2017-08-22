@@ -14,6 +14,8 @@ enum Shapes : Int
     case rectangle
     case line
     case freeStyle
+    case circle
+    case square
     //Add more shapes here
 }
 

@@ -110,10 +110,10 @@ class ViewController: UIViewController
             {
                 switch selectedFillColor
                 {
-            case padColor.red:
-                layer?.fillColor = UIColor.transparentRed.cgColor
-            case padColor.yellow:
-                layer?.fillColor = UIColor.yellow.cgColor
+                    case padColor.red:
+                        layer?.fillColor = UIColor.transparentRed.cgColor
+                    case padColor.yellow:
+                        layer?.fillColor = UIColor.yellow.cgColor
             case padColor.green:
                 layer?.fillColor = UIColor.veryDarkGreen.cgColor
             case padColor.blue:
@@ -123,24 +123,24 @@ class ViewController: UIViewController
                 
             default:
                 layer?.fillColor = UIColor.transparentBlue.cgColor
-            }
+                }
             
-            switch selectedStrokeColor
-            {
-            case padColor.red:
-                layer?.strokeColor = UIColor.transparentRed.cgColor
-            case padColor.yellow:
-                layer?.strokeColor = UIColor.yellow.cgColor
-            case padColor.green:
-                layer?.strokeColor = UIColor.veryDarkGreen.cgColor
-            case padColor.blue:
-                layer?.strokeColor = UIColor.transparentBlue.cgColor
-            case padColor.purple:
-                layer?.strokeColor = UIColor.transparentPurple.cgColor
+                switch selectedStrokeColor
+                {
+                case padColor.red:
+                    layer?.strokeColor = UIColor.transparentRed.cgColor
+                case padColor.yellow:
+                    layer?.strokeColor = UIColor.yellow.cgColor
+                case padColor.green:
+                    layer?.strokeColor = UIColor.veryDarkGreen.cgColor
+                case padColor.blue:
+                    layer?.strokeColor = UIColor.transparentBlue.cgColor
+                case padColor.purple:
+                    layer?.strokeColor = UIColor.transparentPurple.cgColor
                 
-            default:
-                layer?.fillColor = UIColor.transparentBlue.cgColor
-            }
+                default:
+                    layer?.fillColor = UIColor.transparentBlue.cgColor
+                }
             
             
             switch selectedShape
@@ -158,12 +158,55 @@ class ViewController: UIViewController
                 layer?.path = ShapePath().line(startPoint: startPoint, endPoint: endPoint).cgPath
                 
             case Shapes.freeStyle:
+                /*
                 endPoint = sender.location(in: sender.view)
                 customPath?.move(to: startPoint)
                 customPath?.addLine(to: endPoint)
                 startPoint = endPoint
                 customPath?.close()
                 layer?.path = customPath?.cgPath
+            */
+                
+                var translation = sender.translation(in: sender.view)
+                if(translation.x < translation.y )
+                {
+                    translation.y = translation.x
+                }
+                else
+                {
+                    translation.x = translation.y
+                }
+                layer?.path = ShapePath().rectangle(startPoint: startPoint, translationPoint: translation).cgPath
+                
+                
+            case Shapes.circle:
+                var translation = sender.translation(in: sender.view)
+                if(translation.x < translation.y )
+                {
+                    translation.y = translation.x
+                }
+                else
+                {
+                    translation.x = translation.y
+                }
+                layer?.path = ShapePath().oval(startPoint: startPoint, translationPoint: translation).cgPath
+            
+            case Shapes.square:
+                var translation = sender.translation(in: sender.view)
+                if(translation.x < translation.y )
+                {
+                    translation.y = translation.x
+                }
+                else
+                {
+                    translation.x = translation.y
+                }
+                layer?.path = ShapePath().rectangle(startPoint: startPoint, translationPoint: translation).cgPath
+                
+            default:
+                let translation = sender.translation(in: sender.view)
+                layer?.path = ShapePath().oval(startPoint: startPoint, translationPoint: translation).cgPath
+                
             }
             }
             else
