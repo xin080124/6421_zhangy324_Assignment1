@@ -23,7 +23,7 @@ class ViewController: UIViewController
     var selectedStrokeColor = padColor.green
     
     var lineCap:String = kCALineCapRound
-    let shapeArray = [Shapes.oval, Shapes.rectangle, Shapes.line, Shapes.freeStyle]
+    let shapeArray = [Shapes.oval, Shapes.rectangle, Shapes.line, Shapes.freeStyle, Shapes.circle, Shapes.square, Shapes.dash]
     let colorArray = [padColor.red, padColor.yellow, padColor.green, padColor.blue, padColor.purple, padColor.eras]
     
     var erasing:Bool = false
@@ -59,7 +59,7 @@ class ViewController: UIViewController
     }
     
     @IBAction func saveImage(_ sender: UIButton) {
-       self.saveDrawView()
+       //self.saveDrawView()
     }
     override func didReceiveMemoryWarning()
     {
@@ -158,27 +158,13 @@ class ViewController: UIViewController
                 layer?.path = ShapePath().line(startPoint: startPoint, endPoint: endPoint).cgPath
                 
             case Shapes.freeStyle:
-                /*
                 endPoint = sender.location(in: sender.view)
                 customPath?.move(to: startPoint)
                 customPath?.addLine(to: endPoint)
                 startPoint = endPoint
                 customPath?.close()
                 layer?.path = customPath?.cgPath
-            */
-                
-                var translation = sender.translation(in: sender.view)
-                if(translation.x < translation.y )
-                {
-                    translation.y = translation.x
-                }
-                else
-                {
-                    translation.x = translation.y
-                }
-                layer?.path = ShapePath().rectangle(startPoint: startPoint, translationPoint: translation).cgPath
-                
-                
+ 
             case Shapes.circle:
                 var translation = sender.translation(in: sender.view)
                 if(translation.x < translation.y )
@@ -202,11 +188,20 @@ class ViewController: UIViewController
                     translation.x = translation.y
                 }
                 layer?.path = ShapePath().rectangle(startPoint: startPoint, translationPoint: translation).cgPath
+            
+            case Shapes.dash:
+                endPoint = sender.location(in: sender.view)
                 
-            default:
+                let arr :NSArray = NSArray(array: [10,5])
+                
+                layer?.lineDashPattern = arr as? [NSNumber]
+                layer?.path = ShapePath().line(startPoint: startPoint, endPoint: endPoint).cgPath
+                
+                
+            /*default:
                 let translation = sender.translation(in: sender.view)
                 layer?.path = ShapePath().oval(startPoint: startPoint, translationPoint: translation).cgPath
-                
+              */
             }
             }
             else
