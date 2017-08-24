@@ -14,6 +14,9 @@ enum Shapes : Int
     case rectangle
     case line
     case freeStyle
+    case circle
+    case square
+    case dash
     //Add more shapes here
 }
 
@@ -24,4 +27,5 @@ enum padColor : Int
     case green = 2
     case blue = 3
     case purple = 4
+    case eras = 5
 }

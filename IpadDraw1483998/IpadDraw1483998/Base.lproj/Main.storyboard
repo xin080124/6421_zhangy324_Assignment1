@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad9_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,121 +19,176 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zQ-Wm-XIg">
-                                <rect key="frame" x="120" y="954" width="45" height="30"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zQ-Wm-XIg">
+                                <rect key="frame" x="116" y="410" width="45" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="2B2-ly-Xds"/>
                                     <constraint firstAttribute="width" constant="45" id="to3-QO-WkT"/>
                                 </constraints>
-                                <state key="normal" title="tGre"/>
+                                <state key="normal" title="tGre" image="GreenButton0.png"/>
                                 <connections>
                                     <action selector="colorDidSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vhy-3z-m17"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQn-BG-Tru">
-                                <rect key="frame" x="30" y="954" width="45" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQn-BG-Tru">
+                                <rect key="frame" x="26" y="410" width="45" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="0ux-88-Xhd"/>
                                     <constraint firstAttribute="height" constant="30" id="byI-vH-RAa"/>
                                 </constraints>
-                                <state key="normal" title="tRed"/>
+                                <state key="normal" title="tRed" image="RedButton0.png"/>
                                 <connections>
                                     <action selector="colorDidSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Tz-f5-ndd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAX-dl-LR8">
-                                <rect key="frame" x="165" y="954" width="45" height="30"/>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAX-dl-LR8">
+                                <rect key="frame" x="161" y="410" width="45" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="T0Q-yE-Ckb"/>
                                     <constraint firstAttribute="width" constant="45" id="iuT-MK-S8d"/>
                                 </constraints>
-                                <state key="normal" title="tBlu"/>
+                                <state key="normal" title="tBlu" image="BlueButton0.png"/>
                                 <connections>
                                     <action selector="colorDidSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YLk-02-MCM"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R8S-GG-QO1" userLabel="DrawView">
-                                <rect key="frame" x="30" y="30" width="708" height="884"/>
+                                <rect key="frame" x="26" y="30" width="268" height="340"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i88-Aq-Pof">
-                                <rect key="frame" x="30" y="984" width="50" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i88-Aq-Pof">
+                                <rect key="frame" x="26" y="440" width="50" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="RKF-8i-isD"/>
                                     <constraint firstAttribute="width" constant="50" id="o3M-pQ-p8C"/>
                                 </constraints>
-                                <state key="normal" title="Oval"/>
+                                <state key="normal" title="Oval" image="oval.png"/>
                                 <connections>
                                     <action selector="shapeDidSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7pP-Uq-8A2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kML-aj-bYv">
-                                <rect key="frame" x="80" y="984" width="50" height="30"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kML-aj-bYv">
+                                <rect key="frame" x="76" y="440" width="50" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Mth-ys-WHr"/>
                                     <constraint firstAttribute="width" constant="50" id="YBu-Dg-hfk"/>
                                 </constraints>
-                                <state key="normal" title="Rect"/>
+                                <state key="normal" title="Rect" image="rect.png"/>
                                 <connections>
                                     <action selector="shapeDidSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lUp-UW-3oV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h80-aX-AUz">
-                                <rect key="frame" x="180" y="984" width="50" height="30"/>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h80-aX-AUz">
+                                <rect key="frame" x="176" y="440" width="50" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="9DS-YS-uZA"/>
                                     <constraint firstAttribute="height" constant="30" id="PvA-Tt-d9t"/>
                                 </constraints>
-                                <state key="normal" title="Free"/>
+                                <state key="normal" title="Free" image="free.png"/>
                                 <connections>
                                     <action selector="shapeDidSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wFJ-zA-JgL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0P0-au-4gL">
-                                <rect key="frame" x="75" y="954" width="45" height="30"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0P0-au-4gL">
+                                <rect key="frame" x="71" y="410" width="45" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="4Pn-1h-3Yd"/>
                                     <constraint firstAttribute="width" constant="45" id="Tek-lf-QE9"/>
                                 </constraints>
-                                <state key="normal" title="tYel"/>
+                                <state key="normal" title="tYel" image="YellowButton0.png"/>
                                 <connections>
                                     <action selector="colorDidSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="94R-2i-9P9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txF-Xm-IM2">
-                                <rect key="frame" x="130" y="984" width="50" height="30"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txF-Xm-IM2">
+                                <rect key="frame" x="126" y="440" width="50" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="MUs-NX-K4J"/>
                                     <constraint firstAttribute="height" constant="30" id="n77-Jx-yEv"/>
                                 </constraints>
-                                <state key="normal" title="Line"/>
+                                <state key="normal" title="Line" image="lines.png"/>
                                 <connections>
                                     <action selector="shapeDidSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6HH-E2-RrF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPL-2x-9yu">
-                                <rect key="frame" x="708" y="984" width="50" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPL-2x-9yu">
+                                <rect key="frame" x="264" y="440" width="50" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="NbL-54-3XT"/>
                                     <constraint firstAttribute="width" constant="50" id="q8N-lh-mUf"/>
                                 </constraints>
-                                <state key="normal" title="Trash"/>
+                                <state key="normal" title="Trash" image="trash.png"/>
                                 <connections>
                                     <action selector="DeleteDraw:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hmm-lT-Wrc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2i-fW-Bz7">
-                                <rect key="frame" x="210" y="954" width="45" height="30"/>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2i-fW-Bz7">
+                                <rect key="frame" x="206" y="410" width="45" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="PAe-s7-0F5"/>
                                     <constraint firstAttribute="height" constant="30" id="v4k-aW-rXT"/>
                                 </constraints>
-                                <state key="normal" title="tPur"/>
+                                <state key="normal" title="tPur" image="purpleButton0.png"/>
                                 <connections>
                                     <action selector="colorDidSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7G2-kd-l86"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7j-gV-2d1">
+                                <rect key="frame" x="251" y="410" width="45" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3gT-N9-1Xf"/>
+                                    <constraint firstAttribute="width" constant="45" id="zX3-db-bU8"/>
+                                </constraints>
+                                <state key="normal" title="save" image="save.png"/>
+                                <connections>
+                                    <action selector="saveImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1uK-or-M2P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAo-DU-B1f">
+                                <rect key="frame" x="296" y="410" width="45" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="Ung-x8-nUN"/>
+                                    <constraint firstAttribute="height" constant="30" id="b6L-6U-AAw"/>
+                                </constraints>
+                                <state key="normal" title="eras" image="eraser.png"/>
+                                <connections>
+                                    <action selector="myEraser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ovd-hi-2qL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMi-7A-iwd">
+                                <rect key="frame" x="26" y="380" width="40" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="0gR-Ek-oOh"/>
+                                    <constraint firstAttribute="height" constant="30" id="Q4r-Za-Bs4"/>
+                                </constraints>
+                                <state key="normal" title="circ"/>
+                                <connections>
+                                    <action selector="shapeDidSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aam-ua-QWQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6n-ze-pUZ">
+                                <rect key="frame" x="66" y="380" width="40" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="d6B-9y-CBr"/>
+                                    <constraint firstAttribute="height" constant="30" id="zyj-yy-yli"/>
+                                </constraints>
+                                <state key="normal" title="squa"/>
+                                <connections>
+                                    <action selector="shapeDidSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sCC-XY-tiM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hN-al-jNd">
+                                <rect key="frame" x="106" y="380" width="40" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Mpq-Fv-B0R"/>
+                                    <constraint firstAttribute="width" constant="40" id="QKH-Bh-4lx"/>
+                                </constraints>
+                                <state key="normal" title="dash"/>
+                                <connections>
+                                    <action selector="shapeDidSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P0e-wr-j2I"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -149,21 +204,31 @@
                             <constraint firstAttribute="trailingMargin" secondItem="R8S-GG-QO1" secondAttribute="trailing" constant="10" id="8jS-42-uu7"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mPL-2x-9yu" secondAttribute="bottom" constant="10" id="917-Uy-Yt2"/>
                             <constraint firstItem="txF-Xm-IM2" firstAttribute="top" secondItem="9zQ-Wm-XIg" secondAttribute="bottom" id="BYb-Cb-R5P"/>
+                            <constraint firstItem="0P0-au-4gL" firstAttribute="top" secondItem="2hN-al-jNd" secondAttribute="bottom" id="CNj-gc-sXM"/>
                             <constraint firstItem="h80-aX-AUz" firstAttribute="leading" secondItem="txF-Xm-IM2" secondAttribute="trailing" id="D34-yj-Qx4"/>
                             <constraint firstItem="kML-aj-bYv" firstAttribute="top" secondItem="0P0-au-4gL" secondAttribute="bottom" id="DBz-S5-Liz"/>
+                            <constraint firstItem="0P0-au-4gL" firstAttribute="top" secondItem="V6n-ze-pUZ" secondAttribute="bottom" id="G0c-Or-L3A"/>
                             <constraint firstItem="R8S-GG-QO1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="IaA-ue-4DA"/>
                             <constraint firstItem="i88-Aq-Pof" firstAttribute="top" secondItem="cQn-BG-Tru" secondAttribute="bottom" id="K6w-g2-2xJ"/>
+                            <constraint firstItem="2hN-al-jNd" firstAttribute="leading" secondItem="V6n-ze-pUZ" secondAttribute="trailing" id="MLL-ey-0iN"/>
                             <constraint firstItem="txF-Xm-IM2" firstAttribute="top" secondItem="zAX-dl-LR8" secondAttribute="bottom" id="NIu-Ft-OHk"/>
                             <constraint firstItem="kML-aj-bYv" firstAttribute="top" secondItem="0P0-au-4gL" secondAttribute="bottom" id="RJd-5Q-lWj"/>
                             <constraint firstItem="h80-aX-AUz" firstAttribute="top" secondItem="N2i-fW-Bz7" secondAttribute="bottom" id="Twj-VD-KBe"/>
                             <constraint firstItem="9zQ-Wm-XIg" firstAttribute="leading" secondItem="0P0-au-4gL" secondAttribute="trailing" id="UWP-u6-IUZ"/>
+                            <constraint firstItem="OAo-DU-B1f" firstAttribute="leading" secondItem="X7j-gV-2d1" secondAttribute="trailing" id="WG8-fX-zva"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="i88-Aq-Pof" secondAttribute="bottom" constant="10" id="X5u-cC-6uA"/>
                             <constraint firstItem="kML-aj-bYv" firstAttribute="leading" secondItem="i88-Aq-Pof" secondAttribute="trailing" id="Xa7-Yo-JGA"/>
                             <constraint firstItem="zAX-dl-LR8" firstAttribute="leading" secondItem="9zQ-Wm-XIg" secondAttribute="trailing" id="b3M-Sr-Nd1"/>
                             <constraint firstItem="i88-Aq-Pof" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="cOZ-sR-crq"/>
+                            <constraint firstItem="cQn-BG-Tru" firstAttribute="top" secondItem="SMi-7A-iwd" secondAttribute="bottom" id="cQ2-Rf-TIi"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="txF-Xm-IM2" secondAttribute="bottom" constant="10" id="dkp-gW-tPf"/>
+                            <constraint firstItem="V6n-ze-pUZ" firstAttribute="leading" secondItem="SMi-7A-iwd" secondAttribute="trailing" id="iGc-E5-AOi"/>
+                            <constraint firstItem="SMi-7A-iwd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="kpi-bp-I5X"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="X7j-gV-2d1" secondAttribute="bottom" constant="40" id="kxr-y5-U8G"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="h80-aX-AUz" secondAttribute="bottom" constant="10" id="ohv-m3-YbF"/>
+                            <constraint firstItem="X7j-gV-2d1" firstAttribute="leading" secondItem="N2i-fW-Bz7" secondAttribute="trailing" id="qoE-hK-soR"/>
                             <constraint firstItem="mPL-2x-9yu" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="10" id="qzy-JO-Tfr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OAo-DU-B1f" secondAttribute="bottom" constant="40" id="wuO-gr-Xk5"/>
                             <constraint firstItem="cQn-BG-Tru" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="xTk-OM-Sgc"/>
                         </constraints>
                         <connections>
@@ -181,7 +246,21 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1352.6978417266187" y="-387.7697841726619"/>
+            <point key="canvasLocation" x="-1402" y="-736"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BlueButton0.png" width="500" height="300"/>
+        <image name="GreenButton0.png" width="500" height="300"/>
+        <image name="RedButton0.png" width="500" height="300"/>
+        <image name="YellowButton0.png" width="500" height="300"/>
+        <image name="eraser.png" width="500" height="300"/>
+        <image name="free.png" width="500" height="300"/>
+        <image name="lines.png" width="500" height="300"/>
+        <image name="oval.png" width="500" height="300"/>
+        <image name="purpleButton0.png" width="500" height="300"/>
+        <image name="rect.png" width="500" height="300"/>
+        <image name="save.png" width="800" height="800"/>
+        <image name="trash.png" width="256" height="256"/>
+    </resources>
 </document>
