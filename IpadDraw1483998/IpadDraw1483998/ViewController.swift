@@ -36,8 +36,16 @@ class ViewController: UIViewController
     
     func saveDrawView()
     {
+        UIGraphicsBeginImageContextWithOptions(DrawRegion.layer.frame.size, false, 1)
+        DrawRegion.layer.render(in:UIGraphicsGetCurrentContext()!)
+        let viewImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        let data = UIImagePNGRepresentation(viewImage)
+        let documentsDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as! String
+        //let writePath = documentsDir.stringByAppendingPathComponent("myimage.png")
+        //data.writeToFile(writePath, atomically:true)
         
-        UIImageWriteToSavedPhotosAlbum(self.takeImage(), self, nil, nil);
+        //UIImageWriteToSavedPhotosAlbum(self.takeImage(), self, nil, nil);
         
         //UIImageWriteToSavedPhotosAlbum(self.takeImage(), self, "image:didFinishSavingWithError:contextInfo:", nil)
     }
@@ -59,7 +67,7 @@ class ViewController: UIViewController
     }
     
     @IBAction func saveImage(_ sender: UIButton) {
-       //self.saveDrawView()
+//       self.saveDrawView()
     }
     override func didReceiveMemoryWarning()
     {
@@ -79,11 +87,14 @@ class ViewController: UIViewController
         */
         let alertController = UIAlertController(title: "Warning", message: "Sure to delete?", preferredStyle: UIAlertControllerStyle.alert)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
-        let okAction = UIAlertAction(title: "Delete all", style: UIAlertActionStyle.default) {(UIAlertAction)->Void in self.DrawRegion.layer.sublayers = nil}
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil)
+       
+        let okAction = UIAlertAction(title: "Delete all", style: UIAlertActionStyle.cancel) {(UIAlertAction)->Void in self.DrawRegion.layer.sublayers = nil}
         
-        alertController.addAction(cancelAction)
+        
+        
         alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
 
         self.present(alertController, animated: true, completion: nil)
         
