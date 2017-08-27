@@ -1,16 +1,15 @@
 //
 //  ViewController.swift
-//  PanGesture
+//  IpadDraw1483998
 //
-//  Created by Christine Jiang on 16/08/17.
-//  Copyright © 2017 Christine Jiang. All rights reserved.
 //
 
 import UIKit
 
 class ViewController: UIViewController
 {
-    
+
+    //define a UIView to draw all the shapes on.
     @IBOutlet weak var DrawRegion: UIView!
     
     var startPoint: CGPoint = CGPoint.zero
@@ -27,6 +26,7 @@ class ViewController: UIViewController
     let colorArray = [padColor.red, padColor.yellow, padColor.green, padColor.blue, padColor.purple, padColor.eras]
     
     var erasing:Bool = false
+    var fill:Bool = true
     
     override func viewDidLoad()
     {
@@ -36,12 +36,15 @@ class ViewController: UIViewController
     
     func saveDrawView()
     {
+        /*
         UIGraphicsBeginImageContextWithOptions(DrawRegion.layer.frame.size, false, 1)
         DrawRegion.layer.render(in:UIGraphicsGetCurrentContext()!)
         let viewImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         let data = UIImagePNGRepresentation(viewImage)
         let documentsDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as! String
+        */
+        
         //let writePath = documentsDir.stringByAppendingPathComponent("myimage.png")
         //data.writeToFile(writePath, atomically:true)
         
@@ -67,7 +70,7 @@ class ViewController: UIViewController
     }
     
     @IBAction func saveImage(_ sender: UIButton) {
-//       self.saveDrawView()
+       //self.saveDrawView()
     }
     override func didReceiveMemoryWarning()
     {
@@ -91,14 +94,11 @@ class ViewController: UIViewController
        
         let okAction = UIAlertAction(title: "Delete all", style: UIAlertActionStyle.cancel) {(UIAlertAction)->Void in self.DrawRegion.layer.sublayers = nil}
         
-        
-        
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
 
         self.present(alertController, animated: true, completion: nil)
         
-        //self.DrawRegion.layer.sublayers = nil
     }
     
     @IBAction func handlePan(_ sender: UIPanGestureRecognizer)
@@ -119,101 +119,102 @@ class ViewController: UIViewController
         {
             if(erasing == false)
             {
+                fill = true
                 switch selectedFillColor
                 {
                     case padColor.red:
                         layer?.fillColor = UIColor.transparentRed.cgColor
                     case padColor.yellow:
                         layer?.fillColor = UIColor.yellow.cgColor
-            case padColor.green:
-                layer?.fillColor = UIColor.veryDarkGreen.cgColor
-            case padColor.blue:
-                layer?.fillColor = UIColor.transparentBlue.cgColor
-            case padColor.purple:
-                layer?.fillColor = UIColor.transparentPurple.cgColor
+                    case padColor.green:
+                        layer?.fillColor = UIColor.veryDarkGreen.cgColor
+                    case padColor.blue:
+                        layer?.fillColor = UIColor.transparentBlue.cgColor
+                    case padColor.purple:
+                        layer?.fillColor = UIColor.transparentPurple.cgColor
                 
-            default:
-                layer?.fillColor = UIColor.transparentBlue.cgColor
+                    default:
+                        layer?.fillColor = UIColor.transparentBlue.cgColor
                 }
             
                 switch selectedStrokeColor
                 {
-                case padColor.red:
-                    layer?.strokeColor = UIColor.transparentRed.cgColor
-                case padColor.yellow:
-                    layer?.strokeColor = UIColor.yellow.cgColor
-                case padColor.green:
-                    layer?.strokeColor = UIColor.veryDarkGreen.cgColor
-                case padColor.blue:
-                    layer?.strokeColor = UIColor.transparentBlue.cgColor
-                case padColor.purple:
-                    layer?.strokeColor = UIColor.transparentPurple.cgColor
+                    case padColor.red:
+                        layer?.strokeColor = UIColor.transparentRed.cgColor
+                    case padColor.yellow:
+                        layer?.strokeColor = UIColor.yellow.cgColor
+                    case padColor.green:
+                        layer?.strokeColor = UIColor.veryDarkGreen.cgColor
+                    case padColor.blue:
+                        layer?.strokeColor = UIColor.transparentBlue.cgColor
+                    case padColor.purple:
+                        layer?.strokeColor = UIColor.transparentPurple.cgColor
                 
-                default:
-                    layer?.fillColor = UIColor.transparentBlue.cgColor
+                    default:
+                        layer?.fillColor = UIColor.transparentBlue.cgColor
                 }
             
             
-            switch selectedShape
-            {
-            case Shapes.oval:
-                let translation = sender.translation(in: sender.view)
-                layer?.path = ShapePath().oval(startPoint: startPoint, translationPoint: translation).cgPath
+                switch selectedShape
+                {
+                    case Shapes.oval:
+                        let translation = sender.translation(in: sender.view)
+                        layer?.path = ShapePath().oval(startPoint: startPoint, translationPoint: translation).cgPath
                 
-            case Shapes.rectangle:
-                let translation = sender.translation(in: sender.view)
-                layer?.path = ShapePath().rectangle(startPoint: startPoint, translationPoint: translation).cgPath
+                    case Shapes.rectangle:
+                        let translation = sender.translation(in: sender.view)
+                        layer?.path = ShapePath().rectangle(startPoint: startPoint, translationPoint: translation).cgPath
                 
-            case Shapes.line:
-                endPoint = sender.location(in: sender.view)
-                layer?.path = ShapePath().line(startPoint: startPoint, endPoint: endPoint).cgPath
+                    case Shapes.line:
+                        endPoint = sender.location(in: sender.view)
+                        layer?.path = ShapePath().line(startPoint: startPoint, endPoint: endPoint).cgPath
                 
-            case Shapes.freeStyle:
-                endPoint = sender.location(in: sender.view)
-                customPath?.move(to: startPoint)
-                customPath?.addLine(to: endPoint)
-                startPoint = endPoint
-                customPath?.close()
-                layer?.path = customPath?.cgPath
+                    case Shapes.freeStyle:
+                        endPoint = sender.location(in: sender.view)
+                        customPath?.move(to: startPoint)
+                        customPath?.addLine(to: endPoint)
+                        startPoint = endPoint
+                        customPath?.close()
+                        layer?.path = customPath?.cgPath
  
-            case Shapes.circle:
-                var translation = sender.translation(in: sender.view)
-                if(translation.x < translation.y )
-                {
-                    translation.y = translation.x
-                }
-                else
-                {
-                    translation.x = translation.y
-                }
-                layer?.path = ShapePath().oval(startPoint: startPoint, translationPoint: translation).cgPath
+                    case Shapes.circle:
+                        fill = false
+                        layer?.fillColor = UIColor.transparentFully.cgColor
+                        var translation = sender.translation(in: sender.view)
+                        if(translation.x < translation.y )
+                        {
+                            translation.y = translation.x
+                        }
+                        else
+                        {
+                            translation.x = translation.y
+                        }
+                        layer?.path = ShapePath().oval(startPoint: startPoint, translationPoint: translation).cgPath
             
-            case Shapes.square:
-                var translation = sender.translation(in: sender.view)
-                if(translation.x < translation.y )
-                {
-                    translation.y = translation.x
-                }
-                else
-                {
-                    translation.x = translation.y
-                }
-                layer?.path = ShapePath().rectangle(startPoint: startPoint, translationPoint: translation).cgPath
+                    case Shapes.square:
+                        fill = false
+                        layer?.fillColor = UIColor.transparentFully.cgColor
+                        var translation = sender.translation(in: sender.view)
+                        if(translation.x < translation.y )
+                        {
+                            translation.y = translation.x
+                        }
+                        else
+                        {
+                            translation.x = translation.y
+                        }
+                        layer?.path = ShapePath().rectangle(startPoint: startPoint, translationPoint: translation).cgPath
             
-            case Shapes.dash:
-                endPoint = sender.location(in: sender.view)
+                    case Shapes.dash:
+                        endPoint = sender.location(in: sender.view)
                 
-                let arr :NSArray = NSArray(array: [10,5])
+                        let arr :NSArray = NSArray(array: [10,5])
                 
-                layer?.lineDashPattern = arr as? [NSNumber]
-                layer?.path = ShapePath().line(startPoint: startPoint, endPoint: endPoint).cgPath
+                        layer?.lineDashPattern = arr as? [NSNumber]
+                        layer?.path = ShapePath().line(startPoint: startPoint, endPoint: endPoint).cgPath
                 
                 
-            /*default:
-                let translation = sender.translation(in: sender.view)
-                layer?.path = ShapePath().oval(startPoint: startPoint, translationPoint: translation).cgPath
-              */
-            }
+                }
             }
             else
             {

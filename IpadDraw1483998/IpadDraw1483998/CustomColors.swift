@@ -30,6 +30,11 @@ extension UIColor
         return UIColor (red: 255/255, green: 0, blue: 255/255, alpha: 0.5)
     }
     
+    class var transparentFully: UIColor
+    {
+        return UIColor (red: 255/255, green: 255/255, blue: 255/255, alpha: 0)
+    }
+    
     class var veryDarkGreen: UIColor
     {
         return UIColor.rgb(fromHex: 0x008110)
