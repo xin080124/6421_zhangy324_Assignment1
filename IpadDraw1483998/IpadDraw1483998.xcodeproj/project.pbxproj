@@ -25,6 +25,9 @@
 		8701E7921F49A26900456D0A /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = 8701E78E1F49A26900456D0A /* save.png */; };
 		8701E7971F49A52800456D0A /* BlueButton0.png in Resources */ = {isa = PBXBuildFile; fileRef = 8701E7951F49A52800456D0A /* BlueButton0.png */; };
 		8701E7981F49A52800456D0A /* BlueButton1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8701E7961F49A52800456D0A /* BlueButton1.png */; };
+		8701E79C1F52BCD600456D0A /* circButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 8701E7991F52BCD600456D0A /* circButton.png */; };
+		8701E79D1F52BCD600456D0A /* dashButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 8701E79A1F52BCD600456D0A /* dashButton.png */; };
+		8701E79E1F52BCD600456D0A /* RectButton0.png in Resources */ = {isa = PBXBuildFile; fileRef = 8701E79B1F52BCD600456D0A /* RectButton0.png */; };
 		87B0E1781F45914200434411 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0E1771F45914200434411 /* AppDelegate.swift */; };
 		87B0E17A1F45914200434411 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0E1791F45914200434411 /* ViewController.swift */; };
 		87B0E17D1F45914200434411 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87B0E17B1F45914200434411 /* Main.storyboard */; };
@@ -73,6 +76,9 @@
 		8701E78E1F49A26900456D0A /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
 		8701E7951F49A52800456D0A /* BlueButton0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueButton0.png; sourceTree = SOURCE_ROOT; };
 		8701E7961F49A52800456D0A /* BlueButton1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueButton1.png; sourceTree = SOURCE_ROOT; };
+		8701E7991F52BCD600456D0A /* circButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circButton.png; sourceTree = "<group>"; };
+		8701E79A1F52BCD600456D0A /* dashButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dashButton.png; sourceTree = "<group>"; };
+		8701E79B1F52BCD600456D0A /* RectButton0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RectButton0.png; sourceTree = "<group>"; };
 		87B0E1741F45914200434411 /* IpadDraw1483998.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IpadDraw1483998.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87B0E1771F45914200434411 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87B0E1791F45914200434411 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +125,9 @@
 		8701E7721F48EAE900456D0A /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				8701E7991F52BCD600456D0A /* circButton.png */,
+				8701E79A1F52BCD600456D0A /* dashButton.png */,
+				8701E79B1F52BCD600456D0A /* RectButton0.png */,
 				8701E78B1F49A26900456D0A /* eraser.png */,
 				8701E78C1F49A26900456D0A /* free.png */,
 				8701E78D1F49A26900456D0A /* lines.png */,
@@ -308,6 +317,7 @@
 				8701E7971F49A52800456D0A /* BlueButton0.png in Resources */,
 				87B0E1821F45914200434411 /* LaunchScreen.storyboard in Resources */,
 				8701E77E1F48F70000456D0A /* RedButton1.png in Resources */,
+				8701E79D1F52BCD600456D0A /* dashButton.png in Resources */,
 				8701E7881F49A1F000456D0A /* purpleButton1.png in Resources */,
 				87B0E17F1F45914200434411 /* Assets.xcassets in Resources */,
 				8701E7891F49A1F000456D0A /* rect.png in Resources */,
@@ -322,7 +332,9 @@
 				8701E77F1F48F70000456D0A /* YellowButton0.png in Resources */,
 				8701E7741F48EE3000456D0A /* RedButton.png in Resources */,
 				8701E77C1F48F70000456D0A /* GreenButton1.png in Resources */,
+				8701E79E1F52BCD600456D0A /* RectButton0.png in Resources */,
 				8701E78F1F49A26900456D0A /* eraser.png in Resources */,
+				8701E79C1F52BCD600456D0A /* circButton.png in Resources */,
 				8701E7981F49A52800456D0A /* BlueButton1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

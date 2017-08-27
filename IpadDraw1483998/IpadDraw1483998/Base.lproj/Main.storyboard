@@ -158,35 +158,35 @@
                                     <action selector="myEraser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ovd-hi-2qL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMi-7A-iwd">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMi-7A-iwd">
                                 <rect key="frame" x="26" y="380" width="40" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="0gR-Ek-oOh"/>
+                                    <constraint firstAttribute="width" constant="40" id="0gR-Ek-oOh" userLabel="width = 45"/>
                                     <constraint firstAttribute="height" constant="30" id="Q4r-Za-Bs4"/>
                                 </constraints>
-                                <state key="normal" title="circ"/>
+                                <state key="normal" title="circ" image="circButton.png"/>
                                 <connections>
                                     <action selector="shapeDidSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aam-ua-QWQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6n-ze-pUZ">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6n-ze-pUZ">
                                 <rect key="frame" x="66" y="380" width="40" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="d6B-9y-CBr"/>
+                                    <constraint firstAttribute="width" constant="40" id="d6B-9y-CBr" userLabel="width = 45"/>
                                     <constraint firstAttribute="height" constant="30" id="zyj-yy-yli"/>
                                 </constraints>
-                                <state key="normal" title="squa"/>
+                                <state key="normal" title="squa" image="RectButton0.png"/>
                                 <connections>
                                     <action selector="shapeDidSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sCC-XY-tiM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hN-al-jNd">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hN-al-jNd">
                                 <rect key="frame" x="106" y="380" width="40" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Mpq-Fv-B0R"/>
-                                    <constraint firstAttribute="width" constant="40" id="QKH-Bh-4lx"/>
+                                    <constraint firstAttribute="width" constant="40" id="QKH-Bh-4lx" userLabel="width = 45"/>
                                 </constraints>
-                                <state key="normal" title="dash"/>
+                                <state key="normal" title="dash" image="dashButton.png"/>
                                 <connections>
                                     <action selector="shapeDidSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P0e-wr-j2I"/>
                                 </connections>
@@ -252,8 +252,11 @@
     <resources>
         <image name="BlueButton0.png" width="500" height="300"/>
         <image name="GreenButton0.png" width="500" height="300"/>
+        <image name="RectButton0.png" width="500" height="300"/>
         <image name="RedButton0.png" width="500" height="300"/>
         <image name="YellowButton0.png" width="500" height="300"/>
+        <image name="circButton.png" width="500" height="300"/>
+        <image name="dashButton.png" width="500" height="300"/>
         <image name="eraser.png" width="500" height="300"/>
         <image name="free.png" width="500" height="300"/>
         <image name="lines.png" width="500" height="300"/>
