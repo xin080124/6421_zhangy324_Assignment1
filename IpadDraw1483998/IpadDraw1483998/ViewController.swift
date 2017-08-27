@@ -26,31 +26,15 @@ class ViewController: UIViewController
     let colorArray = [padColor.red, padColor.yellow, padColor.green, padColor.blue, padColor.purple, padColor.eras]
     
     var erasing:Bool = false
-    var fill:Bool = true
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib
     }
     
+    //To be completed,used to save the current view to album
     func saveDrawView()
     {
-        /*
-        UIGraphicsBeginImageContextWithOptions(DrawRegion.layer.frame.size, false, 1)
-        DrawRegion.layer.render(in:UIGraphicsGetCurrentContext()!)
-        let viewImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        let data = UIImagePNGRepresentation(viewImage)
-        let documentsDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as! String
-        */
-        
-        //let writePath = documentsDir.stringByAppendingPathComponent("myimage.png")
-        //data.writeToFile(writePath, atomically:true)
-        
-        //UIImageWriteToSavedPhotosAlbum(self.takeImage(), self, nil, nil);
-        
-        //UIImageWriteToSavedPhotosAlbum(self.takeImage(), self, "image:didFinishSavingWithError:contextInfo:", nil)
     }
 
     func takeImage() -> UIImage {
@@ -58,10 +42,6 @@ class ViewController: UIViewController
         DrawRegion.backgroundColor?.setFill()
         UIRectFill(DrawRegion.bounds)
         
-            //DrawRegion.bounds
-        //self.storyboard.
-        
-        //self.DrawRegion.drawInRect(self.bounds)
         
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -72,27 +52,29 @@ class ViewController: UIViewController
     @IBAction func saveImage(_ sender: UIButton) {
        //self.saveDrawView()
     }
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    //when click the "eraser" button
     @IBAction func myEraser(_ sender: UIButton) {
-        //selectedStrokeColor = colorArray[sender.tag]
         erasing = true
-        //layer?.strokeColor = UIColor.white.cgColor
-        //selectedShape = Shapes.freeStyle
     }
     
+    //when click the "Trash" button
     @IBAction func DeleteDraw(_ sender: UIButton) {
-        /*let alertController = UIAlertController(title: "Demo",message:"Delete all the shapes?",preferredStyle: .actionSheet)
-        */
+        
+        //show a warning box to reminder user
         let alertController = UIAlertController(title: "Warning", message: "Sure to delete?", preferredStyle: UIAlertControllerStyle.alert)
         
+        //put the Cancel action at the right side
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil)
-       
-        let okAction = UIAlertAction(title: "Delete all", style: UIAlertActionStyle.cancel) {(UIAlertAction)->Void in self.DrawRegion.layer.sublayers = nil}
+        
+        //put the Confirm action at the left side
+    let okAction = UIAlertAction(title: "Delete all", style: UIAlertActionStyle.cancel) {(UIAlertAction)->Void in self.DrawRegion.layer.sublayers = nil}
         
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
@@ -100,6 +82,7 @@ class ViewController: UIViewController
         self.present(alertController, animated: true, completion: nil)
         
     }
+   
     
     @IBAction func handlePan(_ sender: UIPanGestureRecognizer)
     {
@@ -112,14 +95,13 @@ class ViewController: UIViewController
             layer?.lineWidth = 1.0
             layer?.strokeColor = UIColor.blue.cgColor
             layer?.lineCap = lineCap
-            //self.view.layer.addSublayer(layer!)
+            
             self.DrawRegion.layer.addSublayer(layer!)
         }
         else if sender.state == .changed
         {
             if(erasing == false)
             {
-                fill = true
                 switch selectedFillColor
                 {
                     case padColor.red:
@@ -178,7 +160,6 @@ class ViewController: UIViewController
                         layer?.path = customPath?.cgPath
  
                     case Shapes.circle:
-                        fill = false
                         layer?.fillColor = UIColor.transparentFully.cgColor
                         var translation = sender.translation(in: sender.view)
                         if(translation.x < translation.y )
@@ -192,7 +173,6 @@ class ViewController: UIViewController
                         layer?.path = ShapePath().oval(startPoint: startPoint, translationPoint: translation).cgPath
             
                     case Shapes.square:
-                        fill = false
                         layer?.fillColor = UIColor.transparentFully.cgColor
                         var translation = sender.translation(in: sender.view)
                         if(translation.x < translation.y )
@@ -230,6 +210,7 @@ class ViewController: UIViewController
         }
     }
     
+    //select a color
     @IBAction func colorDidSelect(_ sender: UIButton) {
         erasing = false
         
@@ -237,6 +218,7 @@ class ViewController: UIViewController
         selectedStrokeColor = colorArray[sender.tag]
     }
     
+    //select a shape
     @IBAction func shapeDidSelect(_ sender: UIButton)
     {
         erasing = false

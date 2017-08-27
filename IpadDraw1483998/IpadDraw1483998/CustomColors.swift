@@ -1,9 +1,6 @@
 //
 //  CustomColors.swift
-//  PanGesture
-//
-//  Created by Christine Jiang on 16/08/17.
-//  Copyright © 2017 Christine Jiang. All rights reserved.
+//  IpadDraw1483998
 //
 
 import UIKit
@@ -30,6 +27,7 @@ extension UIColor
         return UIColor (red: 255/255, green: 0, blue: 255/255, alpha: 0.5)
     }
     
+    //completely transparent used for draw outline of circle and square
     class var transparentFully: UIColor
     {
         return UIColor (red: 255/255, green: 255/255, blue: 255/255, alpha: 0)
