@@ -8,7 +8,8 @@ public class mySocket {
 		 
     	//question 1
     	
-    	try{
+    	/*
+		try{
 		    InetAddress[] addresses = InetAddress.getAllByName(
 		                             "www.whitehouse.gov");
 		    
@@ -22,6 +23,10 @@ public class mySocket {
 	    {
 	        System.out.println("Could not find www.whitehouse.gov");
 	    }
+	    */
+		
+		//thread example
+		//...
 	  }
 
 	

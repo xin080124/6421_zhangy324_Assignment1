@@ -12,7 +12,7 @@ public class MyClient {
 		// TODO Auto-generated method stub
         int number,temp;
         String recvStr;
-        Socket s = new Socket("127.0.0.1",1342);
+        Socket s = new Socket("127.0.0.1",5000);
         Scanner sc1 = new Scanner(s.getInputStream());
         
         PrintStream p = new PrintStream(s.getOutputStream());

@@ -12,7 +12,7 @@ public class MyServer {
 		
 		int number,temp;
 		String sendStr;
-        ServerSocket s1 = new ServerSocket(1342);
+        ServerSocket s1 = new ServerSocket(5000);
         Socket ss = s1.accept();
 		
 		Scanner sc = new Scanner(ss.getInputStream());
