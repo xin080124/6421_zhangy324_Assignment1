@@ -2,54 +2,30 @@
 //import java.net.ServerSocket;
 
 import java.net.*;
+import java.util.Scanner;
 import java.io.*;
 
 public class MyServer {
 
-	public static void main(String[] args)
-	    {
-	        ServerSocket server = null;
-	        try
-	        {
-	            server = new ServerSocket(5001);
-	        }
-	        catch(IOException e)
-	        {
-	            e.printStackTrace();
-	        }
-	
-	while(true)
-	{
-	    try
-	    {
-	        Socket socket = server.accept();
-	        
-	        InputStream is = socket.getInputStream();
-	        StringBuffer mesg = new StringBuffer();
-	        while(true)
-	        {
-	            int data = is.read();
-	            
-	            if(data == -1)
-	            {
-	                break;
-	            }
-	            else
-	            {
-	                mesg.append((char)data);
-	            }
-	        }
-	        System.out.println(mesg);
-	    }
-	    catch(IOException e)
-	    {
-	        e.printStackTrace();
-	    }
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		
+		int number,temp;
+		String sendStr;
+        ServerSocket s1 = new ServerSocket(1342);
+        Socket ss = s1.accept();
+		
+		Scanner sc = new Scanner(ss.getInputStream());
+        
+        sc.next();
+        sendStr = "Hi, there, got your message!";
+        
+        PrintStream p = new PrintStream(ss.getOutputStream());
+        
+        p.println(sendStr);
+        
 	}
-	
-	    }
-	
-	
+
 }
 
 

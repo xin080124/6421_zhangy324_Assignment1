@@ -7,16 +7,12 @@ public class NSLookup {
     	//question 1
     	
     	try{
-		    /*InetAddress[] addresses = InetAddress.getAllByName(
-		                             "www.whitehouse.gov");
-		    */
+		    
     		InetAddress[] addresses = InetAddress.getAllByName(args[0]);
-		    /*for (int i = 0; i < addresses.length; i++) 
-		    {
-		      System.out.println(i);
-		      System.out.println(addresses[i]);
-		    }
-		    */
+		    
+    		System.out.println("Host name: " + args[0]);
+    		System.out.println("IP address: " + addresses[0]);
+    		
 	    }
 	    catch (UnknownHostException e) 
 	    {
