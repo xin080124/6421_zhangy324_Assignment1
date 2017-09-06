@@ -26,8 +26,6 @@ class NewFrame extends JFrame{
     private JRadioButton radioThree = new JRadioButton();
     private JRadioButton radioFour = new JRadioButton();
     
-    
-    
     public NewFrame(){
 
         super();
@@ -40,15 +38,36 @@ class NewFrame extends JFrame{
         
         
         //panel.add(radioOne);
-        
+        //this.setRadio();
         this.add(this.getPanel(),null);
         
+        JRadioButton jb1 = new JRadioButton("spring");
+        JRadioButton jb2 = new JRadioButton("summer");
+        JRadioButton jb3 = new JRadioButton("autumn");
+        JRadioButton jb4 = new JRadioButton("winter");
+
+        
+        jb1.setBounds(500,50,100,30);
+        jb2.setBounds(500,100,100,30);
+        jb3.setBounds(500,150,100,30);
+        jb4.setBounds(500,200,100,30);
+
+      ButtonGroup bg = new ButtonGroup();
+        bg.add(jb1);
+        bg.add(jb2);
+        bg.add(jb3);
+        bg.add(jb4);
+        
+        this.add(jb1);
+        this.add(jb2);
+        this.add(jb3);
+        this.add(jb4);
     }
     
     private JPanel getPanel(){
     	if(panel==null){
     		panel = new JPanel();
-    		panel.setBounds(300,10,100,200);
+    		panel.setBounds(300,10,100,100);
     		
     		 //panel.setBounds(10, 10, 300, 200);
     	        panel.setBackground(Color.BLACK);
@@ -56,7 +75,20 @@ class NewFrame extends JFrame{
     	        panel.setEnabled(true);
     	        panel.setLayout(new GridLayout(1,4));
     	//setContentPane(panel)；
-    		
+    	        /*radioOne.setText("spring");
+    	        radioOne.setEnabled(true);
+    	        radioTwo.setText("summer");
+    	        radioTwo.setEnabled(true);
+    	        radioThree.setText("autumn");
+    	        radioThree.setEnabled(true);
+    	        radioFour.setText("winter");
+    	        radioFour.setEnabled(true);
+    	        //this.setRadio();
+    	        panel.add(radioOne);
+    	        panel.add(radioTwo);
+    	        panel.add(radioThree);
+    	        panel.add(radioFour);
+    		*/
     		}
     	return panel;
     }
@@ -89,6 +121,7 @@ class NewFrame extends JFrame{
         if(text1==null){
     	    text1 = new JTextField();
     	    text1.setBounds(96,49,400,300);
+    	    text1.setText("hehe");
     	}
     	return text1;
     }
