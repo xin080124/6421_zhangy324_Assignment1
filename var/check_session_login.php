@@ -2,7 +2,7 @@
 @mysql_connect("localhost","root",'')
 or die("data base connected failed");
 @mysql_select_db("yx")
-or die("选择数据库失败");
+or die("data base selected failed");
 //获取输入的信息
 $username = $_POST['username'];
 $passcode = $_POST['passcode'];
