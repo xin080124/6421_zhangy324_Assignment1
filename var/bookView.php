@@ -44,7 +44,7 @@ if(isset($_POST["MSG"]))
 	{
 		//$sql = "INSERT INTO student_books_notes (note_id, person_id, book_id, value) VALUES (NULL, $studentId, $bookID, $MSG)";
 		
-		$sql = "INSERT INTO student_books_notes (note_id, person_id, book_id, value) VALUES (NULL, 8, 71, \"haha1005\")";
+		$sql = "INSERT INTO student_books_notes (note_id, person_id, book_id, value) VALUES (NULL, 8, 71, \"".$MSG."\")";
 		
         echo $sql;		
 		@mysql_query($sql)or die(" SQL failed");
