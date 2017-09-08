@@ -24,10 +24,10 @@ $courseID = 0;
 //echo $row[1];
 while($row = mysql_fetch_array($query))
 {
-	echo "</br></br>a new row</br>";
-	echo $row['person_id'];
-	echo "</br>";
-	echo $row['course_id'];
+	//echo "</br></br>a new row</br>";
+	//echo $row['person_id'];
+	echo "</br></br>";
+	//echo $row['course_id'];
     $courseID = $row['course_id'];
 
 	$subQuery = @mysql_query("select course_name from courses where course_id = $courseID ")or die("SQL failed");
@@ -35,9 +35,27 @@ while($row = mysql_fetch_array($query))
 	$res = mysql_fetch_array($subQuery);
 	echo "</br>";
 	echo $res['course_name'];
+	
+	showCourseBooks(8,$courseID);
+	
 }
 
+function showCourseBooks($student_id,$course_id)
+{
+	echo "</br>enter showCourseBooks";
+    // $query = @mysql_query("select book_id from student_courses_books where student_id = 8 and course_id = 7 ")or die(" SQL failed");
+	
+	$query = @mysql_query("select * from student_courses_books ")or die(" SQL failed");
+	
 
+	if($row = mysql_fetch_array($query))
+	{
+		echo "</br>";
+		echo $row[0];
+		echo "</br>";
+	}
+	
+}
 	//$result = mysql_query("SELECT *person_courses");
 
 //while($row = mysql_fetch_array($query))
