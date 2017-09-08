@@ -7,7 +7,7 @@ or die("data base connected failed");
 @mysql_select_db("yx")
 or die("data base selected failed");
 
-echo "<textarea  name=\"content\" cols=\"60\" rows=\"9\" ></textarea>";
+$studentId = $_SESSION['userID'];
 
 if(isset($_GET["name"]))
 {
@@ -25,7 +25,37 @@ $book=$_POST["name"];
 if(isset($_POST["id"]))
 $bookID = $_POST['id'];
 
-$studentId = $_SESSION['userID'];
+// $sqltest = "INSERT INTO student_books_notes (note_id, person_id, book_id, value) VALUES (NULL, 8, 71, \"haha1002\")";
+
+// echo "</br>sql test    ";
+// echo $sqltest;
+// echo "</br>";
+// @mysql_query($sqltest)or die(" SQL failed");
+
+
+if(isset($_POST["MSG"]))
+{
+    $MSG = $_POST['MSG'];
+	echo "</br>";
+	echo "</br>";
+    echo $MSG;
+	echo "</br>";
+	if($MSG != "")
+	{
+		//$sql = "INSERT INTO student_books_notes (note_id, person_id, book_id, value) VALUES (NULL, $studentId, $bookID, $MSG)";
+		
+		$sql = "INSERT INTO student_books_notes (note_id, person_id, book_id, value) VALUES (NULL, 8, 71, \"haha1005\")";
+		
+        echo $sql;		
+		@mysql_query($sql)or die(" SQL failed");
+		// $successÂ =Â mysql_affected_rows();
+		// if($successÂ ===Â -1)
+		// echo"fail".mysql_error();
+		// else
+		// echo"success";
+	}
+}
+
 
 echo $book;
 echo "</br>";
@@ -50,16 +80,16 @@ function showBookNotes($student_id,$book_id)
 	{
 		echo "</br>";
 		echo $row['value'];
-		
+		echo "</br>";
 		
 	}
-
+	
 }
 echo "wwwwwwwwwwwwwwwwwwwwwwwwww";
 echo "</br>";
 echo "<form action=\"test.php\" target=\"iframe\" method=\"post\">
 <input type=\"text\" name=\"password\" /><br/> 
-<textarea  name=\"content\" cols=\"60\" rows=\"9\" ></textarea><br/> 
+<textarea  name=\"content\" cols=\"60\" rows=\"9\" ></textarea><br/> 
 <input type=\"submit\" value=\"log in\" />
 </form>";
 
