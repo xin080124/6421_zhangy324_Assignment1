@@ -30,6 +30,11 @@ while($row = mysql_fetch_array($query))
 	echo $row['course_id'];
     $courseID = $row['course_id'];
 
+	$subQuery = @mysql_query("select course_name from courses where course_id = $courseID ")or die("SQL failed");
+	
+	$res = mysql_fetch_array($subQuery);
+	echo "</br>";
+	echo $res['course_name'];
 }
 
 
