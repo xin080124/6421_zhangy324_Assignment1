@@ -19,8 +19,20 @@ echo "db success</br></br>";
 echo $_SESSION['username'];
 
 echo "</br></br>";
-if($row = mysql_fetch_array($query))
-echo $row[1];
+$courseID = 0;
+//if($row = mysql_fetch_array($query))
+//echo $row[1];
+while($row = mysql_fetch_array($query))
+{
+	echo "</br></br>a new row</br>";
+	echo $row['person_id'];
+	echo "</br>";
+	echo $row['course_id'];
+    $courseID = $row['course_id'];
+
+}
+
+
 	//$result = mysql_query("SELECT *person_courses");
 
 //while($row = mysql_fetch_array($query))
