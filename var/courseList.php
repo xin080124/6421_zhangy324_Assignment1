@@ -63,15 +63,16 @@ function showCourseBooks($student_id,$course_id)
 	    $res = mysql_fetch_array($subQuery);
 	    //echo "</br>";
 	    echo $res['book_name'];
+		$bookName = $res['book_name'];
 		echo "</br>";
 		
 		//$linkStr = "<a href='bookView.php'>".$res['book_name']."method=\"post\" \"name\" = \"book\"";
 		
 		//$linkStr = "<a href='bookView.php' method =\"post\" name = \"book\" value=\"10\">".$res['book_name'];
 		
-		$linkStr = "<a href='bookView.php?id=".$bookID."'>".$res['book_name'];
+		$linkStr = "<a href='bookView.php?id=".$bookID."&name=".$bookName." '>".$res['book_name'];
 		
-		$example = "<a href='bookView.php?id=19'>click me to jump</a>";
+		$example = "<a href='bookView.php?id=19 '>click me to jump</a>";
 		echo $example;
 		echo "</br>";
 		echo $linkStr."</br>";
