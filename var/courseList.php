@@ -18,6 +18,8 @@ $query = @mysql_query("select person_id, course_id from person_courses where per
 echo "db success</br></br>";
 echo $_SESSION['username'];
 
+$studentID = $_SESSION['userID'];
+
 echo "</br></br>";
 $courseID = 0;
 //if($row = mysql_fetch_array($query))
@@ -36,29 +38,35 @@ while($row = mysql_fetch_array($query))
 	echo "</br>";
 	echo $res['course_name'];
 	
-	showCourseBooks(8,$courseID);
+	showCourseBooks($studentID,$courseID);
 	
-}
+}	
 
 function showCourseBooks($student_id,$course_id)
 {
 	echo "</br>enter showCourseBooks";
+	//echo "</br>$student_id";
+	//echo "</br>$course_id";
     // $query = @mysql_query("select book_id from student_courses_books where student_id = 8 and course_id = 7 ")or die(" SQL failed");
 	
-	$query = @mysql_query("select * from student_courses_books ")or die(" SQL failed");
-	
+	$query = @mysql_query("select book_id from student_courses_books where person_id = $student_id and course_id = $course_id")or die(" SQL failed");
 
-	if($row = mysql_fetch_array($query))
+	while($row = mysql_fetch_array($query))
 	{
 		echo "</br>";
-		echo $row[0];
+		//echo $row['book_id'];
+		
+		$bookID = $row['book_id'];
+		
+		$subQuery = @mysql_query("select book_name from books where book_id = $bookID ")or die("SQL failed");
+	
+	    $res = mysql_fetch_array($subQuery);
+	    //echo "</br>";
+	    echo $res['book_name'];
+		
 		echo "</br>";
 	}
 	
 }
-	//$result = mysql_query("SELECT *person_courses");
-
-//while($row = mysql_fetch_array($query))
-//{}
 
 ?>
