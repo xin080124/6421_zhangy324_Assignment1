@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IpadDraw1483998/ViewController.swift"
-            timestampString = "526762857.461414"
+            timestampString = "526775806.266076"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "DeleteDraw(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -38,79 +38,95 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IpadDraw1483998/ViewController.swift"
-            timestampString = "526771082.327682"
+            timestampString = "526775806.266076"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "ViewController"
             landmarkType = "3">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "IpadDraw1483998.ViewController.DrawRegion.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIView&gt;"
                   moduleName = "IpadDraw1483998"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nancyzhang/Documents/MyGitServer/6421_zhangy324_Assignment1/IpadDraw1483998/IpadDraw1483998/ViewController.swift"
-                  timestampString = "526771082.748591"
+                  timestampString = "526775807.357194"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
                   offsetFromSymbolStart = "27">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "IpadDraw1483998.ViewController.DrawRegion.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIView&gt;"
                   moduleName = "IpadDraw1483998"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nancyzhang/Documents/MyGitServer/6421_zhangy324_Assignment1/IpadDraw1483998/IpadDraw1483998/ViewController.swift"
-                  timestampString = "526771082.750696"
+                  timestampString = "526775807.359281"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
                   offsetFromSymbolStart = "42">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "IpadDraw1483998.ViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; IpadDraw1483998.ViewController"
                   moduleName = "IpadDraw1483998"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nancyzhang/Documents/MyGitServer/6421_zhangy324_Assignment1/IpadDraw1483998/IpadDraw1483998/ViewController.swift"
-                  timestampString = "526771082.752758"
+                  timestampString = "526775807.361279"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
-                  offsetFromSymbolStart = "72">
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "197">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "IpadDraw1483998.ViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;IpadDraw1483998.ViewController&gt;"
                   moduleName = "IpadDraw1483998"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nancyzhang/Documents/MyGitServer/6421_zhangy324_Assignment1/IpadDraw1483998/IpadDraw1483998/ViewController.swift"
-                  timestampString = "526771082.756744"
+                  timestampString = "526775807.363238"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
-                  offsetFromSymbolStart = "31">
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "118">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IpadDraw1483998/SettingViewController.swift"
+            timestampString = "526775363.131499"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "enter(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

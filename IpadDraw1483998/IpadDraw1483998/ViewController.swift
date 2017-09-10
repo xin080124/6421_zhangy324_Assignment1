@@ -9,6 +9,10 @@ import UIKit
 class ViewController: UIViewController
 {
 
+    @IBOutlet weak var label: UILabel!
+    
+    var mystring = String()
+    
     //define a UIView to draw all the shapes on.
     @IBOutlet weak var DrawRegion: UIView!
     
@@ -30,6 +34,8 @@ class ViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        label.text = mystring
     }
     
     //To be completed,used to save the current view to album

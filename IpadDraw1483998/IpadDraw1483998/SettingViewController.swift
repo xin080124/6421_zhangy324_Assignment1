@@ -10,9 +10,23 @@ import UIKit
 
 class SettingViewController: UIViewController {
 
+    @IBOutlet weak var textField: UITextField!
+    
+    @IBAction func enter(_ sender: Any) {
+        if textField.text != ""
+        {
+            performSegue(withIdentifier: "segue", sender:self)
+        }
+    }
+    
     @IBAction func backBtnClicked(_ sender: Any) {
       self.dismiss(animated: false)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let viewCtrl = segue.destination as! ViewController
+        viewCtrl.mystring = textField.text!
     }
     
     override func viewDidLoad() {
