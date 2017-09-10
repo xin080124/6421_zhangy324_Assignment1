@@ -191,6 +191,17 @@
                                     <action selector="shapeDidSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P0e-wr-j2I"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ar-FG-XTx">
+                                <rect key="frame" x="146" y="380" width="45" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="bxm-EO-NdS"/>
+                                    <constraint firstAttribute="width" constant="45" id="fAU-kc-Mqp"/>
+                                </constraints>
+                                <state key="normal" title="sett"/>
+                                <connections>
+                                    <segue destination="D3r-zf-vPs" kind="presentation" id="UBE-C5-hxd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -207,7 +218,9 @@
                             <constraint firstItem="0P0-au-4gL" firstAttribute="top" secondItem="2hN-al-jNd" secondAttribute="bottom" id="CNj-gc-sXM"/>
                             <constraint firstItem="h80-aX-AUz" firstAttribute="leading" secondItem="txF-Xm-IM2" secondAttribute="trailing" id="D34-yj-Qx4"/>
                             <constraint firstItem="kML-aj-bYv" firstAttribute="top" secondItem="0P0-au-4gL" secondAttribute="bottom" id="DBz-S5-Liz"/>
+                            <constraint firstItem="2Ar-FG-XTx" firstAttribute="leading" secondItem="2hN-al-jNd" secondAttribute="trailing" id="Emg-GE-IlR"/>
                             <constraint firstItem="0P0-au-4gL" firstAttribute="top" secondItem="V6n-ze-pUZ" secondAttribute="bottom" id="G0c-Or-L3A"/>
+                            <constraint firstItem="zAX-dl-LR8" firstAttribute="top" secondItem="2Ar-FG-XTx" secondAttribute="bottom" id="HRm-8K-ony"/>
                             <constraint firstItem="R8S-GG-QO1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="IaA-ue-4DA"/>
                             <constraint firstItem="i88-Aq-Pof" firstAttribute="top" secondItem="cQn-BG-Tru" secondAttribute="bottom" id="K6w-g2-2xJ"/>
                             <constraint firstItem="2hN-al-jNd" firstAttribute="leading" secondItem="V6n-ze-pUZ" secondAttribute="trailing" id="MLL-ey-0iN"/>
@@ -247,6 +260,38 @@
                 </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1402" y="-736"/>
+        </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="mz1-bI-Uyh">
+            <objects>
+                <viewController id="D3r-zf-vPs" customClass="SettingViewController" customModule="IpadDraw1483998" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xOP-U1-uxL"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nvr-V1-muK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aNg-EA-bYm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="4Ym-jp-dQH">
+                                <rect key="frame" x="101" y="122" width="118" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCE-Xj-Kg8">
+                                <rect key="frame" x="137" y="422" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="return"/>
+                                <connections>
+                                    <action selector="backBtnClicked:" destination="D3r-zf-vPs" eventType="touchUpInside" id="w41-5G-c04"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gaf-zk-2d0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-722" y="-734"/>
         </scene>
     </scenes>
     <resources>

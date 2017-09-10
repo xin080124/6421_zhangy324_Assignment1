@@ -35,6 +35,7 @@ class ViewController: UIViewController
     //To be completed,used to save the current view to album
     func saveDrawView()
     {
+        
     }
 
     func takeImage() -> UIImage {
@@ -51,6 +52,14 @@ class ViewController: UIViewController
     
     @IBAction func saveImage(_ sender: UIButton) {
        //self.saveDrawView()
+    
+        let renderer = UIGraphicsImageRenderer(size: DrawRegion.bounds.size)
+        let image = renderer.image { ctx in
+            DrawRegion.drawHierarchy(in: DrawRegion.bounds, afterScreenUpdates: true)
+        }
+        
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+
     }
     
     override func didReceiveMemoryWarning()
