@@ -40,6 +40,8 @@
 		87B0E1A81F4595D900434411 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0E1A51F4595D900434411 /* CustomColors.swift */; };
 		87B0E1A91F4595D900434411 /* ShapePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0E1A61F4595D900434411 /* ShapePath.swift */; };
 		87B0E1AA1F4595D900434411 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0E1A71F4595D900434411 /* Shapes.swift */; };
+		87B7CB831F6611F0000750EE /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 87B7CB811F6611F0000750EE /* Model.xcdatamodeld */; };
+		87B7CB851F66221F000750EE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B7CB841F66221F000750EE /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,8 @@
 		87B0E1A51F4595D900434411 /* CustomColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		87B0E1A61F4595D900434411 /* ShapePath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapePath.swift; sourceTree = "<group>"; };
 		87B0E1A71F4595D900434411 /* Shapes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		87B7CB821F6611F0000750EE /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		87B7CB841F66221F000750EE /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +166,7 @@
 				87B0E18B1F45914200434411 /* IpadDraw1483998Tests */,
 				87B0E1961F45914200434411 /* IpadDraw1483998UITests */,
 				87B0E1751F45914200434411 /* Products */,
+				87B7CB7D1F660A36000750EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -187,8 +192,10 @@
 				87B0E17E1F45914200434411 /* Assets.xcassets */,
 				87B0E1801F45914200434411 /* LaunchScreen.storyboard */,
 				87B0E1831F45914200434411 /* Info.plist */,
+				87B7CB811F6611F0000750EE /* Model.xcdatamodeld */,
 				8701E7DC1F65D08C00456D0A /* tryNew.swift */,
 				8701E7DE1F65D11700456D0A /* SettingViewController.swift */,
+				87B7CB841F66221F000750EE /* CoreDataManager.swift */,
 			);
 			path = IpadDraw1483998;
 			sourceTree = "<group>";
@@ -209,6 +216,13 @@
 				87B0E1991F45914200434411 /* Info.plist */,
 			);
 			path = IpadDraw1483998UITests;
+			sourceTree = "<group>";
+		};
+		87B7CB7D1F660A36000750EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,8 +383,10 @@
 				87B0E1A91F4595D900434411 /* ShapePath.swift in Sources */,
 				87B0E17A1F45914200434411 /* ViewController.swift in Sources */,
 				87B0E1AA1F4595D900434411 /* Shapes.swift in Sources */,
+				87B7CB831F6611F0000750EE /* Model.xcdatamodeld in Sources */,
 				87B0E1A81F4595D900434411 /* CustomColors.swift in Sources */,
 				8701E7DD1F65D08C00456D0A /* tryNew.swift in Sources */,
+				87B7CB851F66221F000750EE /* CoreDataManager.swift in Sources */,
 				8701E7DF1F65D11700456D0A /* SettingViewController.swift in Sources */,
 				87B0E1781F45914200434411 /* AppDelegate.swift in Sources */,
 			);
@@ -642,6 +658,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		87B7CB811F6611F0000750EE /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				87B7CB821F6611F0000750EE /* Model.xcdatamodel */,
+			);
+			currentVersion = 87B7CB821F6611F0000750EE /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 87B0E16C1F45914200434411 /* Project object */;
 }

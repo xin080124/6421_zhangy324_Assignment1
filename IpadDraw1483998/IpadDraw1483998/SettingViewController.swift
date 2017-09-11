@@ -7,15 +7,65 @@
 //
 
 import UIKit
+import CoreData
 
 class SettingViewController: UIViewController {
 
+    var people: [NSManagedObject] = []
+    
     @IBOutlet weak var textField: UITextField!
     
     @IBAction func enter(_ sender: Any) {
         if textField.text != ""
         {
             performSegue(withIdentifier: "segue", sender:self)
+            
+            //let nameToSave = textField.text
+            //self.save(name:nameToSave!)
+        }
+        
+    }
+    
+    func save(name: String) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "Person",
+                                                in: managedContext)!
+    
+        print(entity)
+        
+        let person = NSManagedObject(entity: entity,
+                                     insertInto: managedContext)
+        
+        print(person)
+        
+        person.setValue(name, forKeyPath: "name")
+        
+        do {
+            try managedContext.save()
+            people.append(person)
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Person")
+        do {
+            people = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
     
