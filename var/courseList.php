@@ -36,7 +36,18 @@ while($row = mysql_fetch_array($query))
 	
 	$res = mysql_fetch_array($subQuery);
 	echo "</br>";
-	echo $res['course_name'];
+	//echo $res['course_name'];
+	
+	$courseName = $res['course_name'];
+	
+	echo $courseName;
+	echo "</br>";
+	
+	$example = "<a href='courseView.php?id=19 '>".$courseName."</a>";
+	echo $example;
+	
+	//$example = "<a href='bookView.php?id=19 '>click me to jump</a>";
+	//echo $example;
 	
 	showCourseBooks($studentID,$courseID);
 	
