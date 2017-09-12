@@ -26,9 +26,9 @@ $courseID = 0;
 //echo $row[1];
 while($row = mysql_fetch_array($query))
 {
-	//echo "</br></br>a new row</br>";
+	echo "</br></br>------------------a new course---------------------</br>";
 	//echo $row['person_id'];
-	echo "</br></br>";
+	echo "</br>";
 	//echo $row['course_id'];
     $courseID = $row['course_id'];
 
@@ -62,9 +62,9 @@ function showCourseBooks($student_id,$course_id)
 	
 	    $res = mysql_fetch_array($subQuery);
 	    //echo "</br>";
-	    echo $res['book_name'];
+	    //echo $res['book_name'];
 		$bookName = $res['book_name'];
-		echo "</br>";
+		//echo "</br>";
 		
 		//$linkStr = "<a href='bookView.php'>".$res['book_name']."method=\"post\" \"name\" = \"book\"";
 		
@@ -72,8 +72,8 @@ function showCourseBooks($student_id,$course_id)
 		
 		$linkStr = "<a href='bookView.php?id=".$bookID."&name=".$bookName." '>".$res['book_name'];
 		
-		$example = "<a href='bookView.php?id=19 '>click me to jump</a>";
-		echo $example;
+		//$example = "<a href='bookView.php?id=19 '>click me to jump</a>";
+		//echo $example;
 		echo "</br>";
 		echo $linkStr."</br>";
 	}
