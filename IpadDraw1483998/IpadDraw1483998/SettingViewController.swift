@@ -20,8 +20,8 @@ class SettingViewController: UIViewController {
         {
             performSegue(withIdentifier: "segue", sender:self)
             
-            //let nameToSave = textField.text
-            //self.save(name:nameToSave!)
+            let nameToSave = textField.text
+            self.save(name:nameToSave!)
         }
         
     }
