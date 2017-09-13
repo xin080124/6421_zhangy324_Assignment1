@@ -61,38 +61,38 @@ if(isset($_GET["dbid"]))
 }
 
 echo "</br>";
-echo "recommeded book list:";
+echo "recommeded book list:-------------------------------------------";
 
-showRecommendedBooks($courseID);
+showRecommendedBooks($courseID,$userId);
 echo "</br>";
 
-echo "other book list:";
+echo "other book list:--------------------------------------------------";
 echo "</br>";
 showNotRecommendedBooks($courseID);
 
-//echo "<p align=\"left\"> <input type=\"submit\" name=\"Submit\" value=\"Submit\" />  </p>";
-
-function showRecommendedBooks($course_id)
+function showRecommendedBooks($course_id,$user_id)
 {
 	$query = @mysql_query("select books.book_id,books.book_name from recommend_courses_books , books where 
-	books.book_id = recommend_courses_books.book_id")or die("SQL failed");
+	books.book_id = recommend_courses_books.book_id and
+	recommend_courses_books.person_id = $user_id and
+	recommend_courses_books.course_id = $course_id")or die("SQL failed");
 	while($row = mysql_fetch_array($query))
 	{
 		 $bookID = $row['book_id'];
 		 //$bookID = 3;
 		 $bookName = $row['book_name'];
 		 echo "</br>";
-		 echo $bookID;
-		 echo "</br>";
+		 //echo $bookID;
+		 //echo "</br>";
 		 echo $bookName;
-		 echo "</br>";
+		 //echo "</br>";
 		 //always pass the wrong bookID, so change type from button to link
 		 //echo "<p align=\"left\"> <form method=\"POST\" action=\"courseView.php?dbid=".$bookID."&dcid=".$course_id."\"><input type=\"submit\" name=\"Submit\" value=\"delete\" />  </p>";
 		 //echo "<p align=\"left\"> <form action=\"courseView.php?dbid=$bookID&dcid=$courseID><input type=\"button\" name=\"delete\" value=\"delete\" />  </p>";
-		 echo $bookID;
-		 echo "</br>";
 		 
-		 $linkStr = "<a href='courseView.php?dbid=".$bookID."&dcid=".$course_id." '>"."verify";
+		 //echo "</br>";
+		 
+		 $linkStr = "<a href='courseView.php?dbid=".$bookID."&dcid=".$course_id." '>"."verify</a>";
 		 echo "</br>";
 
 		echo $linkStr."</br>";
@@ -104,7 +104,8 @@ function showNotRecommendedBooks($course_id)
 	$query = @mysql_query("select books.book_id,books.book_name from books where 
 	books.book_id not in
 	(
-	    select book_id from recommend_courses_books
+	    select book_id from recommend_courses_books where
+		recommend_courses_books.course_id = $course_id
 	)
 	")or die("SQL failed");
 	while($row = mysql_fetch_array($query))
@@ -112,8 +113,8 @@ function showNotRecommendedBooks($course_id)
 		 $bookID = $row['book_id'];
 		 $bookName = $row['book_name'];
 		 echo "</br>";
-		 echo $bookID;
-		 echo "</br>";
+		 //echo $bookID;
+		 //echo "</br>";
 		 echo $bookName;
 		 echo "<p align=\"left\"> <form method=\"POST\" action=\"courseView.php?rbid=".$bookID."&rcid=".$course_id."\"><input type=\"submit\" name=\"Submit\" value=\"recommend\" />  </p>";
 		 
