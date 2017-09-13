@@ -37,10 +37,29 @@ if(isset($_GET["rbid"]))
     @mysql_query($sql)or die(" SQL failed");
 }
 
+if(isset($_GET["dcid"]))
+{
+	echo "from post";
+    $recommend_course=$_GET["dcid"];
+    $courseID = $_GET["dcid"];
+}
+if(isset($_GET["dbid"]))
+{
+    $bookID = $_GET['dbid'];
+	
+	//DELETE FROM runoob_tbl WHERE runoob_id=3;
+	
+	$sql = "DELETE FROM recommend_courses_books WHERE
+	person_id = $userId and course_id = $courseID and book_id = $bookID";
+
+	echo $sql;		
+    @mysql_query($sql)or die(" SQL failed");
+}
+
 echo "</br>";
 echo "recommeded book list:";
 
-showRecommendedBooks($courseID);
+showRecommendedBooks	($courseID);
 echo "</br>";
 
 echo "other book list:";
@@ -62,6 +81,7 @@ function showRecommendedBooks($course_id)
 		 echo "</br>";
 		 echo $bookName;
 		 echo "</br>";
+		 echo "<p align=\"left\"> <form method=\"POST\" action=\"courseView.php?dbid=".$bookID."&dcid=".$course_id."\"><input type=\"submit\" name=\"Submit\" value=\"delete\" />  </p>";
 	}	
 }
 
