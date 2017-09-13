@@ -22,14 +22,16 @@ if(isset($_GET["id"]))
     echo $courseID;
 }
 
+//after recommend action
 if(isset($_GET["rcid"]))
 {
-	echo "from post";
+	echo "from recommend action";
     $recommend_course=$_GET["rcid"];
     $courseID = $_GET["rcid"];
 }
 if(isset($_GET["rbid"]))
 {
+	echo "rrrrrrrrr";
     $bookID = $_GET['rbid'];
 	$sql = "INSERT INTO recommend_courses_books (person_id, course_id, book_id) VALUES (".$userId.", ".$courseID.", ".$bookID.")";
 
@@ -37,21 +39,23 @@ if(isset($_GET["rbid"]))
     @mysql_query($sql)or die(" SQL failed");
 }
 
+//after delete action
 if(isset($_GET["dcid"]))
 {
-	echo "from post";
+	echo "from delete action";
     $recommend_course=$_GET["dcid"];
     $courseID = $_GET["dcid"];
 }
 if(isset($_GET["dbid"]))
 {
+	echo "ddddddd";
     $bookID = $_GET['dbid'];
-	
-	//DELETE FROM runoob_tbl WHERE runoob_id=3;
-	
+	echo $bookID;
+	//$sql = "INSERT INTO recommend_courses_books (person_id, course_id, book_id) VALUES (".$userId.", ".$courseID.", ".$bookID.")";
+    echo "</br>";
 	$sql = "DELETE FROM recommend_courses_books WHERE
 	person_id = $userId and course_id = $courseID and book_id = $bookID";
-
+	
 	echo $sql;		
     @mysql_query($sql)or die(" SQL failed");
 }
@@ -59,7 +63,7 @@ if(isset($_GET["dbid"]))
 echo "</br>";
 echo "recommeded book list:";
 
-showRecommendedBooks	($courseID);
+showRecommendedBooks($courseID);
 echo "</br>";
 
 echo "other book list:";
@@ -75,13 +79,23 @@ function showRecommendedBooks($course_id)
 	while($row = mysql_fetch_array($query))
 	{
 		 $bookID = $row['book_id'];
+		 //$bookID = 3;
 		 $bookName = $row['book_name'];
 		 echo "</br>";
 		 echo $bookID;
 		 echo "</br>";
 		 echo $bookName;
 		 echo "</br>";
-		 echo "<p align=\"left\"> <form method=\"POST\" action=\"courseView.php?dbid=".$bookID."&dcid=".$course_id."\"><input type=\"submit\" name=\"Submit\" value=\"delete\" />  </p>";
+		 //always pass the wrong bookID, so change type from button to link
+		 //echo "<p align=\"left\"> <form method=\"POST\" action=\"courseView.php?dbid=".$bookID."&dcid=".$course_id."\"><input type=\"submit\" name=\"Submit\" value=\"delete\" />  </p>";
+		 //echo "<p align=\"left\"> <form action=\"courseView.php?dbid=$bookID&dcid=$courseID><input type=\"button\" name=\"delete\" value=\"delete\" />  </p>";
+		 echo $bookID;
+		 echo "</br>";
+		 
+		 $linkStr = "<a href='courseView.php?dbid=".$bookID."&dcid=".$course_id." '>"."verify";
+		 echo "</br>";
+
+		echo $linkStr."</br>";
 	}	
 }
 
