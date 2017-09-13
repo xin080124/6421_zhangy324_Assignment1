@@ -40,11 +40,12 @@ while($row = mysql_fetch_array($query))
 	
 	$courseName = $res['course_name'];
 	
-	echo $courseName;
-	echo "</br>";
+	//echo $courseName;
+	//echo "</br>";
+	//$linkStr = "<a href='bookView.php?id=".$bookID."&name=".$bookName." '>".$res['book_name'];
 	
-	$example = "<a href='courseView.php?id=19 '>".$courseName."</a>";
-	echo $example;
+	$courseLink = "<a href='courseView.php?id=".$courseID."&name=".$courseName." '>".$courseName."</a>";
+	echo $courseLink;
 	
 	//$example = "<a href='bookView.php?id=19 '>click me to jump</a>";
 	//echo $example;
