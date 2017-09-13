@@ -21,11 +21,16 @@ if(isset($_GET["name"]))
 if(isset($_GET["id"]))
 $courseID = $_GET['id'];
 echo "</br>";
-echo "book list:";
+echo "recommeded book list:";
 
 showRecommendedBooks();
+echo "</br>";
 
+echo "other book list:";
+echo "</br>";
+showNotRecommendedBooks();
 
+echo "<p align=\"left\"> <input type=\"submit\" name=\"Submit\" value=\"Submit\" />  </p>";
 
 function showRecommendedBooks()
 {
@@ -45,8 +50,12 @@ function showRecommendedBooks()
 
 function showNotRecommendedBooks()
 {
-	$query = @mysql_query("select books.book_id,books.book_name from recommend_courses_books , books where 
-	books.book_id = recommend_courses_books.book_id")or die("SQL failed");
+	$query = @mysql_query("select books.book_id,books.book_name from books where 
+	books.book_id not in
+	(
+	    select book_id from recommend_courses_books
+	)
+	")or die("SQL failed");
 	while($row = mysql_fetch_array($query))
 	{
 		 $bookID = $row['book_id'];
@@ -55,7 +64,7 @@ function showNotRecommendedBooks()
 		 echo $bookID;
 		 echo "</br>";
 		 echo $bookName;
-		 echo "</br>";
+		 echo "<input type='button' name='Submit'  /></br>";
 	}	
 }
 
