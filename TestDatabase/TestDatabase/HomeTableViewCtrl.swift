@@ -119,6 +119,10 @@ class HomeTableViewCtrl: UITableViewController
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
   {
     let person = people[indexPath.row]
+    let pos = indexPath.row
+    print("------pos:")
+    print(pos)
+    
     print(person)
     let cell = tableView.dequeueReusableCell(withIdentifier: "NewCell",
                                              for: indexPath)
