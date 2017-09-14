@@ -10,6 +10,16 @@ import UIKit
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var nameText: UITextField!
+    
+    @IBAction func submitInfo(_ sender: Any) {
+        if nameText.text != ""
+        {
+            let nameToSave = nameText.text
+            //self.save(name:nameToSave!)
+        }
+    }
+    
     @IBAction func dropClicked(_ sender: Any) {
         self.dismiss(animated: false)
     }

@@ -359,6 +359,9 @@
                                 <rect key="frame" x="148" y="394" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="subm"/>
+                                <connections>
+                                    <action selector="submitInfo:" destination="NmZ-jp-63W" eventType="touchUpInside" id="2cd-Om-2a7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmI-pr-nlr">
                                 <rect key="frame" x="231" y="393" width="46" height="30"/>
@@ -371,6 +374,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="nameText" destination="VzU-RQ-jvc" id="iUo-UW-sxF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QbF-6X-bLR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
