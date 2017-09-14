@@ -31,6 +31,20 @@ class IpadDraw1483998UITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+        
+        let app = XCUIApplication()
+        app.buttons["sett"].tap()
+        
+        let window = app.children(matching: .window).element(boundBy: 0)
+        window.children(matching: .other).element.children(matching: .other).element.children(matching: .textField).element.tap()
+        
+        let element = window.children(matching: .other).element(boundBy: 1)
+        element.children(matching: .other).element(boundBy: 0).children(matching: .textField).element.typeText("hlkjh")
+        app.typeText("ljkh")
+        element.children(matching: .other).element.children(matching: .other).element.tap()
+        
+        
     }
     
 }
