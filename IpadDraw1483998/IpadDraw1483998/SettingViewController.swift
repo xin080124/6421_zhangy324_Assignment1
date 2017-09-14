@@ -67,6 +67,16 @@ class SettingViewController: UIViewController {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Person")
         do {
             people = try managedContext.fetch(fetchRequest)
+            
+            let pCount = people.count
+            
+            for i in 0  ..< pCount
+            {
+                let person = people[i]
+                let value = person.value(forKeyPath: "name") as? String
+                print(value)
+                print("^^^^^^^^^^^^^^")
+            }
             print("pppppppppppppppp")
             print(people)
         } catch let error as NSError {
