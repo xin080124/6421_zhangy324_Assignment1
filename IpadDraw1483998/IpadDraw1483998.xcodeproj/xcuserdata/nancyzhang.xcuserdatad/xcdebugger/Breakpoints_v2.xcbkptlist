@@ -104,11 +104,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IpadDraw1483998/SettingViewController.swift"
-            timestampString = "526787978.73513"
+            timestampString = "527122169.883508"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "SettingViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -120,11 +120,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IpadDraw1483998/SettingViewController.swift"
-            timestampString = "526788262.442659"
+            timestampString = "527122169.883508"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "save(name:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -136,11 +136,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IpadDraw1483998/SettingViewController.swift"
-            timestampString = "526788331.171525"
+            timestampString = "527122169.883508"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "save(name:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -152,12 +152,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IpadDraw1483998/SettingViewController.swift"
-            timestampString = "526788372.011313"
+            timestampString = "527122169.883508"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "save(name:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IpadDraw1483998/SettingViewController.swift"
+            timestampString = "527122169.883508"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "ppppppppp()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -168,12 +184,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IpadDraw1483998/SettingViewController.swift"
-            timestampString = "527071382.455923"
+            timestampString = "527122169.883508"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "ppppppppp()"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "deleteClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

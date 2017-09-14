@@ -13,6 +13,54 @@ class SettingViewController: UIViewController {
 
     var people: [NSManagedObject] = []
     
+    @IBAction func deleteClicked(_ sender: Any) {
+        //people.remove(at: 0)
+        
+        //print(pCount)
+
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Person")
+        
+        var predicable = NSPredicate(format: "name contains[c] %@" , "h")
+        fetchRequest.predicate = predicable
+        
+        /* filter
+        do {
+            people = try managedContext.fetch(fetchRequest)
+            let pCount = people.count
+            
+            for i in 0  ..< pCount
+            {
+                print(i)
+                print("*************deleteClicked")
+                let person = people[i]
+                let value = person.value(forKeyPath: "name") as? String
+                let ageValue = person.value(forKeyPath: "age") as? String
+                print(value)
+                print(ageValue)
+                //print(" name = "+(value?)!+" age = "+(ageValue?)!)
+                print("eeeeeeeeeeeeeeee")
+            }
+            
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        */
+        
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
+        do{
+            print("deletig searched contents")
+            try managedContext.execute(deleteRequest)
+        }catch{
+            print(error.localizedDescription)
+        }
+    }
+    
     @IBOutlet weak var textField: UITextField!
     
     @IBAction func enter(_ sender: Any) {
@@ -34,13 +82,12 @@ class SettingViewController: UIViewController {
         let entity = NSEntityDescription.entity(forEntityName: "Person",
                                                 in: managedContext)!
         print("sssssssssssssssssss")
-        print(entity)
+        //print(entity)
         
         let person = NSManagedObject(entity: entity,
                                      insertInto: managedContext)
         print("sssssssssssssssssss")
-        print(person)
-        
+        //print(person)
         
         person.setValue(name, forKeyPath: "name")
         person.setValue("agevalue", forKeyPath: "age")
@@ -51,6 +98,7 @@ class SettingViewController: UIViewController {
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
+ 
         
         ppppppppp()
         
@@ -69,16 +117,22 @@ class SettingViewController: UIViewController {
             people = try managedContext.fetch(fetchRequest)
             
             let pCount = people.count
-            
+            print(pCount)
+
             for i in 0  ..< pCount
             {
+                print(i)
+                print("*************name")
                 let person = people[i]
                 let value = person.value(forKeyPath: "name") as? String
+                let ageValue = person.value(forKeyPath: "age") as? String
                 print(value)
+                print(ageValue)
+                //print(" name = "+(value?)!+" age = "+(ageValue?)!)
                 print("^^^^^^^^^^^^^^")
             }
             print("pppppppppppppppp")
-            print(people)
+            //print(people)
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
@@ -97,7 +151,7 @@ class SettingViewController: UIViewController {
         do {
             people = try managedContext.fetch(fetchRequest)
             print("pppppppppppppppp")
-            print(people)
+            //print(people)
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }

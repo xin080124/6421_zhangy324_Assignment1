@@ -317,6 +317,14 @@
                                 <rect key="frame" x="101" y="404" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </slider>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="26P-kv-qj1">
+                                <rect key="frame" x="0.0" y="356" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="dele"/>
+                                <connections>
+                                    <action selector="deleteClicked:" destination="D3r-zf-vPs" eventType="touchUpInside" id="jHu-Qz-HuF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -326,7 +334,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gaf-zk-2d0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1798" y="-1045"/>
+            <point key="canvasLocation" x="-2400" y="-373"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="ZCg-Ni-93C">
