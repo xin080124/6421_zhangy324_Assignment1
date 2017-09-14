@@ -33,15 +33,17 @@ class SettingViewController: UIViewController {
         let managedContext = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Person",
                                                 in: managedContext)!
-    
+        print("sssssssssssssssssss")
         print(entity)
         
         let person = NSManagedObject(entity: entity,
                                      insertInto: managedContext)
-        
+        print("sssssssssssssssssss")
         print(person)
         
+        
         person.setValue(name, forKeyPath: "name")
+        person.setValue("agevalue", forKeyPath: "age")
         
         do {
             try managedContext.save()
@@ -50,6 +52,26 @@ class SettingViewController: UIViewController {
             print("Could not save. \(error), \(error.userInfo)")
         }
         
+        ppppppppp()
+        
+    }
+    
+    func ppppppppp() {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Person")
+        do {
+            people = try managedContext.fetch(fetchRequest)
+            print("pppppppppppppppp")
+            print(people)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,6 +86,8 @@ class SettingViewController: UIViewController {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Person")
         do {
             people = try managedContext.fetch(fetchRequest)
+            print("pppppppppppppppp")
+            print(people)
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
