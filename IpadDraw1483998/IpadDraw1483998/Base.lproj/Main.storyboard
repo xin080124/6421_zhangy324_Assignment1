@@ -328,6 +328,46 @@
             </objects>
             <point key="canvasLocation" x="-1798" y="-1045"/>
         </scene>
+        <!--Register View Controller-->
+        <scene sceneID="ZCg-Ni-93C">
+            <objects>
+                <viewController id="NmZ-jp-63W" customClass="RegisterViewController" customModule="IpadDraw1483998" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m8K-e2-9vV"/>
+                        <viewControllerLayoutGuide type="bottom" id="zow-70-e95"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6f9-Rn-xra">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VzU-RQ-jvc">
+                                <rect key="frame" x="16" y="394" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6n-gd-8MZ">
+                                <rect key="frame" x="148" y="394" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="subm"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmI-pr-nlr">
+                                <rect key="frame" x="231" y="393" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="drop"/>
+                                <connections>
+                                    <action selector="dropClicked:" destination="NmZ-jp-63W" eventType="touchUpInside" id="00G-ae-3uK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QbF-6X-bLR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2220" y="-431"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="wXr-aV-9sH">
             <objects>
@@ -341,9 +381,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54k-HC-ZYA">
-                                <rect key="frame" x="58" y="430" width="46" height="30"/>
+                                <rect key="frame" x="58" y="411" width="46" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="regi"/>
+                                <connections>
+                                    <segue destination="NmZ-jp-63W" kind="presentation" id="kgO-qZ-mID"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0U0-6F-TcC">
                                 <rect key="frame" x="206" y="443" width="46" height="17"/>
