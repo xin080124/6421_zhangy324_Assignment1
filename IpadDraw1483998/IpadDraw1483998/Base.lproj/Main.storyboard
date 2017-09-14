@@ -55,10 +55,6 @@
                                     <action selector="colorDidSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YLk-02-MCM"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R8S-GG-QO1" userLabel="DrawView">
-                                <rect key="frame" x="26" y="30" width="268" height="340"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i88-Aq-Pof">
                                 <rect key="frame" x="26" y="440" width="50" height="30"/>
                                 <constraints>
@@ -209,6 +205,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R8S-GG-QO1" userLabel="DrawView">
+                                <rect key="frame" x="28" y="36" width="268" height="340"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7BT-aM-83Z">
+                                <rect key="frame" x="249" y="380" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="logi"/>
+                                <connections>
+                                    <segue destination="U2T-o5-tKU" kind="presentation" id="Zpy-Tf-Ybd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -319,6 +327,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gaf-zk-2d0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1798" y="-1045"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="wXr-aV-9sH">
+            <objects>
+                <viewController id="U2T-o5-tKU" customClass="LoginViewController" customModule="IpadDraw1483998" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MTF-4w-dmQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Crl-QT-vb8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nSa-nt-UeL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54k-HC-ZYA">
+                                <rect key="frame" x="58" y="430" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="regi"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0U0-6F-TcC">
+                                <rect key="frame" x="206" y="443" width="46" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="canc"/>
+                                <connections>
+                                    <action selector="cancelClicked:" destination="U2T-o5-tKU" eventType="touchUpInside" id="ii3-uX-gJm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r2f-wp-MP7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1233.75" y="-175"/>
         </scene>
     </scenes>
     <resources>
