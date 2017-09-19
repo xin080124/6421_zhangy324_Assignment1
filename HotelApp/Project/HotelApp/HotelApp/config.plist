@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Root</key>
+	<dict>
+		<key>About</key>
+		<dict>
+			<key>text</key>
+			<string>Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+			<key>image</key>
+			<string>about_hotel_img.png</string>
+			<key>title</key>
+			<string>About our hotel</string>
+		</dict>
+		<key>Gallery</key>
+		<dict>
+			<key>imagesAndTitlesItems</key>
+			<array>
+				<string>Hall</string>
+				<string>img1.png</string>
+				<string>img2.png</string>
+				<string>img3.png</string>
+				<string>img4.png</string>
+				<string>img5.png</string>
+				<string>Standard Room</string>
+				<string>img6.png</string>
+				<string>img7.png</string>
+				<string>img8.png</string>
+				<string>img6.png</string>
+				<string>img6.png</string>
+				<string>img1.png</string>
+				<string>img2.png</string>
+				<string>Suite</string>
+				<string>img1.png</string>
+				<string>img2.png</string>
+				<string>img3.png</string>
+				<string>img4.png</string>
+				<string>img5.png</string>
+			</array>
+			<key>videosItems</key>
+			<array>
+				<string>Movie.m4v</string>
+			</array>
+		</dict>
+		<key>Reservation</key>
+		<dict>
+			<key>roomCategories</key>
+			<array>
+				<dict>
+					<key>categoryPrice</key>
+					<string>400</string>
+					<key>categoryName</key>
+					<string>Deluxe</string>
+				</dict>
+				<dict>
+					<key>categoryPrice</key>
+					<string>300</string>
+					<key>categoryName</key>
+					<string>Superior</string>
+				</dict>
+				<dict>
+					<key>categoryPrice</key>
+					<string>200</string>
+					<key>categoryName</key>
+					<string>Moderate</string>
+				</dict>
+				<dict>
+					<key>categoryPrice</key>
+					<string>100</string>
+					<key>categoryName</key>
+					<string>Standard</string>
+				</dict>
+			</array>
+		</dict>
+		<key>Contacts</key>
+		<dict>
+			<key>contactsInfo</key>
+			<dict>
+				<key>email</key>
+				<string>contact@thehotel.com</string>
+				<key>telephone</key>
+				<string>001122334455</string>
+				<key>message</key>
+				<string>Please feel free to contact us if  you have any questions or would like to book</string>
+				<key>title</key>
+				<string>The Hotel</string>
+				<key>address</key>
+				<string>5th June Avenue Victoria</string>
+				<key>postOffice</key>
+				<string>01234 Seychelles</string>
+				<key>webPage</key>
+				<string>www.thehotel.com</string>
+			</dict>
+			<key>locationItems</key>
+			<array>
+				<dict>
+					<key>title</key>
+					<string>The Hotel</string>
+					<key>latitude</key>
+					<real>48.855172</real>
+					<key>longitude</key>
+					<real>2.327943</real>
+					<key>address</key>
+					<string>5th June Avenue Victoria, City</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+</dict>
+</plist>
