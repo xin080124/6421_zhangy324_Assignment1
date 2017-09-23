@@ -1,252 +1,320 @@
--- MySQL dump 10.16  Distrib 10.1.21-MariaDB, for Win32 (AMD64)
+-- phpMyAdmin SQL Dump
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost    Database: localhost
--- ------------------------------------------------------
--- Server version	10.1.21-MariaDB
+-- Host: 127.0.0.1
+-- Generation Time: Sep 23, 2017 at 10:14 PM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 5.6.30
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `yx`
+--
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `books`
 --
 
-DROP TABLE IF EXISTS `books`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `books` (
   `book_id` int(10) NOT NULL DEFAULT '0',
-  `book_name` varchar(4000) NOT NULL DEFAULT '',
-  PRIMARY KEY (`book_id`)
+  `book_name` varchar(4000) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `books`
 --
 
-LOCK TABLES `books` WRITE;
-/*!40000 ALTER TABLE `books` DISABLE KEYS */;
-INSERT INTO `books` VALUES (11,'c sharp 1'),(12,'c sharp 2'),(71,'agile book 1'),(72,'agile book2');
-/*!40000 ALTER TABLE `books` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `books` (`book_id`, `book_name`) VALUES
+(11, 'c sharp 1'),
+(12, 'c sharp 2'),
+(71, 'agile book 1'),
+(72, 'agile book2');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `books0923`
+--
+
+CREATE TABLE `books0923` (
+  `book_id` int(10) NOT NULL,
+  `book_name` varchar(4000) NOT NULL DEFAULT '',
+  `author_name` varchar(100) NOT NULL DEFAULT '',
+  `yeartime` varchar(10) NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `books0923`
+--
+
+INSERT INTO `books0923` (`book_id`, `book_name`, `author_name`, `yeartime`) VALUES
+(1, 'hh', 'kk', 'bx'),
+(2, 'Modern Database Management (Tenth Edition)', 'Jeffrey A. Hoffer&V.Ramesh&Heikki Topi', '2011'),
+(3, 'An Introduction to Database Systems', 'C.J. Date', '2004'),
+(4, 'Beginning Oracle SQL For Oracle Database 12c', 'Tim Gorman& Inger Jorgensen& Melanie Caffrey', '2014'),
+(5, 'Relational database design and implementation', 'Jan L. Harrington', '2016'),
+(6, 'Database design application development and administration', 'Michael V Mannino', '2004'),
+(7, 'Database systems : design implementation and management.', 'Carlos Coronel&Steven Morris ', '2015'),
+(8, 'Database systems : a practical approach to design  implementation  and management', 'Thomas M. Connolly& Carolyn E. Beg', '2015'),
+(9, 'Learning Data Mining with R', 'Bater Makhabel', '2015'),
+(10, 'Social Big Data Mining', 'Hiroshi Ishikawa', '2015'),
+(11, 'Data Mining for Business Applications', 'C Soares& R Ghani', '2010'),
+(12, 'Proactive data mining with decision trees', 'Haim Dahan& Shahar Cohen& Lior Rokach& Oded Maimon', '2014'),
+(13, 'RapidMiner Data Mining Use Cases and Business Analytics Applications', 'Markus Hofmann& Ralf Klinkenberg', '2013'),
+(14, 'Data Mining In Time Series Databases', 'Mark Last& Abraham Kandel& Horst Bunke', '2004');
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `cfield_execution_values`
 --
 
-DROP TABLE IF EXISTS `cfield_execution_values`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cfield_execution_values` (
   `field_id` int(10) NOT NULL DEFAULT '0',
   `execution_id` int(10) NOT NULL DEFAULT '0',
   `testplan_id` int(10) NOT NULL DEFAULT '0',
   `tcversion_id` int(10) NOT NULL DEFAULT '0',
-  `value` varchar(4000) NOT NULL DEFAULT '',
-  PRIMARY KEY (`field_id`,`execution_id`,`testplan_id`,`tcversion_id`)
+  `value` varchar(4000) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `cfield_execution_values`
 --
 
-LOCK TABLES `cfield_execution_values` WRITE;
-/*!40000 ALTER TABLE `cfield_execution_values` DISABLE KEYS */;
-INSERT INTO `cfield_execution_values` VALUES (10,1,1,1,'qwreqwer');
-/*!40000 ALTER TABLE `cfield_execution_values` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `cfield_execution_values` (`field_id`, `execution_id`, `testplan_id`, `tcversion_id`, `value`) VALUES
+(10, 1, 1, 1, 'qwreqwer');
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `courses`
 --
 
-DROP TABLE IF EXISTS `courses`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `courses` (
   `course_id` int(10) NOT NULL DEFAULT '0',
-  `course_name` varchar(4000) NOT NULL DEFAULT '',
-  PRIMARY KEY (`course_id`)
+  `course_name` varchar(4000) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `courses`
 --
 
-LOCK TABLES `courses` WRITE;
-/*!40000 ALTER TABLE `courses` DISABLE KEYS */;
-INSERT INTO `courses` VALUES (1,'C#'),(7,'agile');
-/*!40000 ALTER TABLE `courses` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `courses` (`course_id`, `course_name`) VALUES
+(1, 'C#'),
+(7, 'agile');
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `person`
 --
 
-DROP TABLE IF EXISTS `person`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `person` (
   `number` int(11) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   `birthday` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `person`
 --
 
-LOCK TABLES `person` WRITE;
-/*!40000 ALTER TABLE `person` DISABLE KEYS */;
-INSERT INTO `person` VALUES (34,'\0','2017-09-04');
-/*!40000 ALTER TABLE `person` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `person` (`number`, `name`, `birthday`) VALUES
+(34, '\0', '2017-09-04');
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `person_courses`
 --
 
-DROP TABLE IF EXISTS `person_courses`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `person_courses` (
   `person_id` int(10) NOT NULL DEFAULT '0',
-  `course_id` int(10) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`person_id`,`course_id`)
+  `course_id` int(10) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `person_courses`
 --
 
-LOCK TABLES `person_courses` WRITE;
-/*!40000 ALTER TABLE `person_courses` DISABLE KEYS */;
-INSERT INTO `person_courses` VALUES (1,1),(8,1),(8,7);
-/*!40000 ALTER TABLE `person_courses` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `person_courses` (`person_id`, `course_id`) VALUES
+(1, 1),
+(8, 1),
+(8, 7);
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `recommend_courses_books`
 --
 
-DROP TABLE IF EXISTS `recommend_courses_books`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `recommend_courses_books` (
   `person_id` int(10) NOT NULL DEFAULT '0',
   `course_id` int(10) NOT NULL DEFAULT '0',
-  `book_id` int(10) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`person_id`,`course_id`,`book_id`)
+  `book_id` int(10) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `recommend_courses_books`
 --
 
-LOCK TABLES `recommend_courses_books` WRITE;
-/*!40000 ALTER TABLE `recommend_courses_books` DISABLE KEYS */;
-INSERT INTO `recommend_courses_books` VALUES (1,1,11),(1,1,71),(1,1,72),(1,7,71);
-/*!40000 ALTER TABLE `recommend_courses_books` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `recommend_courses_books` (`person_id`, `course_id`, `book_id`) VALUES
+(1, 1, 11),
+(1, 1, 72),
+(1, 7, 71),
+(8, 7, 12),
+(8, 7, 72);
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `student_books_notes`
 --
 
-DROP TABLE IF EXISTS `student_books_notes`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `student_books_notes` (
-  `note_id` int(10) NOT NULL AUTO_INCREMENT,
+  `note_id` int(10) NOT NULL,
   `person_id` int(10) NOT NULL DEFAULT '0',
   `book_id` int(10) NOT NULL DEFAULT '0',
-  `value` varchar(4000) NOT NULL DEFAULT '',
-  PRIMARY KEY (`note_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `value` varchar(4000) NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `student_books_notes`
 --
 
-LOCK TABLES `student_books_notes` WRITE;
-/*!40000 ALTER TABLE `student_books_notes` DISABLE KEYS */;
-INSERT INTO `student_books_notes` VALUES (1,8,71,'hhhhhhhhh'),(2,8,72,'ttttttttt'),(3,2,71,'sssssss'),(4,8,71,'haha'),(5,8,71,'haha1002'),(6,8,71,'haha1003'),(7,8,71,'haha1005'),(8,8,71,'welcome adding notes 1028\r\n'),(9,8,71,'welcome adding notes dsfgsdfgdfgw  3333333\r\n');
-/*!40000 ALTER TABLE `student_books_notes` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `student_books_notes` (`note_id`, `person_id`, `book_id`, `value`) VALUES
+(15, 8, 71, 'welcome adding notes  nnnnnn\r\n'),
+(16, 8, 71, 'welcome adding notes  hhhhhhhh\r\n'),
+(18, 8, 71, 'welcome adding notes\r\n729'),
+(19, 8, 71, 'welcome adding notes  fffffff\r\n'),
+(20, 8, 71, 'welcome adding notes\r\n730'),
+(21, 8, 71, 'welcome adding notes   2050\r\n');
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `student_courses_books`
 --
 
-DROP TABLE IF EXISTS `student_courses_books`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `student_courses_books` (
   `person_id` int(10) NOT NULL DEFAULT '0',
   `course_id` int(10) NOT NULL DEFAULT '0',
-  `book_id` int(10) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`person_id`,`course_id`,`book_id`)
+  `book_id` int(10) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `student_courses_books`
 --
 
-LOCK TABLES `student_courses_books` WRITE;
-/*!40000 ALTER TABLE `student_courses_books` DISABLE KEYS */;
-INSERT INTO `student_courses_books` VALUES (8,7,71),(8,7,72);
-/*!40000 ALTER TABLE `student_courses_books` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `student_courses_books` (`person_id`, `course_id`, `book_id`) VALUES
+(8, 7, 71),
+(8, 7, 72);
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `username` char(8) NOT NULL,
   `passcode` char(8) NOT NULL,
   `userflag` int(11) DEFAULT NULL,
-  `ID` int(11) NOT NULL,
-  PRIMARY KEY (`username`)
+  `ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `users`
 --
 
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('admin','admin123',0,0),('alan','1',1,1),('yx','2',2,8);
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+INSERT INTO `users` (`username`, `passcode`, `userflag`, `ID`) VALUES
+('admin', 'admin123', 0, 0),
+('sam', '1', 1, 1),
+('yx', '2', 2, 8);
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `books`
+--
+ALTER TABLE `books`
+  ADD PRIMARY KEY (`book_id`);
+
+--
+-- Indexes for table `books0923`
+--
+ALTER TABLE `books0923`
+  ADD PRIMARY KEY (`book_id`);
+
+--
+-- Indexes for table `cfield_execution_values`
+--
+ALTER TABLE `cfield_execution_values`
+  ADD PRIMARY KEY (`field_id`,`execution_id`,`testplan_id`,`tcversion_id`);
+
+--
+-- Indexes for table `courses`
+--
+ALTER TABLE `courses`
+  ADD PRIMARY KEY (`course_id`);
+
+--
+-- Indexes for table `person_courses`
+--
+ALTER TABLE `person_courses`
+  ADD PRIMARY KEY (`person_id`,`course_id`);
+
+--
+-- Indexes for table `recommend_courses_books`
+--
+ALTER TABLE `recommend_courses_books`
+  ADD PRIMARY KEY (`person_id`,`course_id`,`book_id`);
+
+--
+-- Indexes for table `student_books_notes`
+--
+ALTER TABLE `student_books_notes`
+  ADD PRIMARY KEY (`note_id`);
+
+--
+-- Indexes for table `student_courses_books`
+--
+ALTER TABLE `student_courses_books`
+  ADD PRIMARY KEY (`person_id`,`course_id`,`book_id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`username`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `books0923`
+--
+ALTER TABLE `books0923`
+  MODIFY `book_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+--
+-- AUTO_INCREMENT for table `student_books_notes`
+--
+ALTER TABLE `student_books_notes`
+  MODIFY `note_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2017-09-15 15:10:24

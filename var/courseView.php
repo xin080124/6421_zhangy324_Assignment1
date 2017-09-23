@@ -172,13 +172,32 @@ $sql = "select books0923.book_id,books0923.book_name from recommend_courses_book
 showNotRecommendedBooks($courseID);
 function showNotRecommendedBooks($course_id)
 {
-	$query = @mysql_query("select books0923.book_id,books0923.book_name from books where 
+	/*
+	$sql = "select books0923.book_id,books0923.book_name from recommend_courses_books, books0923 where 
+	books0923.book_id = recommend_courses_books.book_id";
+	*/
+	
+	/*
+	$sql = "select books0923.book_id,books0923.book_name from books where 
 	books0923.book_id not in
 	(
 	    select book_id from recommend_courses_books where
 		recommend_courses_books.course_id = $course_id
 	)
-	")or die("SQL failed");
+	"
+	*/
+	
+	$sql = "select books0923.book_id,books0923.book_name from books0923 where 
+	books0923.book_id not in
+	(
+	    select book_id from recommend_courses_books where
+		recommend_courses_books.course_id = $course_id
+	)";
+	
+    echo "</br>";
+	echo $sql;
+	
+	$query = @mysql_query($sql)or die("SQL failed");
 	while($row = mysql_fetch_array($query))
 	{
 		echo "<div class=\"col-sm-4 col-xs-12\"> ";

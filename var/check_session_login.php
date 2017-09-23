@@ -65,13 +65,13 @@ if($row = mysql_fetch_array($query))
 		$_SESSION['userID'] = $row['ID'];
 		
 		if($row['userflag'] == 0)
-		    echo "<h4> Welcome you, administrator~~ ";
+		    echo "<h4> administrator login success~~ ";
 	    else if($row['userflag'] == 1)
-		    echo "<h4> Welcome you, lecturer~~ ";
+		    echo "<h4> lecturer login success~~ ";
 	    else if($row['userflag'] == 2)
-		    echo "<h4> Welcome you, student~~ ";
+		    echo "<h4> student  login success~~ ";
 	  
-          echo "</br><p><a href='welcome_session_login.php'>www.cnblogs.com/txw1958</a><p>";
+          echo "</br><p><a href='welcome_session_login.php'>enter hub</a><p>";
     }else{
         echo "<h4>userflag不正确";
     }

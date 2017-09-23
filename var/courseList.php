@@ -55,12 +55,14 @@ or die("data base connected failed");
 @mysql_select_db("yx")
 or die("data base selected failed");
 
-$query = @mysql_query("select person_id, course_id from person_courses where person_id = 8 ")or die("SQL failed");
+//$userId = $_SESSION['userID'];
+$studentID = $_SESSION['userID'];
+
+$query = @mysql_query("select person_id, course_id from person_courses where person_id = $studentID ")or die("SQL failed");
 
 echo "<h2>db success</br></br>";
 echo "<h4>".$_SESSION['username'];
 
-$studentID = $_SESSION['userID'];
 
 echo "</br></br>";
 $courseID = 0;
