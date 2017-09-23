@@ -58,8 +58,16 @@ else
     echo "<h4>ERROR";
 }
 
-echo "</br></br></br>";
-echo "<h2> <a href=\"courseList.php\">My courses</a>";
+if($_SESSION['userflag'] > 0)
+{
+    echo "</br></br></br>";
+    echo "<h2> <a href=\"courseList.php\">My courses</a>";
+}
+else
+{
+	echo "</br></br></br>";
+    echo "<h2> <a href=\"assignCourses.php\">Assign courses</a>";
+}
 
 ?>
     </div>
