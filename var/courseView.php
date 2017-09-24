@@ -59,6 +59,7 @@ if(isset($_GET["name"]))
 {
 	$course=$_GET["name"];
 	echo $course;
+	$_SESSION['courseName'] = $course;
 }
 if(isset($_GET["id"]))
 {
@@ -77,9 +78,11 @@ if(isset($_GET["rbid"]))
 {
 	//echo "rrrrrrrrr";
     $bookID = $_GET['rbid'];
+	echo $bookID;
+	echo "</br>";
 	$sql = "INSERT INTO recommend_courses_books (person_id, course_id, book_id) VALUES (".$userId.", ".$courseID.", ".$bookID.")";
 
-	//echo $sql;		
+	echo $sql;		
     @mysql_query($sql)or die(" SQL failed");
 }
 
@@ -100,9 +103,12 @@ if(isset($_GET["dbid"]))
 	$sql = "DELETE FROM recommend_courses_books WHERE
 	person_id = $userId and course_id = $courseID and book_id = $bookID";
 	
-	//echo $sql;		
+	echo $sql;		
     @mysql_query($sql)or die(" SQL failed");
 }
+
+echo "</br>";
+echo $_SESSION['courseName'];
 
 echo "</br></br></br>";
 echo "<h2> <a href=\"courseList.php\">My courses</a></h2>";
@@ -123,10 +129,13 @@ function showRecommendedBooks($course_id,$user_id)
 	recommend_courses_books.course_id = $course_id";
 */
 $sql = "select books0923.book_id,books0923.book_name from recommend_courses_books, books0923 where 
-	books0923.book_id = recommend_courses_books.book_id";
+	books0923.book_id = recommend_courses_books.book_id
+	and
+	recommend_courses_books.person_id = $user_id and
+	recommend_courses_books.course_id = $course_id";
 
     echo "</br>";
-	echo $sql;
+	//echo $sql;
 	
 	$query = @mysql_query($sql)or die("SQL failed");
 	
@@ -208,10 +217,10 @@ function showNotRecommendedBooks($course_id)
 		 $bookID = $row['book_id'];
 		 $bookName = $row['book_name'];
 		 echo "</br>";
-		 //echo $bookID;
-		 //echo "</br>";
+		 echo $bookID;
+		 echo "</br>";
 		 echo $bookName;
-		 echo "<form method=\"POST\" action=\"courseView.php?rbid=".$bookID."&rcid=".$course_id."\"></br><input type=\"submit\" name=\"Submit\" value=\"recommend\" /></br>";
+		 echo "<form method=\"POST\" action=\"courseView.php?rbid=".$bookID."&rcid=".$course_id."\"></br><input type=\"submit\" name=\"Submit\" value=\"recommend\" /></form></br>";
 		 echo "</div>";
 		 echo "</div>";
 	}	
@@ -219,7 +228,10 @@ function showNotRecommendedBooks($course_id)
 
 function forceUpdate()
 {
-	echo "<script>location:reload();</script>";
+	echo "<script>location:r
+	
+	
+	eload();</script>";
 }
 
 
