@@ -8,7 +8,7 @@ or die("data base connected failed");
 or die("data base selected failed");
 
 $studentId = $_SESSION['userID'];
-echo $studentId;
+//echo $studentId;
 	echo "</br>";
 
 if(isset($_POST["acid"]))
@@ -34,6 +34,25 @@ if(isset($_POST["acid"]))
 	}
 }
 
+if(isset($_GET["dcid"]))
+{
+	$courseID=$_GET["dcid"];
+    echo $courseID;
+	echo "</br>";
+
+	if(isset($_GET["dlid"]))
+	{
+		$lectureID = $_GET['dlid'];
+        echo $lectureID;
+		echo "</br>";
+		
+		$sql = "DELETE FROM person_courses WHERE
+    	person_id = $lectureID and course_id = $courseID";
+ 
+	    echo $sql;		
+        @mysql_query($sql)or die(" SQL failed");
+	}
+}
 showAllcourses();
 
 function showAllcourses()
@@ -45,13 +64,37 @@ function showAllcourses()
 		echo "</br>";
 		echo $row['course_name'];
 		$courseID = $row['course_id'];
-		echo "</br>";
-		showAllLecturers($courseID);
+		echo "</br>is assigned to";
+		showAssignedLecturers($courseID);
+		echo "</br></br>other lecturers";
+		showNotAssignedLecturers($courseID);
 	    echo "</br>---------------------------------------------------------";
 	}
 }
 
-function showAllLecturers($course_id)
+function showAssignedLecturers($course_id)
+{
+	$sql = "select username,ID from users where userflag = 1 and ID in
+	(
+	    select person_id from person_courses where
+        person_courses.course_id = $course_id
+	)";
+	$query = @mysql_query($sql)or die("SQL failed");
+    while($row = mysql_fetch_array($query))
+    {
+		$lectureID = $row['ID'];
+		echo "</br>";
+		echo $row['username'];
+		echo "</br>";
+		
+		$linkStr = "<a href='assignCourses.php?dcid=".$course_id."&dlid=".$lectureID." '>"."delete</a>";
+
+		echo "</br>";
+        echo $linkStr."</br>";
+	}
+}
+
+function showNotAssignedLecturers($course_id)
 {
 	//<form ACTION="SelectFormControlHandler.php" METHOD="POST">
     //echo "<form method=\"POST\" action=\"bookView.php?id=".$bookID."&name=".$book."\">
@@ -59,7 +102,11 @@ function showAllLecturers($course_id)
 	echo "<form method=\"POST\" action = \"assignCourses.php\">";
 	//echo "form method=\"POST\" action = \"assignCourses.php?acid =".$course_id;
 	
-	$sql = "select username,ID from users where userflag = 1 and ID not in";
+	$sql = "select username,ID from users where userflag = 1 and ID not in
+	(
+	    select person_id from person_courses where
+        person_courses.course_id = $course_id
+	)";
 	$query = @mysql_query($sql)or die("SQL failed");
     while($row = mysql_fetch_array($query))
     {
