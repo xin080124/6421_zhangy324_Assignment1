@@ -111,9 +111,16 @@ if(isset($_GET["dbid"]))
 	echo $bookID;
 	//$sql = "INSERT INTO recommend_courses_books (person_id, course_id, book_id) VALUES (".$userId.", ".$courseID.", ".$bookID.")";
     echo "</br>";
-	$sql = "DELETE FROM recommend_courses_books WHERE
-	person_id = $userId and course_id = $courseID and book_id = $bookID";
-	
+	if($userFlag == 1)
+	{
+		$sql = "DELETE FROM recommend_courses_books WHERE
+		person_id = $userId and course_id = $courseID and book_id = $bookID";
+	}
+	else
+	{
+		$sql = "DELETE FROM student_courses_books  WHERE
+		person_id = $userId and course_id = $courseID and book_id = $bookID";
+	}
 	echo $sql;		
     @mysql_query($sql)or die(" SQL failed");
 }
@@ -178,7 +185,11 @@ function getSelectedBooks($course_id,$user_id,$highlightSet)
 
 	*/
 	
-	$sql = "select books0923.book_id,books0923.book_name from student_courses_books, books0923 ";
+	$sql = "select books0923.book_id,books0923.book_name from student_courses_books, books0923 where
+	books0923.book_id = student_courses_books.book_id
+	and
+	student_courses_books.person_id = $user_id and
+	student_courses_books.course_id = $course_id";
 
     echo "</br>";
 	echo $sql;
