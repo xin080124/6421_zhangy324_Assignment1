@@ -85,8 +85,14 @@ if(isset($_GET["rbid"]))
     $bookID = $_GET['rbid'];
 	echo $bookID;
 	echo "</br>";
-	$sql = "INSERT INTO recommend_courses_books (person_id, course_id, book_id) VALUES (".$userId.", ".$courseID.", ".$bookID.")";
-
+	if($userFlag == 1)
+	{
+	    $sql = "INSERT INTO recommend_courses_books (person_id, course_id, book_id) VALUES (".$userId.", ".$courseID.", ".$bookID.")";
+	}
+    else
+    {
+		$sql = "INSERT INTO student_courses_books (person_id, course_id, book_id) VALUES (".$userId.", ".$courseID.", ".$bookID.")";
+	}	
 	echo $sql;		
     @mysql_query($sql)or die(" SQL failed");
 }
@@ -124,9 +130,140 @@ echo "</br>";
 echo "</br>";
 if($userFlag == 1)
     showRecommendedBooks($courseID,$userId);
-echo "</br>";
+else
+{
+	$rList = getRecommendedBooksSet($courseID,1);
+    echo $rList;
+	getSelectedBooks($courseID,$userId,$rList);
+}
+	echo "</br>";
 
-function showRecommendedBooks($course_id,$user_id)
+function getRecommendedBooksSet($course_id,$user_id)
+{
+	$sql = "select books0923.book_id,books0923.book_name from recommend_courses_books, books0923 where 
+	books0923.book_id = recommend_courses_books.book_id
+	and
+	recommend_courses_books.person_id = $user_id and
+	recommend_courses_books.course_id = $course_id";
+
+    echo "</br>";
+	echo $sql;
+	
+	$query = @mysql_query($sql)or die("SQL failed");
+	$index = 0;
+	$recmList = Array();
+	
+	while($row = mysql_fetch_array($query))
+	{
+		echo $row['book_id'];
+		$recmList[$index] = $row['book_id'];
+		$index++;
+	}
+	
+	print_r($recmList);
+	return $recmList;
+}
+
+function getSelectedBooks($course_id,$user_id,$highlightSet)
+{
+	echo "</br>";
+	echo "getSelectedBooks";
+	echo "</br>";
+	/*
+	$sql = "select books0923.book_id,books0923.book_name from recommend_courses_books, books0923 where 
+	books0923.book_id = recommend_courses_books.book_id
+	and
+	recommend_courses_books.person_id = $user_id and
+	recommend_courses_books.course_id = $course_id";
+
+	*/
+	
+	$sql = "select books0923.book_id,books0923.book_name from student_courses_books, books0923 ";
+
+    echo "</br>";
+	echo $sql;
+	
+	$query = @mysql_query($sql)or die("SQL failed");
+	/*
+	while($row = mysql_fetch_array($query))
+	{
+		echo $row['book_id'];
+		$recmList[$index] = $row['book_id'];
+		$index++;
+	}
+	*/
+	//print_r($recmList);
+	//return $recmList;
+	listQueryRes($query,"selected books","remove",$course_id,$highlightSet);
+
+}
+
+function getUnSelectedBooks($course_id,$user_id,$highlightSet)
+{
+	echo "</br>";
+	echo "getUnSelectedBooks";
+	echo "</br>";
+	/*
+	$sql = "select books0923.book_id,books0923.book_name from recommend_courses_books, books0923 where 
+	books0923.book_id = recommend_courses_books.book_id
+	and
+	recommend_courses_books.person_id = $user_id and
+	recommend_courses_books.course_id = $course_id";
+*/
+
+    $sql = "select books0923.book_id,books0923.book_name from books0923 ";
+    
+	echo "</br>";
+	echo $sql;
+	echo "</br>";
+	
+	$query = @mysql_query($sql)or die("SQL failed");
+	
+	listQueryRes($query,"left books","select",$course_id,$highlightSet);
+
+}
+function listQueryRes($query,$lable,$action,$course_id,$highlightSet)
+{
+	while($row = mysql_fetch_array($query))
+	{
+		echo "<div class=\"col-sm-4 col-xs-12\"> ";
+	    echo "<div class=\"panel panel-default text-center\">";
+        echo "<div class=\"panel-heading\">";
+        //echo "<h2>Recommeded Books</h2>";
+		echo "<h2>".$lable."</h2>";
+		
+        echo "</div>";
+		$bookID = $row['book_id'];
+		 //$bookID = 3;
+		$bookName = $row['book_name'];
+		echo "</br>";
+		
+		echo $bookName;
+	
+	    //print_r($highlightSet);
+		if($action == "select")
+		{
+			if (in_array($bookID, $highlightSet))
+			{
+                echo "</br>it is rec</br>";
+			}
+			$postStr = 	"rbid=".$bookID."&rcid=".$course_id;
+		}
+		else{
+		    $postStr = 	"dbid=".$bookID."&dcid=".$course_id;
+		
+		    //courseView.php?rbid=".$bookID."&rcid=".$course_id."
+		}
+		$linkStr = "<a href='courseView.php?".$postStr." '>".$action."</a>";
+		echo "</br>";
+
+		echo $linkStr."</br>";
+		echo "</div>";
+		echo "</div>";
+	}
+}
+
+function showRecommendedBooks($course_id)
 {
 	/*
 	$sql = "select books0923.book_id,books0923.book_name from recommend_courses_books , books0923 where 
@@ -172,7 +309,7 @@ $sql = "select books0923.book_id,books0923.book_name from recommend_courses_book
 
 		echo $linkStr."</br>";
 		 echo "</div>";
-		  echo "</div>";
+		 echo "</div>";
 	}	
 }
 ?>
@@ -186,6 +323,9 @@ $sql = "select books0923.book_id,books0923.book_name from recommend_courses_book
 <?php
 if($userFlag == 1)
     showNotRecommendedBooks($courseID);
+else
+    //getUnSelectedBooks($courseID,);    
+getUnSelectedBooks($courseID,$userId,$rList);
 
 function showNotRecommendedBooks($course_id)
 {
