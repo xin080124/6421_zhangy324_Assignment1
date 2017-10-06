@@ -222,7 +222,13 @@ function getUnSelectedBooks($course_id,$user_id,$highlightSet)
 	recommend_courses_books.course_id = $course_id";
 */
 
-    $sql = "select books0923.book_id,books0923.book_name from books0923 ";
+    $sql = "select books0923.book_id,books0923.book_name from books0923 
+	where books0923.book_id not in 
+	(
+	    select student_courses_books.book_id from student_courses_books
+		where person_id = $user_id
+		and course_id = $course_id
+	)";
     
 	echo "</br>";
 	echo $sql;
