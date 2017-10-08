@@ -1,61 +1,97 @@
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 import org.omg.CORBA.portable.InputStream;
 
 public class MyServer4 {
 
-	public static void main(String[] args) {
-		//SomeThread thread = new SomeThread ();
-
-		System.out.println(" in MyThread4 ");
-		
-		 ServerSocket server = null;
-	        try
-	        {
-	            server = new ServerSocket(5000);
-	        }
-	        catch(IOException e)
-	        {
-	            e.printStackTrace();
-	        }
-
-		
-		while(true)
+	ServerSocket sSocket;
+	Socket cSocket;
+	String timeStr;
+	
+	DataInputStream dis;
+	DataOutputStream dos;
+	
+	public MyServer4()
+	{
+		// construct ServerSocket
+		try {
+			sSocket = new ServerSocket(5004);
+		}
+		catch (IOException e)
 		{
-		    try
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		MyServer4 server = new MyServer4();
+		server.start();
+
+	}
+
+	public void start()
+	{
+	    while(true)
+	    {
+	    	try
 		    {
-		        Socket socket = server.accept();
-		        MyThread4 thread = new MyThread4();
-				thread.start();
-				
-		        /*
-		        InputStream is = socket.getInputStream();
-		        StringBuffer mesg = new StringBuffer();
-		        while(true)
+		        cSocket = sSocket.accept();
+		        
+		        try {
+					 dis = new DataInputStream(cSocket.getInputStream());
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+				try {
+					dos = new DataOutputStream(cSocket.getOutputStream());
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		        
+		        Thread thread = new Thread()
 		        {
-		            int data = is.read();
-		            
-		            if(data == -1)
-		            {
-		                break;
-		            }
-		            else
-		            {
-		                mesg.append((char)data);
-		            }
-		        }
-		        System.out.println(mesg);
-		        */
+		        	public void run()
+		        	{
+		        		timeStr = refFormatNowDate();
+		        		
+		                //only write for once
+		        		try
+		        		{
+		        		    dos.writeUTF(timeStr);
+		        		}
+		        		catch (IOException e) {
+		        			// TODO Auto-generated catch block
+		        			e.printStackTrace();
+		        		}
+		        	}
+		        };
+				//thread.start();
+				
 		    }
 		    catch(IOException e)
 		    {
 		        e.printStackTrace();
 		    }
-		}
-
-
+	    	
+	    }
 	}
-
+	
+	public static String refFormatNowDate() 
+	{
+		Date nowTime = new Date(System.currentTimeMillis());
+		SimpleDateFormat sdFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String retStrFormatNowDate = sdFormatter.format(nowTime);
+		return retStrFormatNowDate;
+	}
 }

@@ -7,7 +7,7 @@ import java.net.Socket;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 
-public class MyThread4 extends Thread{
+public class MultithreadedServer extends Thread{
 
 	Socket threadClient;
 	String timeStr;
@@ -16,7 +16,7 @@ public class MyThread4 extends Thread{
 	DataOutputStream dos;
 
 	
-	MyThread4(Socket client) {
+	MultithreadedServer(Socket client) {
 		threadClient = client;
 		
 		try {
@@ -37,7 +37,7 @@ public class MyThread4 extends Thread{
 	
 	public void run() {
 	     // do something
-		System.out.println("test java thread");
+		System.out.println("Question 5:  MultitishreadedServer is running");
 		
         timeStr = refFormatNowDate();
 		
@@ -56,12 +56,10 @@ public class MyThread4 extends Thread{
 	public static String refFormatNowDate() 
 	{
 		Date nowTime = new Date(System.currentTimeMillis());
-		SimpleDateFormat sdFormatter = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat sdFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String retStrFormatNowDate = sdFormatter.format(nowTime);
 		return retStrFormatNowDate;
 	}
 
-
 	
-
 }

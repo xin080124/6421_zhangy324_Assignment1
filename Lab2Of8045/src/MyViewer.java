@@ -17,20 +17,24 @@ public class MyViewer {
 class NewFrame extends JFrame{
     private JLabel label1;
     private JButton button1;
-    private JTextField text1;
+    //private JTextField text1;
+    private JTextArea text1;
     
     private JPanel panel;
-
+    
+    
     private JRadioButton radioOne = new JRadioButton();
     private JRadioButton radioTwo = new JRadioButton();
     private JRadioButton radioThree = new JRadioButton();
     private JRadioButton radioFour = new JRadioButton();
     
+    
     public NewFrame(){
 
         super();
         
-        this.setSize(700,500);
+        this.setSize(700,210);
+        this.setTitle("Season Viewer");
         this.getContentPane().setLayout(null);
         
         this.add(this.getTextField(),null);
@@ -46,11 +50,10 @@ class NewFrame extends JFrame{
         JRadioButton jb3 = new JRadioButton("autumn");
         JRadioButton jb4 = new JRadioButton("winter");
 
-        
-        jb1.setBounds(500,50,100,30);
-        jb2.setBounds(500,100,100,30);
-        jb3.setBounds(500,150,100,30);
-        jb4.setBounds(500,200,100,30);
+        jb1.setBounds(600,5,100,30);
+        jb2.setBounds(600,35,100,30);
+        jb3.setBounds(600,65,100,30);
+        jb4.setBounds(600,95,100,30);
 
       ButtonGroup bg = new ButtonGroup();
         bg.add(jb1);
@@ -62,6 +65,46 @@ class NewFrame extends JFrame{
         this.add(jb2);
         this.add(jb3);
         this.add(jb4);
+        
+        jb1.addActionListener(new ActionListener()
+        {
+          public void actionPerformed(ActionEvent e)
+           {
+              System.out.println("Button spring was clicked!");
+              text1.setText("Everything turns green and the flowers bloom out");
+           }
+         }
+        );
+        
+        jb2.addActionListener(new ActionListener()
+        {
+          public void actionPerformed(ActionEvent e)
+           {
+              System.out.println("Button spring was clicked!");
+              text1.setText("The trees are very shady.");
+           }
+         }
+        );
+        
+        jb3.addActionListener(new ActionListener()
+        {
+          public void actionPerformed(ActionEvent e)
+           {
+              System.out.println("Button spring was clicked!");
+              text1.setText("The season of harvest");
+           }
+         }
+        );
+       
+        jb4.addActionListener(new ActionListener()
+        {
+          public void actionPerformed(ActionEvent e)
+           {
+              System.out.println("Button winter was clicked!");
+              text1.setText("white snow make the world pure and neat");
+           }
+         }
+        );
     }
     
     private JPanel getPanel(){
@@ -108,7 +151,7 @@ class NewFrame extends JFrame{
     private JButton getButton(){
     	if(button1==null){
     	button1 = new JButton();
-    	button1.setBounds(10,10,71,27);
+    	button1.setBounds(600,135,71,27);
     	button1.setText("OK");
     	button1.setToolTipText("OK");
     	//button1.addActionListener(new HelloButton());//添加监听器类，其主要的响应都由监听器类的方法实现
@@ -117,10 +160,12 @@ class NewFrame extends JFrame{
     }
 
     
-    private JTextField getTextField(){
+    private JTextArea getTextField(){
         if(text1==null){
-    	    text1 = new JTextField();
-    	    text1.setBounds(96,49,400,300);
+    	    text1 = new JTextArea();
+    	    text1.setBounds(0,5,600,160);
+    	    //text1.setWrapStyleWord(true);
+
     	    text1.setText("hehe");
     	}
     	return text1;
@@ -128,3 +173,4 @@ class NewFrame extends JFrame{
 
 
 }
+
