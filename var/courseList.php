@@ -66,6 +66,9 @@ echo "<h4>".$_SESSION['username'];
 
 echo "</br></br>";
 $courseID = 0;
+
+
+$userFlag = $_SESSION['userflag'];
 //if($row = mysql_fetch_array($query))
 //echo $row[1];
 ?>
@@ -112,7 +115,7 @@ while($row = mysql_fetch_array($query))
 	
 	if($userFlag == 1)
 	{
-	    $studentLink = "<h2><a href='courseView.php?id=".$courseID."&name=".$courseName." '>student management</a>";
+	    $studentLink = "<h2><a href='studentList.php?id=".$courseID."&name=".$courseName." '>student management</a>";
 	echo $studentLink;
 		
 	}
