@@ -48,10 +48,15 @@
 //include("courseList.php");
 
 session_start();
+
+/*
 @mysql_connect("localhost","root",'')
 or die("data base connected failed");
 @mysql_select_db("yx")
 or die("data base selected failed");
+*/
+require_once('connectDB.php');
+$mysqli = initPermanentConnection();
 
 $studentId = $_SESSION['userID'];
 
@@ -91,12 +96,16 @@ if(isset($_POST["MSG"]))
 	echo "</br>";
 	if($MSG != "")
 	{
-		//$sql = "INSERT INTO student_books_notes (note_id, person_id, book_id, value) VALUES (NULL, $studentId, $bookID, $MSG)";
+		$sql = "INSERT INTO student_books_notes (note_id, person_id, book_id, value) VALUES (NULL, $studentId, $bookID, \"$MSG\")";
 		
-		$sql = "INSERT INTO student_books_notes (note_id, person_id, book_id, value) VALUES (NULL, 8, 71, \"".$MSG."\")";
+		echo $sql."</br></br>";		
 		
-        //echo $sql;		
-		@mysql_query($sql)or die(" SQL failed");
+		//$sql = "INSERT INTO student_books_notes (note_id, person_id, book_id, value) VALUES (NULL, 8, 71, \"".$MSG."\")";
+		
+        echo $sql;		
+		//@mysql_query($sql)or die(" SQL failed");
+		$query = $mysqli->query($sql) or die("SQL execuation fails.");
+
 		// $success = mysql_affected_rows();
 		// if($success === -1)
 		// echo"fail".mysql_error();
@@ -117,7 +126,8 @@ if(isset($_GET["dnid"]))
 	note_id = $noteID";
 	
 	//echo $sql;		
-    @mysql_query($sql)or die(" SQL failed");
+    //@mysql_query($sql)or die(" SQL failed");
+	$query = $mysqli->query($sql) or die("SQL execuation fails.");
 }
 
 /*
@@ -128,9 +138,9 @@ echo "</br>";
 */
 
 
-showBookNotes($studentId,$bookID,$book);
+showBookNotes($studentId,$bookID,$book,$mysqli);
 
-function showBookNotes($student_id,$book_id,$book_name)
+function showBookNotes($student_id,$book_id,$book_name,$sqlHandle)
 {
 	/*
 	echo "</br>enter showBookNotes";
@@ -141,8 +151,11 @@ function showBookNotes($student_id,$book_id,$book_name)
 	echo "</br>";
 	*/
 
-	$query = @mysql_query("select * from student_books_notes")or die(" SQL failed");
+	//$query = @mysql_query("select * from student_books_notes")or die(" SQL failed");
 	
+	$sql = "select * from student_books_notes";
+	$query = $sqlHandle->query($sql) or die("SQL execuation fails.");
+
 	while($row = mysql_fetch_array($query))
 	{
 		 echo "<div class=\"row text-center slideanim\">";
